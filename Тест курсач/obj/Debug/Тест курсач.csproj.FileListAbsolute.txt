@@ -1,0 +1,12 @@
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Тест курсач.exe.config
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Тест курсач.exe
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Тест курсач.pdb
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.csproj.AssemblyReference.cache
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.csproj.SuggestedBindingRedirects.cache
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Form1.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Properties.Resources.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.csproj.GenerateResource.cache
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.csproj.CoreCompileInputs.cache
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.exe
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.pdb
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.UserControl1.resources
