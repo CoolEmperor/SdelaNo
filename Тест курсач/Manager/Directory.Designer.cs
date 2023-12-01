@@ -1,4 +1,4 @@
-﻿namespace Тест_курсач
+﻿namespace СделаНо
 {
     partial class Directory
     {

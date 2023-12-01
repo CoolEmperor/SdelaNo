@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Тест_курсач
+namespace СделаНо
 {
     public partial class Manager : Form
     {

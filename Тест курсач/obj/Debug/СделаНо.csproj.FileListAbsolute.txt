@@ -6,19 +6,19 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Guna.Charts.WinForms.xml
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.csproj.AssemblyReference.cache
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.csproj.SuggestedBindingRedirects.cache
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Properties.Resources.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.csproj.GenerateResource.cache
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.csproj.CoreCompileInputs.cache
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.csproj.CopyComplete
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.exe
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест курсач.pdb
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Directory.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.TypeEquipment.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Authorization.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Master.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.DeviceType.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Material.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Model.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Work.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Admin.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Admin.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Authorization.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.DeviceType.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Manager.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Master.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Material.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Model.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Directory.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.TypeEquipment.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Work.resources

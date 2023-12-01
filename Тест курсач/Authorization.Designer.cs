@@ -1,4 +1,4 @@
-﻿namespace Тест_курсач
+﻿namespace СделаНо
 {
     partial class Authorization
     {
@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.login = new Guna.UI2.WinForms.Guna2TextBox();
-            this.password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.usernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.aut = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -50,6 +50,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1219, 63);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // guna2Button1
             // 
@@ -78,51 +79,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Мастерская \"СделаНо\"";
             // 
-            // login
+            // usernameTextBox
             // 
-            this.login.BorderRadius = 20;
-            this.login.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.login.DefaultText = "";
-            this.login.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.login.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.login.FillColor = System.Drawing.Color.Silver;
-            this.login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.login.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.login.Location = new System.Drawing.Point(148, 216);
-            this.login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.login.Name = "login";
-            this.login.PasswordChar = '\0';
-            this.login.PlaceholderForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.login.PlaceholderText = "Логин";
-            this.login.SelectedText = "";
-            this.login.Size = new System.Drawing.Size(229, 47);
-            this.login.TabIndex = 3;
+            this.usernameTextBox.BorderRadius = 20;
+            this.usernameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.usernameTextBox.DefaultText = "";
+            this.usernameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.usernameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.usernameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.usernameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.usernameTextBox.FillColor = System.Drawing.Color.Silver;
+            this.usernameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.usernameTextBox.ForeColor = System.Drawing.Color.Black;
+            this.usernameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usernameTextBox.Location = new System.Drawing.Point(148, 216);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.PasswordChar = '\0';
+            this.usernameTextBox.PlaceholderForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.usernameTextBox.PlaceholderText = "Логин";
+            this.usernameTextBox.SelectedText = "";
+            this.usernameTextBox.Size = new System.Drawing.Size(229, 47);
+            this.usernameTextBox.TabIndex = 3;
             // 
-            // password
+            // passwordTextBox
             // 
-            this.password.BorderRadius = 20;
-            this.password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.password.DefaultText = "";
-            this.password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.password.FillColor = System.Drawing.Color.Silver;
-            this.password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.password.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.password.Location = new System.Drawing.Point(148, 283);
-            this.password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.PlaceholderForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.password.PlaceholderText = "Пароль";
-            this.password.SelectedText = "";
-            this.password.Size = new System.Drawing.Size(229, 47);
-            this.password.TabIndex = 4;
+            this.passwordTextBox.BorderRadius = 20;
+            this.passwordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordTextBox.DefaultText = "";
+            this.passwordTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordTextBox.FillColor = System.Drawing.Color.Silver;
+            this.passwordTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.passwordTextBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordTextBox.Location = new System.Drawing.Point(148, 283);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.PlaceholderForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.passwordTextBox.PlaceholderText = "Пароль";
+            this.passwordTextBox.SelectedText = "";
+            this.passwordTextBox.Size = new System.Drawing.Size(229, 47);
+            this.passwordTextBox.TabIndex = 4;
             // 
             // aut
             // 
@@ -159,8 +162,8 @@
             this.ClientSize = new System.Drawing.Size(1219, 623);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.aut);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.login);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Authorization";
@@ -177,8 +180,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox login;
-        private Guna.UI2.WinForms.Guna2TextBox password;
+        private Guna.UI2.WinForms.Guna2TextBox usernameTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox passwordTextBox;
         private Guna.UI2.WinForms.Guna2Button aut;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.PictureBox pictureBox1;

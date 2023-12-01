@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Тест_курсач
+namespace СделаНо
 {
     internal static class Program
     {
