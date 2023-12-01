@@ -67,16 +67,16 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeviceType.cs">
+    <Compile Include="Manager\DeviceType.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DeviceType.Designer.cs">
+    <Compile Include="Manager\DeviceType.Designer.cs">
       <DependentUpon>DeviceType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs">
+    <Compile Include="Manager\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manager.Designer.cs">
+    <Compile Include="Manager\Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Master.cs">
@@ -85,54 +85,57 @@
     <Compile Include="Master.Designer.cs">
       <DependentUpon>Master.cs</DependentUpon>
     </Compile>
-    <Compile Include="Material.cs">
+    <Compile Include="Manager\Material.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Material.Designer.cs">
+    <Compile Include="Manager\Material.Designer.cs">
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs">
+    <Compile Include="Manager\Model.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Model.Designer.cs">
+    <Compile Include="Manager\Model.Designer.cs">
       <DependentUpon>Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Directory.cs">
+    <Compile Include="Manager\Directory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Directory.Designer.cs">
+    <Compile Include="Manager\Directory.Designer.cs">
       <DependentUpon>Directory.cs</DependentUpon>
     </Compile>
-    <Compile Include="TypeEquipment.cs">
+    <Compile Include="Manager\TypeEquipment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TypeEquipment.Designer.cs">
+    <Compile Include="Manager\TypeEquipment.Designer.cs">
       <DependentUpon>TypeEquipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Work.cs">
+    <Compile Include="Manager\Work.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Work.Designer.cs">
+    <Compile Include="Manager\Work.Designer.cs">
       <DependentUpon>Work.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeviceType.resx">
+    <EmbeddedResource Include="Manager\DeviceType.resx">
       <DependentUpon>DeviceType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager.resx">
+    <EmbeddedResource Include="Manager\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master.resx">
       <DependentUpon>Master.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Material.resx">
+    <EmbeddedResource Include="Manager\Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model.resx">
+    <EmbeddedResource Include="Manager\Model.resx">
       <DependentUpon>Model.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -144,13 +147,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Directory.resx">
+    <EmbeddedResource Include="Manager\Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TypeEquipment.resx">
+    <EmbeddedResource Include="Manager\TypeEquipment.resx">
       <DependentUpon>TypeEquipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Work.resx">
+    <EmbeddedResource Include="Manager\Work.resx">
       <DependentUpon>Work.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

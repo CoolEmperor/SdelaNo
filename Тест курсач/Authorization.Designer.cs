@@ -91,7 +91,7 @@
             this.login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.login.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.login.Location = new System.Drawing.Point(163, 228);
+            this.login.Location = new System.Drawing.Point(148, 216);
             this.login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.login.Name = "login";
             this.login.PasswordChar = '\0';
@@ -114,7 +114,7 @@
             this.password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.password.Location = new System.Drawing.Point(163, 295);
+            this.password.Location = new System.Drawing.Point(148, 283);
             this.password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -134,7 +134,7 @@
             this.aut.FillColor = System.Drawing.Color.Wheat;
             this.aut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.aut.ForeColor = System.Drawing.Color.Black;
-            this.aut.Location = new System.Drawing.Point(153, 415);
+            this.aut.Location = new System.Drawing.Point(138, 403);
             this.aut.Name = "aut";
             this.aut.Size = new System.Drawing.Size(251, 66);
             this.aut.TabIndex = 5;
@@ -144,9 +144,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(522, 135);
+            this.pictureBox1.Location = new System.Drawing.Point(561, 136);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(590, 413);
+            this.pictureBox1.Size = new System.Drawing.Size(502, 391);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
