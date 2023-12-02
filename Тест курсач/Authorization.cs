@@ -52,6 +52,7 @@ namespace СделаНо
                     {
                         string role = reader["Роль"].ToString();
                         string fns = reader["ФИО"].ToString();
+                        int idsotr = Convert.ToInt32(reader["ИдСотрудника"]);
                         switch (role)
                         {
                             case "Администратор":
@@ -64,7 +65,7 @@ namespace СделаНо
                                 managerForm.Show();
                                 break;
                             case "Мастер":
-                                Master masterForm = new Master(fns);
+                                Master masterForm = new Master(fns,idsotr);
                                 masterForm.Show();
                                 break;
                         }

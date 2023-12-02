@@ -295,12 +295,30 @@ namespace Тест_курсач.Master
 
         private void textFindMat_TextChanged(object sender, EventArgs e)
         {
-            
+            string searchValue = textFindMat.Text.Trim(); // Получаем текст из TextBox для поиска
+
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                viewMaterialUsageBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
+            }
+            else
+            {
+                viewMaterialUsageBindingSource.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
+            }
         }
 
         private void textFindWork_TextChanged(object sender, EventArgs e)
         {
-            
+            string searchValue = textFindWork.Text.Trim(); // Получаем текст из TextBox для поиска
+
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
+            }
+            else
+            {
+                видремонтныхработBindingSource1.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
+            }
         }
 
         private void SelectZakaz_Load(object sender, EventArgs e)

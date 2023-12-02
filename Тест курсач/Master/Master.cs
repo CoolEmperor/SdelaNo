@@ -19,11 +19,13 @@ namespace СделаНо
     {
         private int selectId;
         private string fns1;
+        private int idsotr;
         string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
-        public Master(string fns)
+        public Master(string fns, int idsotr)
         {
             InitializeComponent();
-            fns1 = fns;
+            this.fns1 = fns;
+            this.idsotr = idsotr;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -39,7 +41,7 @@ namespace СделаНо
             
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
-            MainMaster spr = new MainMaster();
+            MainMaster spr = new MainMaster(this.idsotr);
            
 
             spr.RowSelected += MainMaster_RowSelected; // Подписываемся на событие
@@ -73,7 +75,7 @@ namespace СделаНо
         {
             butBack.Visible = false;
             butZakaz.Visible = true;
-            MainMaster spr = new MainMaster();
+            MainMaster spr = new MainMaster(this.idsotr);
             Controler(spr);
         }
     }

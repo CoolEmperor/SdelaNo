@@ -13,12 +13,14 @@ namespace Тест_курсач.Master
 {
     public partial class MainMaster : UserControl
     {
+        int idsotr;
         public event EventHandler<int> RowSelected;
         string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
-        public MainMaster()
+        public MainMaster(int idsotr)
         {
             InitializeComponent();
-            string query = "SELECT * FROM Заказ";
+            this.idsotr = idsotr;
+            string query = $"SELECT * FROM Заказ Where ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -35,7 +37,7 @@ namespace Тест_курсач.Master
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Заказ";
+            string query = $"SELECT * FROM Заказ Where ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -47,7 +49,7 @@ namespace Тест_курсач.Master
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Заказ Where Статус = 'На диагностике'";
+            string query = $"SELECT * FROM Заказ Where Статус = 'На диагностике' And ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -59,7 +61,7 @@ namespace Тест_курсач.Master
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Заказ Where Статус = 'На ремонте'";
+            string query = $"SELECT * FROM Заказ Where Статус = 'На ремонте' And ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
