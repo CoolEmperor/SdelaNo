@@ -51,20 +51,20 @@ namespace СделаНо
                     if (reader.Read())
                     {
                         string role = reader["Роль"].ToString();
+                        string fns = reader["ФИО"].ToString();
                         switch (role)
                         {
                             case "Администратор":
-                                string fns = reader["ФИО"].ToString();
                                 Admin adminForm = new Admin(fns);
                                 adminForm.Show();
                                 
                                 break;
                             case "Менеджер":
-                                Manager managerForm = new Manager();
+                                Manager managerForm = new Manager(fns);
                                 managerForm.Show();
                                 break;
                             case "Мастер":
-                                Master masterForm = new Master();
+                                Master masterForm = new Master(fns);
                                 masterForm.Show();
                                 break;
                         }

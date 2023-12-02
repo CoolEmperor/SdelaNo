@@ -12,14 +12,17 @@ namespace СделаНо
 {
     public partial class Manager : Form
     {
-        public Manager()
+        private string fns1;
+        public Manager(string fns)
         {
             InitializeComponent();
+            fns1 = fns;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Здравствуйте, " + fns1);
+            label3.Text = fns1;
         }
 
         private void Controler(UserControl userControl)
@@ -58,7 +61,18 @@ namespace СделаНо
 
         private void butExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+            //this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
