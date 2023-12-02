@@ -33,6 +33,7 @@ namespace СделаНо
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "сделаНоDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
             this.сотрудникTableAdapter.Fill(this.сделаНоDataSet.Сотрудник);
+
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
 
@@ -280,6 +281,11 @@ namespace СделаНо
                 comboRole.Text = data1.CurrentRow.Cells[4].Value.ToString();
                 textTel.Text = data1.CurrentRow.Cells[5].Value.ToString();
             }
+        }
+
+        private void textBoxFindFam_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,8 +36,7 @@ namespace СделаНо
         }
         private void Master_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "сделаНоDataSet.Заказ". При необходимости она может быть перемещена или удалена.
-            this.заказTableAdapter.Fill(this.сделаНоDataSet.Заказ);
+            
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
             MainMaster spr = new MainMaster();

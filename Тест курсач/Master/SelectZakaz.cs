@@ -295,66 +295,17 @@ namespace Тест_курсач.Master
 
         private void textFindMat_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = textFindMat.Text.Trim(); // Получаем текст из TextBox для поиска
-
-            // Проверяем, если текст для поиска не пустой
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                // Проходимся по всем строкам DataGridView для поиска материала по названию
-                foreach (DataGridViewRow row in data5.Rows)
-                {
-                    if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().IndexOf(searchValue, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        // Если находим совпадение, строка становится видимой
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        // Если не находим совпадение, скрываем строку
-                        row.Visible = false;
-                    }
-                }
-            }
-            else
-            {
-                // Если текст для поиска пустой, все строки делаем видимыми
-                foreach (DataGridViewRow row in data5.Rows)
-                {
-                    row.Visible = true;
-                }
-            }
+            
         }
 
         private void textFindWork_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = textFindWork.Text.Trim(); // Получаем текст из TextBox для поиска
+            
+        }
 
-            // Проверяем, если текст для поиска не пустой
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                // Проходимся по всем строкам DataGridView для поиска материала по названию
-                foreach (DataGridViewRow row in data4.Rows)
-                {
-                    if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().IndexOf(searchValue, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        // Если находим совпадение, строка становится видимой
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        // Если не находим совпадение, скрываем строку
-                        row.Visible = false;
-                    }
-                }
-            }
-            else
-            {
-                // Если текст для поиска пустой, все строки делаем видимыми
-                foreach (DataGridViewRow row in data4.Rows)
-                {
-                    row.Visible = true;
-                }
-            }
+        private void SelectZakaz_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

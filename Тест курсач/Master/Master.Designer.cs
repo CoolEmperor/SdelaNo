@@ -34,14 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.сделаНоDataSet = new СделаНо.СделаНоDataSet();
             this.заказBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказTableAdapter = new СделаНо.СделаНоDataSetTableAdapters.ЗаказTableAdapter();
             this.butZakaz = new Guna.UI2.WinForms.Guna2Button();
             this.butExit = new Guna.UI2.WinForms.Guna2Button();
             this.butBack = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,17 +94,13 @@
             // 
             // сделаНоDataSet
             // 
-            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
-            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // заказBindingSource
             // 
             this.заказBindingSource.DataMember = "Заказ";
-            this.заказBindingSource.DataSource = this.сделаНоDataSet;
             // 
             // заказTableAdapter
             // 
-            this.заказTableAdapter.ClearBeforeFill = true;
             // 
             // butZakaz
             // 
@@ -174,7 +167,6 @@
             this.Load += new System.EventHandler(this.Master_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -187,9 +179,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelContainer;
-        private СделаНоDataSet сделаНоDataSet;
         private System.Windows.Forms.BindingSource заказBindingSource;
-        private СделаНоDataSetTableAdapters.ЗаказTableAdapter заказTableAdapter;
         private Guna.UI2.WinForms.Guna2Button butZakaz;
         private Guna.UI2.WinForms.Guna2Button butExit;
         private Guna.UI2.WinForms.Guna2Button butBack;

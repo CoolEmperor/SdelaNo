@@ -29,24 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.butExit = new Guna.UI2.WinForms.Guna2Button();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.идСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.рольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.сделаНоDataSet = new СделаНо.СделаНоDataSet();
-            this.сотрудникTableAdapter = new СделаНо.СделаНоDataSetTableAdapters.СотрудникTableAdapter();
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
             this.labelFIO = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.textBoxFindFam = new Guna.UI2.WinForms.Guna2TextBox();
             this.butClear = new Guna.UI2.WinForms.Guna2Button();
             this.butAll = new Guna.UI2.WinForms.Guna2Button();
+            this.сотрудникTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
@@ -136,39 +136,39 @@
             // 
             this.data1.AllowUserToAddRows = false;
             this.data1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data1.ColumnHeadersHeight = 35;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.идСотрудникаDataGridViewTextBoxColumn,
-            this.фИОDataGridViewTextBoxColumn,
-            this.логинDataGridViewTextBoxColumn,
-            this.парольDataGridViewTextBoxColumn,
-            this.рольDataGridViewTextBoxColumn,
-            this.телефонDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.data1.DataSource = this.сотрудникBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data1.DefaultCellStyle = dataGridViewCellStyle3;
             this.data1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.Location = new System.Drawing.Point(18, 87);
             this.data1.Name = "data1";
@@ -202,54 +202,54 @@
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // идСотрудникаDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.идСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "ИдСотрудника";
-            this.идСотрудникаDataGridViewTextBoxColumn.HeaderText = "ИдСотрудника";
-            this.идСотрудникаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идСотрудникаDataGridViewTextBoxColumn.Name = "идСотрудникаDataGridViewTextBoxColumn";
-            this.идСотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идСотрудникаDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ИдСотрудника";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ИдСотрудника";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
-            // фИОDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
-            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ФИО";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ФИО";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // логинDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.логинDataGridViewTextBoxColumn.DataPropertyName = "Логин";
-            this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
-            this.логинDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
-            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Логин";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Логин";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // парольDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.парольDataGridViewTextBoxColumn.DataPropertyName = "Пароль";
-            this.парольDataGridViewTextBoxColumn.HeaderText = "Пароль";
-            this.парольDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
-            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Пароль";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Пароль";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // рольDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.рольDataGridViewTextBoxColumn.DataPropertyName = "Роль";
-            this.рольDataGridViewTextBoxColumn.HeaderText = "Роль";
-            this.рольDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.рольDataGridViewTextBoxColumn.Name = "рольDataGridViewTextBoxColumn";
-            this.рольDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Роль";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Роль";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // телефонDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
-            this.телефонDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // сотрудникBindingSource
             // 
@@ -260,10 +260,6 @@
             // 
             this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
             this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // сотрудникTableAdapter
-            // 
-            this.сотрудникTableAdapter.ClearBeforeFill = true;
             // 
             // labelFIO
             // 
@@ -544,13 +540,14 @@
             this.textBoxFindFam.ForeColor = System.Drawing.Color.Red;
             this.textBoxFindFam.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxFindFam.Location = new System.Drawing.Point(1125, 630);
-            this.textBoxFindFam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFindFam.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFindFam.Name = "textBoxFindFam";
             this.textBoxFindFam.PasswordChar = '\0';
             this.textBoxFindFam.PlaceholderText = "Текст для поиска";
             this.textBoxFindFam.SelectedText = "";
             this.textBoxFindFam.Size = new System.Drawing.Size(350, 31);
             this.textBoxFindFam.TabIndex = 36;
+            this.textBoxFindFam.TextChanged += new System.EventHandler(this.textBoxFindFam_TextChanged);
             // 
             // butClear
             // 
@@ -583,6 +580,10 @@
             this.butAll.TabIndex = 38;
             this.butAll.Text = "Отобразить все";
             this.butAll.Click += new System.EventHandler(this.butAll_Click);
+            // 
+            // сотрудникTableAdapter
+            // 
+            this.сотрудникTableAdapter.ClearBeforeFill = true;
             // 
             // Admin
             // 
@@ -635,9 +636,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button butExit;
         private Guna.UI2.WinForms.Guna2DataGridView data1;
-        private СделаНоDataSet сделаНоDataSet;
-        private System.Windows.Forms.BindingSource сотрудникBindingSource;
-        private СделаНоDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn идСотрудникаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
@@ -664,5 +662,14 @@
         private Guna.UI2.WinForms.Guna2TextBox textBoxFindFam;
         private Guna.UI2.WinForms.Guna2Button butClear;
         private Guna.UI2.WinForms.Guna2Button butAll;
+        private Тест_курсач.СделаНоDataSet сделаНоDataSet;
+        private System.Windows.Forms.BindingSource сотрудникBindingSource;
+        private Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
