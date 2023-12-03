@@ -526,12 +526,32 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewMaterialUsageTableAdapter" GeneratorDataComponentClassName="ViewMaterialUsageTableAdapter" Name="ViewMaterialUsage" UserDataComponentName="ViewMaterialUsageTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ВидТехникиДляМенеджераTableAdapter" GeneratorDataComponentClassName="ВидТехникиДляМенеджераTableAdapter" Name="ВидТехникиДляМенеджера" UserDataComponentName="ВидТехникиДляМенеджераTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="СделаНоConnectionString (Settings)" DbObjectName="СделаНо.dbo.ViewMaterialUsage" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="СделаНоConnectionString (Settings)" DbObjectName="СделаНо.dbo.ВидТехникиДляМенеджера" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Название, Стоимость, Количество FROM dbo.ViewMaterialUsage</CommandText>
+                    <CommandText>SELECT Название, Описание, [Тип устройства], Модель, ИдВида FROM ВидТехникиДляМенеджера</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
+              <Mapping SourceColumn="Тип устройства" DataSetColumn="Тип устройства" />
+              <Mapping SourceColumn="Модель" DataSetColumn="Модель" />
+              <Mapping SourceColumn="ИдВида" DataSetColumn="ИдВида" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="МатериалыДляМастераTableAdapter" GeneratorDataComponentClassName="МатериалыДляМастераTableAdapter" Name="МатериалыДляМастера" UserDataComponentName="МатериалыДляМастераTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="СделаНоConnectionString (Settings)" DbObjectName="СделаНо.dbo.МатериалыДляМастера" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Название, Стоимость, Количество, ИдМатериала FROM МатериалыДляМастера</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -541,6 +561,7 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
               <Mapping SourceColumn="Название" DataSetColumn="Название" />
               <Mapping SourceColumn="Стоимость" DataSetColumn="Стоимость" />
               <Mapping SourceColumn="Количество" DataSetColumn="Количество" />
+              <Mapping SourceColumn="ИдМатериала" DataSetColumn="ИдМатериала" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -753,18 +774,54 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewMaterialUsage" msprop:Generator_RowEvHandlerName="ViewMaterialUsageRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewMaterialUsageRowDeleted" msprop:Generator_RowDeletingName="ViewMaterialUsageRowDeleting" msprop:Generator_RowEvArgName="ViewMaterialUsageRowChangeEvent" msprop:Generator_TablePropName="ViewMaterialUsage" msprop:Generator_RowChangedName="ViewMaterialUsageRowChanged" msprop:Generator_RowChangingName="ViewMaterialUsageRowChanging" msprop:Generator_TableClassName="ViewMaterialUsageDataTable" msprop:Generator_RowClassName="ViewMaterialUsageRow" msprop:Generator_TableVarName="tableViewMaterialUsage" msprop:Generator_UserTableName="ViewMaterialUsage">
+        <xs:element name="ВидТехникиДляМенеджера" msprop:Generator_RowClassName="ВидТехникиДляМенеджераRow" msprop:Generator_RowEvHandlerName="ВидТехникиДляМенеджераRowChangeEventHandler" msprop:Generator_RowDeletedName="ВидТехникиДляМенеджераRowDeleted" msprop:Generator_RowDeletingName="ВидТехникиДляМенеджераRowDeleting" msprop:Generator_RowEvArgName="ВидТехникиДляМенеджераRowChangeEvent" msprop:Generator_TablePropName="ВидТехникиДляМенеджера" msprop:Generator_RowChangedName="ВидТехникиДляМенеджераRowChanged" msprop:Generator_UserTableName="ВидТехникиДляМенеджера" msprop:Generator_RowChangingName="ВидТехникиДляМенеджераRowChanging" msprop:Generator_TableClassName="ВидТехникиДляМенеджераDataTable" msprop:Generator_TableVarName="tableВидТехникиДляМенеджера">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Название" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_UserColumnName="Название">
+              <xs:element name="Название" msprop:Generator_UserColumnName="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Стоимость" msprop:Generator_ColumnPropNameInRow="Стоимость" msprop:Generator_ColumnPropNameInTable="СтоимостьColumn" msprop:Generator_ColumnVarNameInTable="columnСтоимость" msprop:Generator_UserColumnName="Стоимость" type="xs:decimal" />
-              <xs:element name="Количество" msprop:Generator_ColumnPropNameInRow="Количество" msprop:Generator_ColumnPropNameInTable="КоличествоColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество" msprop:Generator_UserColumnName="Количество" type="xs:int" />
+              <xs:element name="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_x0020_устройства" msprop:Generator_UserColumnName="Тип устройства" msprop:Generator_ColumnPropNameInTable="Тип_устройстваColumn" msprop:Generator_ColumnPropNameInRow="Тип_устройства" msprop:Generator_ColumnVarNameInTable="columnТип_устройства">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Модель" msprop:Generator_UserColumnName="Модель" msprop:Generator_ColumnPropNameInTable="МодельColumn" msprop:Generator_ColumnPropNameInRow="Модель" msprop:Generator_ColumnVarNameInTable="columnМодель">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ИдВида" msprop:Generator_ColumnPropNameInRow="ИдВида" msprop:Generator_ColumnPropNameInTable="ИдВидаColumn" msprop:Generator_ColumnVarNameInTable="columnИдВида" msprop:Generator_UserColumnName="ИдВида" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="МатериалыДляМастера" msprop:Generator_RowClassName="МатериалыДляМастераRow" msprop:Generator_RowEvHandlerName="МатериалыДляМастераRowChangeEventHandler" msprop:Generator_RowDeletedName="МатериалыДляМастераRowDeleted" msprop:Generator_RowDeletingName="МатериалыДляМастераRowDeleting" msprop:Generator_RowEvArgName="МатериалыДляМастераRowChangeEvent" msprop:Generator_TablePropName="МатериалыДляМастера" msprop:Generator_RowChangedName="МатериалыДляМастераRowChanged" msprop:Generator_UserTableName="МатериалыДляМастера" msprop:Generator_RowChangingName="МатериалыДляМастераRowChanging" msprop:Generator_TableClassName="МатериалыДляМастераDataTable" msprop:Generator_TableVarName="tableМатериалыДляМастера">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название" msprop:Generator_UserColumnName="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Стоимость" msprop:Generator_UserColumnName="Стоимость" msprop:Generator_ColumnPropNameInTable="СтоимостьColumn" msprop:Generator_ColumnPropNameInRow="Стоимость" msprop:Generator_ColumnVarNameInTable="columnСтоимость" type="xs:decimal" />
+              <xs:element name="Количество" msprop:Generator_UserColumnName="Количество" msprop:Generator_ColumnPropNameInTable="КоличествоColumn" msprop:Generator_ColumnPropNameInRow="Количество" msprop:Generator_ColumnVarNameInTable="columnКоличество" type="xs:int" />
+              <xs:element name="ИдМатериала" msprop:Generator_ColumnPropNameInRow="ИдМатериала" msprop:Generator_ColumnPropNameInTable="ИдМатериалаColumn" msprop:Generator_ColumnVarNameInTable="columnИдМатериала" msprop:Generator_UserColumnName="ИдМатериала" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -797,6 +854,14 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
     <xs:unique name="Тип_устройства_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Тип_устройства" />
       <xs:field xpath="mstns:ИдТипа" />
+    </xs:unique>
+    <xs:unique name="ВидТехникиДляМенеджера_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ВидТехникиДляМенеджера" />
+      <xs:field xpath="mstns:ИдВида" />
+    </xs:unique>
+    <xs:unique name="МатериалыДляМастера_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:МатериалыДляМастера" />
+      <xs:field xpath="mstns:ИдМатериала" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

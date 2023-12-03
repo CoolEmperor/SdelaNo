@@ -59,7 +59,7 @@ namespace Тест_курсач.Master
                 data2.DataSource = table1;
             }
 
-            string query2 = $@"SELECT * FROM ViewMaterialUsage";
+            string query2 = $@"SELECT * FROM МатериалыДляМастера";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -299,11 +299,11 @@ namespace Тест_курсач.Master
 
             if (!string.IsNullOrEmpty(searchValue))
             {
-                viewMaterialUsageBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
+                материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
             }
             else
             {
-                viewMaterialUsageBindingSource.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
+                материалыДляМастераBindingSource.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
             }
         }
 

@@ -30,7 +30,7 @@ namespace СделаНо
         }
         private void FillDataGridView()
         {
-            string query = "SELECT Вид_техники.Название, Вид_техники.Описание, Модель.Название, Тип_устройства.Название FROM [Вид_техники] JOIN Модель ON [Вид_техники].ИдМодели = Модель.ИдМодели JOIN Тип_устройства ON [Вид_техники].ИдТипа = Тип_устройства.ИдТипа";
+            string query = "SELECT * FROM ВидТехникиДляМенеджера";
             //string query = "SELECT * FROM [Вид_техники]";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -207,22 +207,6 @@ namespace СделаНо
             }
         }
 
-        private void butFind_Click(object sender, EventArgs e)
-        {
-            string filterText = textBoxFind.Text;
-            string findField = "Название";
-
-            if (!string.IsNullOrWhiteSpace(filterText))
-            {
-                видтехникиBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
-            }
-        }
-
-        private void butAll_Click(object sender, EventArgs e)
-        {
-            видтехникиBindingSource.RemoveFilter();
-        }
-
         private void data1_SelectionChanged(object sender, EventArgs e)
         {
             int selectedEmployeeId;
@@ -264,6 +248,21 @@ namespace СделаНо
                 comboType.DataSource = dataSet.Tables["Тип_устройства"];
                 comboType.DisplayMember = "Название"; // Укажите имя поля, которое нужно отображать в комбо-боксе
                 comboType.ValueMember = "ИдТипа"; // Укажите имя поля, которое будет использоваться как значение
+            }
+        }
+
+        private void textBoxFind_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = textBoxFind.Text;
+            string findField = "Название";
+
+            if (!string.IsNullOrWhiteSpace(filterText))
+            {
+                видТехникиДляМенеджераBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+            }
+            else
+            {
+                видТехникиДляМенеджераBindingSource.RemoveFilter(); // Очищаем фильтр, если строка поиска пуста
             }
         }
     }

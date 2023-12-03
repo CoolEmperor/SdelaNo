@@ -45,26 +45,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.data2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.data3 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.butMat = new Guna.UI2.WinForms.Guna2Button();
-            this.butWork = new Guna.UI2.WinForms.Guna2Button();
-            this.butBack = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.data4 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.data5 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.text1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textFindMat = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textFindWork = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
-            this.заказBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказTableAdapter();
             this.идЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.номерквитанцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датапринятияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,38 +61,59 @@
             this.стоимостьматериаловDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стоимостьработDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.общаястоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewMaterialUsageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewMaterialUsageTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ViewMaterialUsageTableAdapter();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.стоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
+            this.заказBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
+            this.data2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.идРаботыDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.названиеDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стоимостьDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.описаниеDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.материалBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.материалTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МатериалTableAdapter();
+            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.data3 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.идМатериалаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.материалыДляМастераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.butMat = new Guna.UI2.WinForms.Guna2Button();
+            this.butWork = new Guna.UI2.WinForms.Guna2Button();
+            this.butBack = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.data4 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.идРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видремонтныхработBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.data5 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.идМатериалаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.названиеDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стоимостьDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.видремонтныхработBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.стоимостьDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.идРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.материалBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.text1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textFindMat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textFindWork = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.заказTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказTableAdapter();
+            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
+            this.материалTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МатериалTableAdapter();
+            this.материалыДляМастераTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МатериалыДляМастераTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewMaterialUsageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.материалBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалыДляМастераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // data1
@@ -194,6 +195,148 @@
             this.data1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // идЗаказаDataGridViewTextBoxColumn
+            // 
+            this.идЗаказаDataGridViewTextBoxColumn.DataPropertyName = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.HeaderText = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идЗаказаDataGridViewTextBoxColumn.Name = "идЗаказаDataGridViewTextBoxColumn";
+            this.идЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идЗаказаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // номерквитанцииDataGridViewTextBoxColumn
+            // 
+            this.номерквитанцииDataGridViewTextBoxColumn.DataPropertyName = "Номер_квитанции";
+            this.номерквитанцииDataGridViewTextBoxColumn.HeaderText = "Номер_квитанции";
+            this.номерквитанцииDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.номерквитанцииDataGridViewTextBoxColumn.Name = "номерквитанцииDataGridViewTextBoxColumn";
+            this.номерквитанцииDataGridViewTextBoxColumn.ReadOnly = true;
+            this.номерквитанцииDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // датапринятияDataGridViewTextBoxColumn
+            // 
+            this.датапринятияDataGridViewTextBoxColumn.DataPropertyName = "Дата_принятия";
+            this.датапринятияDataGridViewTextBoxColumn.HeaderText = "Дата принятия";
+            this.датапринятияDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датапринятияDataGridViewTextBoxColumn.Name = "датапринятияDataGridViewTextBoxColumn";
+            this.датапринятияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаначалаDataGridViewTextBoxColumn
+            // 
+            this.датаначалаDataGridViewTextBoxColumn.DataPropertyName = "Дата_начала";
+            this.датаначалаDataGridViewTextBoxColumn.HeaderText = "Дата начала";
+            this.датаначалаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаначалаDataGridViewTextBoxColumn.Name = "датаначалаDataGridViewTextBoxColumn";
+            this.датаначалаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаконцаDataGridViewTextBoxColumn
+            // 
+            this.датаконцаDataGridViewTextBoxColumn.DataPropertyName = "Дата_конца";
+            this.датаконцаDataGridViewTextBoxColumn.HeaderText = "Дата конца";
+            this.датаконцаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаконцаDataGridViewTextBoxColumn.Name = "датаконцаDataGridViewTextBoxColumn";
+            this.датаконцаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датавыдачиDataGridViewTextBoxColumn
+            // 
+            this.датавыдачиDataGridViewTextBoxColumn.DataPropertyName = "Дата_выдачи";
+            this.датавыдачиDataGridViewTextBoxColumn.HeaderText = "Дата_выдачи";
+            this.датавыдачиDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датавыдачиDataGridViewTextBoxColumn.Name = "датавыдачиDataGridViewTextBoxColumn";
+            this.датавыдачиDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датавыдачиDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // идСотрудникаDataGridViewTextBoxColumn
+            // 
+            this.идСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "ИдСотрудника";
+            this.идСотрудникаDataGridViewTextBoxColumn.HeaderText = "ИдСотрудника";
+            this.идСотрудникаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идСотрудникаDataGridViewTextBoxColumn.Name = "идСотрудникаDataGridViewTextBoxColumn";
+            this.идСотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идСотрудникаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // идВидаDataGridViewTextBoxColumn
+            // 
+            this.идВидаDataGridViewTextBoxColumn.DataPropertyName = "ИдВида";
+            this.идВидаDataGridViewTextBoxColumn.HeaderText = "Вид техники";
+            this.идВидаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идВидаDataGridViewTextBoxColumn.Name = "идВидаDataGridViewTextBoxColumn";
+            this.идВидаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // авансDataGridViewTextBoxColumn
+            // 
+            this.авансDataGridViewTextBoxColumn.DataPropertyName = "Аванс";
+            this.авансDataGridViewTextBoxColumn.HeaderText = "Аванс";
+            this.авансDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.авансDataGridViewTextBoxColumn.Name = "авансDataGridViewTextBoxColumn";
+            this.авансDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // скидкаDataGridViewTextBoxColumn
+            // 
+            this.скидкаDataGridViewTextBoxColumn.DataPropertyName = "Скидка";
+            this.скидкаDataGridViewTextBoxColumn.HeaderText = "Скидка";
+            this.скидкаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.скидкаDataGridViewTextBoxColumn.Name = "скидкаDataGridViewTextBoxColumn";
+            this.скидкаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОКлиентаDataGridViewTextBoxColumn
+            // 
+            this.фИОКлиентаDataGridViewTextBoxColumn.DataPropertyName = "ФИО_Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фИОКлиентаDataGridViewTextBoxColumn.Name = "фИОКлиентаDataGridViewTextBoxColumn";
+            this.фИОКлиентаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номертелефонаDataGridViewTextBoxColumn
+            // 
+            this.номертелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.номертелефонаDataGridViewTextBoxColumn.Name = "номертелефонаDataGridViewTextBoxColumn";
+            this.номертелефонаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьматериаловDataGridViewTextBoxColumn
+            // 
+            this.стоимостьматериаловDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_материалов";
+            this.стоимостьматериаловDataGridViewTextBoxColumn.HeaderText = "Стоимость материалов";
+            this.стоимостьматериаловDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьматериаловDataGridViewTextBoxColumn.Name = "стоимостьматериаловDataGridViewTextBoxColumn";
+            this.стоимостьматериаловDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьработDataGridViewTextBoxColumn
+            // 
+            this.стоимостьработDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_работ";
+            this.стоимостьработDataGridViewTextBoxColumn.HeaderText = "Стоимость работ";
+            this.стоимостьработDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьработDataGridViewTextBoxColumn.Name = "стоимостьработDataGridViewTextBoxColumn";
+            this.стоимостьработDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // общаястоимостьDataGridViewTextBoxColumn
+            // 
+            this.общаястоимостьDataGridViewTextBoxColumn.DataPropertyName = "Общая_стоимость";
+            this.общаястоимостьDataGridViewTextBoxColumn.HeaderText = "Общая стоимость";
+            this.общаястоимостьDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.общаястоимостьDataGridViewTextBoxColumn.Name = "общаястоимостьDataGridViewTextBoxColumn";
+            this.общаястоимостьDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // заказBindingSource
+            // 
+            this.заказBindingSource.DataMember = "Заказ";
+            this.заказBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // сделаНоDataSet
+            // 
+            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
+            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // data2
             // 
             this.data2.AllowUserToAddRows = false;
@@ -262,6 +405,44 @@
             this.data2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.data2_MouseDoubleClick);
             // 
+            // идРаботыDataGridViewTextBoxColumn1
+            // 
+            this.идРаботыDataGridViewTextBoxColumn1.DataPropertyName = "ИдРаботы";
+            this.идРаботыDataGridViewTextBoxColumn1.HeaderText = "ИдРаботы";
+            this.идРаботыDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.идРаботыDataGridViewTextBoxColumn1.Name = "идРаботыDataGridViewTextBoxColumn1";
+            this.идРаботыDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.идРаботыDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn2
+            // 
+            this.названиеDataGridViewTextBoxColumn2.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.названиеDataGridViewTextBoxColumn2.Name = "названиеDataGridViewTextBoxColumn2";
+            this.названиеDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // стоимостьDataGridViewTextBoxColumn2
+            // 
+            this.стоимостьDataGridViewTextBoxColumn2.DataPropertyName = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn2.HeaderText = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.стоимостьDataGridViewTextBoxColumn2.Name = "стоимостьDataGridViewTextBoxColumn2";
+            this.стоимостьDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // описаниеDataGridViewTextBoxColumn1
+            // 
+            this.описаниеDataGridViewTextBoxColumn1.DataPropertyName = "Описание";
+            this.описаниеDataGridViewTextBoxColumn1.HeaderText = "Описание";
+            this.описаниеDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.описаниеDataGridViewTextBoxColumn1.Name = "описаниеDataGridViewTextBoxColumn1";
+            this.описаниеDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // видремонтныхработBindingSource
+            // 
+            this.видремонтныхработBindingSource.DataMember = "Вид_ремонтных_работ";
+            this.видремонтныхработBindingSource.DataSource = this.сделаНоDataSet;
+            // 
             // data3
             // 
             this.data3.AllowUserToAddRows = false;
@@ -284,10 +465,11 @@
             this.data3.ColumnHeadersHeight = 75;
             this.data3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.идМатериалаDataGridViewTextBoxColumn1,
             this.названиеDataGridViewTextBoxColumn,
             this.стоимостьDataGridViewTextBoxColumn,
             this.количествоDataGridViewTextBoxColumn});
-            this.data3.DataSource = this.viewMaterialUsageBindingSource;
+            this.data3.DataSource = this.материалыДляМастераBindingSource;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -328,6 +510,44 @@
             this.data3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.data3_MouseDoubleClick);
+            // 
+            // идМатериалаDataGridViewTextBoxColumn1
+            // 
+            this.идМатериалаDataGridViewTextBoxColumn1.DataPropertyName = "ИдМатериала";
+            this.идМатериалаDataGridViewTextBoxColumn1.HeaderText = "ИдМатериала";
+            this.идМатериалаDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.идМатериалаDataGridViewTextBoxColumn1.Name = "идМатериалаDataGridViewTextBoxColumn1";
+            this.идМатериалаDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.идМатериалаDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьDataGridViewTextBoxColumn
+            // 
+            this.стоимостьDataGridViewTextBoxColumn.DataPropertyName = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьDataGridViewTextBoxColumn.Name = "стоимостьDataGridViewTextBoxColumn";
+            this.стоимостьDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // материалыДляМастераBindingSource
+            // 
+            this.материалыДляМастераBindingSource.DataMember = "МатериалыДляМастера";
+            this.материалыДляМастераBindingSource.DataSource = this.сделаНоDataSet;
             // 
             // label1
             // 
@@ -475,6 +695,44 @@
             this.data4.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.data4_MouseDoubleClick);
             // 
+            // идРаботыDataGridViewTextBoxColumn
+            // 
+            this.идРаботыDataGridViewTextBoxColumn.DataPropertyName = "ИдРаботы";
+            this.идРаботыDataGridViewTextBoxColumn.HeaderText = "ИдРаботы";
+            this.идРаботыDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идРаботыDataGridViewTextBoxColumn.Name = "идРаботыDataGridViewTextBoxColumn";
+            this.идРаботыDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идРаботыDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn1
+            // 
+            this.названиеDataGridViewTextBoxColumn1.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.названиеDataGridViewTextBoxColumn1.Name = "названиеDataGridViewTextBoxColumn1";
+            this.названиеDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // стоимостьDataGridViewTextBoxColumn1
+            // 
+            this.стоимостьDataGridViewTextBoxColumn1.DataPropertyName = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn1.HeaderText = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.стоимостьDataGridViewTextBoxColumn1.Name = "стоимостьDataGridViewTextBoxColumn1";
+            this.стоимостьDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // описаниеDataGridViewTextBoxColumn
+            // 
+            this.описаниеDataGridViewTextBoxColumn.DataPropertyName = "Описание";
+            this.описаниеDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.описаниеDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.описаниеDataGridViewTextBoxColumn.Name = "описаниеDataGridViewTextBoxColumn";
+            this.описаниеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видремонтныхработBindingSource1
+            // 
+            this.видремонтныхработBindingSource1.DataMember = "Вид_ремонтных_работ";
+            this.видремонтныхработBindingSource1.DataSource = this.сделаНоDataSet;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -551,6 +809,36 @@
             this.data5.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data5.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.data5_MouseDoubleClick);
+            // 
+            // идМатериалаDataGridViewTextBoxColumn
+            // 
+            this.идМатериалаDataGridViewTextBoxColumn.DataPropertyName = "ИдМатериала";
+            this.идМатериалаDataGridViewTextBoxColumn.HeaderText = "ИдМатериала";
+            this.идМатериалаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идМатериалаDataGridViewTextBoxColumn.Name = "идМатериалаDataGridViewTextBoxColumn";
+            this.идМатериалаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идМатериалаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn3
+            // 
+            this.названиеDataGridViewTextBoxColumn3.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn3.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.названиеDataGridViewTextBoxColumn3.Name = "названиеDataGridViewTextBoxColumn3";
+            this.названиеDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // стоимостьDataGridViewTextBoxColumn3
+            // 
+            this.стоимостьDataGridViewTextBoxColumn3.DataPropertyName = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn3.HeaderText = "Стоимость";
+            this.стоимостьDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.стоимостьDataGridViewTextBoxColumn3.Name = "стоимостьDataGridViewTextBoxColumn3";
+            this.стоимостьDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // материалBindingSource
+            // 
+            this.материалBindingSource.DataMember = "Материал";
+            this.материалBindingSource.DataSource = this.сделаНоDataSet;
             // 
             // label5
             // 
@@ -644,298 +932,21 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Поиск работы";
             // 
-            // сделаНоDataSet
-            // 
-            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
-            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // заказBindingSource
-            // 
-            this.заказBindingSource.DataMember = "Заказ";
-            this.заказBindingSource.DataSource = this.сделаНоDataSet;
-            // 
             // заказTableAdapter
             // 
             this.заказTableAdapter.ClearBeforeFill = true;
-            // 
-            // идЗаказаDataGridViewTextBoxColumn
-            // 
-            this.идЗаказаDataGridViewTextBoxColumn.DataPropertyName = "ИдЗаказа";
-            this.идЗаказаDataGridViewTextBoxColumn.HeaderText = "ИдЗаказа";
-            this.идЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идЗаказаDataGridViewTextBoxColumn.Name = "идЗаказаDataGridViewTextBoxColumn";
-            this.идЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идЗаказаDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // номерквитанцииDataGridViewTextBoxColumn
-            // 
-            this.номерквитанцииDataGridViewTextBoxColumn.DataPropertyName = "Номер_квитанции";
-            this.номерквитанцииDataGridViewTextBoxColumn.HeaderText = "Номер_квитанции";
-            this.номерквитанцииDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.номерквитанцииDataGridViewTextBoxColumn.Name = "номерквитанцииDataGridViewTextBoxColumn";
-            this.номерквитанцииDataGridViewTextBoxColumn.ReadOnly = true;
-            this.номерквитанцииDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // датапринятияDataGridViewTextBoxColumn
-            // 
-            this.датапринятияDataGridViewTextBoxColumn.DataPropertyName = "Дата_принятия";
-            this.датапринятияDataGridViewTextBoxColumn.HeaderText = "Дата принятия";
-            this.датапринятияDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датапринятияDataGridViewTextBoxColumn.Name = "датапринятияDataGridViewTextBoxColumn";
-            this.датапринятияDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // датаначалаDataGridViewTextBoxColumn
-            // 
-            this.датаначалаDataGridViewTextBoxColumn.DataPropertyName = "Дата_начала";
-            this.датаначалаDataGridViewTextBoxColumn.HeaderText = "Дата начала";
-            this.датаначалаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датаначалаDataGridViewTextBoxColumn.Name = "датаначалаDataGridViewTextBoxColumn";
-            this.датаначалаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // датаконцаDataGridViewTextBoxColumn
-            // 
-            this.датаконцаDataGridViewTextBoxColumn.DataPropertyName = "Дата_конца";
-            this.датаконцаDataGridViewTextBoxColumn.HeaderText = "Дата конца";
-            this.датаконцаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датаконцаDataGridViewTextBoxColumn.Name = "датаконцаDataGridViewTextBoxColumn";
-            this.датаконцаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // датавыдачиDataGridViewTextBoxColumn
-            // 
-            this.датавыдачиDataGridViewTextBoxColumn.DataPropertyName = "Дата_выдачи";
-            this.датавыдачиDataGridViewTextBoxColumn.HeaderText = "Дата_выдачи";
-            this.датавыдачиDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датавыдачиDataGridViewTextBoxColumn.Name = "датавыдачиDataGridViewTextBoxColumn";
-            this.датавыдачиDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датавыдачиDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // идСотрудникаDataGridViewTextBoxColumn
-            // 
-            this.идСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "ИдСотрудника";
-            this.идСотрудникаDataGridViewTextBoxColumn.HeaderText = "ИдСотрудника";
-            this.идСотрудникаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идСотрудникаDataGridViewTextBoxColumn.Name = "идСотрудникаDataGridViewTextBoxColumn";
-            this.идСотрудникаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идСотрудникаDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // идВидаDataGridViewTextBoxColumn
-            // 
-            this.идВидаDataGridViewTextBoxColumn.DataPropertyName = "ИдВида";
-            this.идВидаDataGridViewTextBoxColumn.HeaderText = "Вид техники";
-            this.идВидаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идВидаDataGridViewTextBoxColumn.Name = "идВидаDataGridViewTextBoxColumn";
-            this.идВидаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // статусDataGridViewTextBoxColumn
-            // 
-            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
-            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
-            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // авансDataGridViewTextBoxColumn
-            // 
-            this.авансDataGridViewTextBoxColumn.DataPropertyName = "Аванс";
-            this.авансDataGridViewTextBoxColumn.HeaderText = "Аванс";
-            this.авансDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.авансDataGridViewTextBoxColumn.Name = "авансDataGridViewTextBoxColumn";
-            this.авансDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // скидкаDataGridViewTextBoxColumn
-            // 
-            this.скидкаDataGridViewTextBoxColumn.DataPropertyName = "Скидка";
-            this.скидкаDataGridViewTextBoxColumn.HeaderText = "Скидка";
-            this.скидкаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.скидкаDataGridViewTextBoxColumn.Name = "скидкаDataGridViewTextBoxColumn";
-            this.скидкаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фИОКлиентаDataGridViewTextBoxColumn
-            // 
-            this.фИОКлиентаDataGridViewTextBoxColumn.DataPropertyName = "ФИО_Клиента";
-            this.фИОКлиентаDataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
-            this.фИОКлиентаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.фИОКлиентаDataGridViewTextBoxColumn.Name = "фИОКлиентаDataGridViewTextBoxColumn";
-            this.фИОКлиентаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // номертелефонаDataGridViewTextBoxColumn
-            // 
-            this.номертелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер_телефона";
-            this.номертелефонаDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
-            this.номертелефонаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.номертелефонаDataGridViewTextBoxColumn.Name = "номертелефонаDataGridViewTextBoxColumn";
-            this.номертелефонаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // стоимостьматериаловDataGridViewTextBoxColumn
-            // 
-            this.стоимостьматериаловDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_материалов";
-            this.стоимостьматериаловDataGridViewTextBoxColumn.HeaderText = "Стоимость материалов";
-            this.стоимостьматериаловDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.стоимостьматериаловDataGridViewTextBoxColumn.Name = "стоимостьматериаловDataGridViewTextBoxColumn";
-            this.стоимостьматериаловDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // стоимостьработDataGridViewTextBoxColumn
-            // 
-            this.стоимостьработDataGridViewTextBoxColumn.DataPropertyName = "Стоимость_работ";
-            this.стоимостьработDataGridViewTextBoxColumn.HeaderText = "Стоимость работ";
-            this.стоимостьработDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.стоимостьработDataGridViewTextBoxColumn.Name = "стоимостьработDataGridViewTextBoxColumn";
-            this.стоимостьработDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // общаястоимостьDataGridViewTextBoxColumn
-            // 
-            this.общаястоимостьDataGridViewTextBoxColumn.DataPropertyName = "Общая_стоимость";
-            this.общаястоимостьDataGridViewTextBoxColumn.HeaderText = "Общая стоимость";
-            this.общаястоимостьDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.общаястоимостьDataGridViewTextBoxColumn.Name = "общаястоимостьDataGridViewTextBoxColumn";
-            this.общаястоимостьDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // viewMaterialUsageBindingSource
-            // 
-            this.viewMaterialUsageBindingSource.DataMember = "ViewMaterialUsage";
-            this.viewMaterialUsageBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // viewMaterialUsageTableAdapter
-            // 
-            this.viewMaterialUsageTableAdapter.ClearBeforeFill = true;
-            // 
-            // названиеDataGridViewTextBoxColumn
-            // 
-            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
-            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // стоимостьDataGridViewTextBoxColumn
-            // 
-            this.стоимостьDataGridViewTextBoxColumn.DataPropertyName = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn.HeaderText = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.стоимостьDataGridViewTextBoxColumn.Name = "стоимостьDataGridViewTextBoxColumn";
-            this.стоимостьDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // количествоDataGridViewTextBoxColumn
-            // 
-            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
-            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.количествоDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
-            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // видремонтныхработBindingSource
-            // 
-            this.видремонтныхработBindingSource.DataMember = "Вид_ремонтных_работ";
-            this.видремонтныхработBindingSource.DataSource = this.сделаНоDataSet;
             // 
             // вид_ремонтных_работTableAdapter
             // 
             this.вид_ремонтных_работTableAdapter.ClearBeforeFill = true;
             // 
-            // идРаботыDataGridViewTextBoxColumn1
-            // 
-            this.идРаботыDataGridViewTextBoxColumn1.DataPropertyName = "ИдРаботы";
-            this.идРаботыDataGridViewTextBoxColumn1.HeaderText = "ИдРаботы";
-            this.идРаботыDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.идРаботыDataGridViewTextBoxColumn1.Name = "идРаботыDataGridViewTextBoxColumn1";
-            this.идРаботыDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.идРаботыDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // названиеDataGridViewTextBoxColumn2
-            // 
-            this.названиеDataGridViewTextBoxColumn2.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.названиеDataGridViewTextBoxColumn2.Name = "названиеDataGridViewTextBoxColumn2";
-            this.названиеDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // стоимостьDataGridViewTextBoxColumn2
-            // 
-            this.стоимостьDataGridViewTextBoxColumn2.DataPropertyName = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn2.HeaderText = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.стоимостьDataGridViewTextBoxColumn2.Name = "стоимостьDataGridViewTextBoxColumn2";
-            this.стоимостьDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // описаниеDataGridViewTextBoxColumn1
-            // 
-            this.описаниеDataGridViewTextBoxColumn1.DataPropertyName = "Описание";
-            this.описаниеDataGridViewTextBoxColumn1.HeaderText = "Описание";
-            this.описаниеDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.описаниеDataGridViewTextBoxColumn1.Name = "описаниеDataGridViewTextBoxColumn1";
-            this.описаниеDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // материалBindingSource
-            // 
-            this.материалBindingSource.DataMember = "Материал";
-            this.материалBindingSource.DataSource = this.сделаНоDataSet;
-            // 
             // материалTableAdapter
             // 
             this.материалTableAdapter.ClearBeforeFill = true;
             // 
-            // идМатериалаDataGridViewTextBoxColumn
+            // материалыДляМастераTableAdapter
             // 
-            this.идМатериалаDataGridViewTextBoxColumn.DataPropertyName = "ИдМатериала";
-            this.идМатериалаDataGridViewTextBoxColumn.HeaderText = "ИдМатериала";
-            this.идМатериалаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идМатериалаDataGridViewTextBoxColumn.Name = "идМатериалаDataGridViewTextBoxColumn";
-            this.идМатериалаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идМатериалаDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // названиеDataGridViewTextBoxColumn3
-            // 
-            this.названиеDataGridViewTextBoxColumn3.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn3.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.названиеDataGridViewTextBoxColumn3.Name = "названиеDataGridViewTextBoxColumn3";
-            this.названиеDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // стоимостьDataGridViewTextBoxColumn3
-            // 
-            this.стоимостьDataGridViewTextBoxColumn3.DataPropertyName = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn3.HeaderText = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.стоимостьDataGridViewTextBoxColumn3.Name = "стоимостьDataGridViewTextBoxColumn3";
-            this.стоимостьDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // видремонтныхработBindingSource1
-            // 
-            this.видремонтныхработBindingSource1.DataMember = "Вид_ремонтных_работ";
-            this.видремонтныхработBindingSource1.DataSource = this.сделаНоDataSet;
-            // 
-            // описаниеDataGridViewTextBoxColumn
-            // 
-            this.описаниеDataGridViewTextBoxColumn.DataPropertyName = "Описание";
-            this.описаниеDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.описаниеDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.описаниеDataGridViewTextBoxColumn.Name = "описаниеDataGridViewTextBoxColumn";
-            this.описаниеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // стоимостьDataGridViewTextBoxColumn1
-            // 
-            this.стоимостьDataGridViewTextBoxColumn1.DataPropertyName = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn1.HeaderText = "Стоимость";
-            this.стоимостьDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.стоимостьDataGridViewTextBoxColumn1.Name = "стоимостьDataGridViewTextBoxColumn1";
-            this.стоимостьDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // названиеDataGridViewTextBoxColumn1
-            // 
-            this.названиеDataGridViewTextBoxColumn1.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn1.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.названиеDataGridViewTextBoxColumn1.Name = "названиеDataGridViewTextBoxColumn1";
-            this.названиеDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // идРаботыDataGridViewTextBoxColumn
-            // 
-            this.идРаботыDataGridViewTextBoxColumn.DataPropertyName = "ИдРаботы";
-            this.идРаботыDataGridViewTextBoxColumn.HeaderText = "ИдРаботы";
-            this.идРаботыDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идРаботыDataGridViewTextBoxColumn.Name = "идРаботыDataGridViewTextBoxColumn";
-            this.идРаботыDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идРаботыDataGridViewTextBoxColumn.Visible = false;
+            this.материалыДляМастераTableAdapter.ClearBeforeFill = true;
             // 
             // SelectZakaz
             // 
@@ -963,16 +974,16 @@
             this.Size = new System.Drawing.Size(1500, 700);
             this.Load += new System.EventHandler(this.SelectZakaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewMaterialUsageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.материалBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалыДляМастераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1016,13 +1027,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn общаястоимостьDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource заказBindingSource;
         private СделаНоDataSet сделаНоDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource viewMaterialUsageBindingSource;
         private System.Windows.Forms.BindingSource видремонтныхработBindingSource;
         private СделаНоDataSetTableAdapters.ЗаказTableAdapter заказTableAdapter;
-        private СделаНоDataSetTableAdapters.ViewMaterialUsageTableAdapter viewMaterialUsageTableAdapter;
         private СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter вид_ремонтных_работTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn идРаботыDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn2;
@@ -1038,5 +1044,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn описаниеDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource видремонтныхработBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn идМатериалаDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource материалыДляМастераBindingSource;
+        private СделаНоDataSetTableAdapters.МатериалыДляМастераTableAdapter материалыДляМастераTableAdapter;
     }
 }

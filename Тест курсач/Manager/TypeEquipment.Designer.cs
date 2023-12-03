@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.идВидаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типУстройстваDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.модельDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видТехникиДляМенеджераBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
-            this.видтехникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.вид_техникиTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_техникиTableAdapter();
-            this.типустройстваBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.тип_устройстваTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Тип_устройстваTableAdapter();
-            this.модельBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.модельTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МодельTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,64 +48,56 @@
             this.comboModel = new Guna.UI2.WinForms.Guna2ComboBox();
             this.textDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.textName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.идМоделиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.идТипаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.идВидаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.butAll = new Guna.UI2.WinForms.Guna2Button();
             this.butClear = new Guna.UI2.WinForms.Guna2Button();
             this.textBoxFind = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.butFind = new Guna.UI2.WinForms.Guna2Button();
             this.butSort = new Guna.UI2.WinForms.Guna2Button();
             this.butDelete = new Guna.UI2.WinForms.Guna2Button();
             this.butEdit = new Guna.UI2.WinForms.Guna2Button();
             this.butAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.видТехникиДляМенеджераTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ВидТехникиДляМенеджераTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видТехникиДляМенеджераBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.видтехникиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типустройстваBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.модельBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // data1
             // 
             this.data1.AllowUserToAddRows = false;
             this.data1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.data1.ColumnHeadersHeight = 35;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.идВидаDataGridViewTextBoxColumn,
             this.названиеDataGridViewTextBoxColumn,
             this.описаниеDataGridViewTextBoxColumn,
-            this.идТипаDataGridViewTextBoxColumn,
-            this.идМоделиDataGridViewTextBoxColumn});
-            this.data1.DataSource = this.видтехникиBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.типУстройстваDataGridViewTextBoxColumn,
+            this.модельDataGridViewTextBoxColumn});
+            this.data1.DataSource = this.видТехникиДляМенеджераBindingSource;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data1.DefaultCellStyle = dataGridViewCellStyle6;
             this.data1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.Location = new System.Drawing.Point(15, 19);
             this.data1.Name = "data1";
@@ -139,37 +131,56 @@
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data1.SelectionChanged += new System.EventHandler(this.data1_SelectionChanged);
             // 
+            // идВидаDataGridViewTextBoxColumn
+            // 
+            this.идВидаDataGridViewTextBoxColumn.DataPropertyName = "ИдВида";
+            this.идВидаDataGridViewTextBoxColumn.HeaderText = "ИдВида";
+            this.идВидаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идВидаDataGridViewTextBoxColumn.Name = "идВидаDataGridViewTextBoxColumn";
+            this.идВидаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идВидаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // описаниеDataGridViewTextBoxColumn
+            // 
+            this.описаниеDataGridViewTextBoxColumn.DataPropertyName = "Описание";
+            this.описаниеDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.описаниеDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.описаниеDataGridViewTextBoxColumn.Name = "описаниеDataGridViewTextBoxColumn";
+            this.описаниеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // типУстройстваDataGridViewTextBoxColumn
+            // 
+            this.типУстройстваDataGridViewTextBoxColumn.DataPropertyName = "Тип устройства";
+            this.типУстройстваDataGridViewTextBoxColumn.HeaderText = "Тип устройства";
+            this.типУстройстваDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.типУстройстваDataGridViewTextBoxColumn.Name = "типУстройстваDataGridViewTextBoxColumn";
+            this.типУстройстваDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // модельDataGridViewTextBoxColumn
+            // 
+            this.модельDataGridViewTextBoxColumn.DataPropertyName = "Модель";
+            this.модельDataGridViewTextBoxColumn.HeaderText = "Модель";
+            this.модельDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.модельDataGridViewTextBoxColumn.Name = "модельDataGridViewTextBoxColumn";
+            this.модельDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видТехникиДляМенеджераBindingSource
+            // 
+            this.видТехникиДляМенеджераBindingSource.DataMember = "ВидТехникиДляМенеджера";
+            this.видТехникиДляМенеджераBindingSource.DataSource = this.сделаНоDataSet;
+            // 
             // сделаНоDataSet
             // 
             this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
             this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // видтехникиBindingSource
-            // 
-            this.видтехникиBindingSource.DataMember = "Вид_техники";
-            this.видтехникиBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // вид_техникиTableAdapter
-            // 
-            this.вид_техникиTableAdapter.ClearBeforeFill = true;
-            // 
-            // типустройстваBindingSource
-            // 
-            this.типустройстваBindingSource.DataMember = "Тип_устройства";
-            this.типустройстваBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // тип_устройстваTableAdapter
-            // 
-            this.тип_устройстваTableAdapter.ClearBeforeFill = true;
-            // 
-            // модельBindingSource
-            // 
-            this.модельBindingSource.DataMember = "Модель";
-            this.модельBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // модельTableAdapter
-            // 
-            this.модельTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -219,7 +230,7 @@
             this.comboType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboType.ForeColor = System.Drawing.Color.Black;
             this.comboType.ItemHeight = 30;
             this.comboType.Location = new System.Drawing.Point(986, 134);
             this.comboType.Name = "comboType";
@@ -234,7 +245,7 @@
             this.comboModel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboModel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboModel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboModel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboModel.ForeColor = System.Drawing.Color.Black;
             this.comboModel.ItemHeight = 30;
             this.comboModel.Location = new System.Drawing.Point(986, 187);
             this.comboModel.Name = "comboModel";
@@ -250,7 +261,8 @@
             this.textDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textDesc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textDesc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textDesc.ForeColor = System.Drawing.Color.Black;
             this.textDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textDesc.Location = new System.Drawing.Point(986, 79);
             this.textDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -270,7 +282,8 @@
             this.textName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textName.ForeColor = System.Drawing.Color.Black;
             this.textName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textName.Location = new System.Drawing.Point(986, 35);
             this.textName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -280,75 +293,6 @@
             this.textName.SelectedText = "";
             this.textName.Size = new System.Drawing.Size(251, 36);
             this.textName.TabIndex = 21;
-            // 
-            // идМоделиDataGridViewTextBoxColumn
-            // 
-            this.идМоделиDataGridViewTextBoxColumn.DataPropertyName = "ИдМодели";
-            this.идМоделиDataGridViewTextBoxColumn.DataSource = this.модельBindingSource;
-            this.идМоделиDataGridViewTextBoxColumn.DisplayMember = "Название";
-            this.идМоделиDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.идМоделиDataGridViewTextBoxColumn.HeaderText = "Модель";
-            this.идМоделиDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идМоделиDataGridViewTextBoxColumn.Name = "идМоделиDataGridViewTextBoxColumn";
-            this.идМоделиDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идМоделиDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.идМоделиDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.идМоделиDataGridViewTextBoxColumn.ValueMember = "ИдМодели";
-            // 
-            // идТипаDataGridViewTextBoxColumn
-            // 
-            this.идТипаDataGridViewTextBoxColumn.DataPropertyName = "ИдТипа";
-            this.идТипаDataGridViewTextBoxColumn.DataSource = this.типустройстваBindingSource;
-            this.идТипаDataGridViewTextBoxColumn.DisplayMember = "Название";
-            this.идТипаDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.идТипаDataGridViewTextBoxColumn.HeaderText = "Тип устройства";
-            this.идТипаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идТипаDataGridViewTextBoxColumn.Name = "идТипаDataGridViewTextBoxColumn";
-            this.идТипаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идТипаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.идТипаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.идТипаDataGridViewTextBoxColumn.ValueMember = "ИдТипа";
-            // 
-            // описаниеDataGridViewTextBoxColumn
-            // 
-            this.описаниеDataGridViewTextBoxColumn.DataPropertyName = "Описание";
-            this.описаниеDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.описаниеDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.описаниеDataGridViewTextBoxColumn.Name = "описаниеDataGridViewTextBoxColumn";
-            this.описаниеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // названиеDataGridViewTextBoxColumn
-            // 
-            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
-            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // идВидаDataGridViewTextBoxColumn
-            // 
-            this.идВидаDataGridViewTextBoxColumn.DataPropertyName = "ИдВида";
-            this.идВидаDataGridViewTextBoxColumn.HeaderText = "ИдВида";
-            this.идВидаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идВидаDataGridViewTextBoxColumn.Name = "идВидаDataGridViewTextBoxColumn";
-            this.идВидаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идВидаDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // butAll
-            // 
-            this.butAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butAll.FillColor = System.Drawing.Color.PeachPuff;
-            this.butAll.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butAll.ForeColor = System.Drawing.Color.Black;
-            this.butAll.Location = new System.Drawing.Point(1058, 604);
-            this.butAll.Name = "butAll";
-            this.butAll.Size = new System.Drawing.Size(179, 30);
-            this.butAll.TabIndex = 48;
-            this.butAll.Text = "Отобразить все";
-            this.butAll.Click += new System.EventHandler(this.butAll_Click);
             // 
             // butClear
             // 
@@ -387,6 +331,7 @@
             this.textBoxFind.SelectedText = "";
             this.textBoxFind.Size = new System.Drawing.Size(350, 31);
             this.textBoxFind.TabIndex = 46;
+            this.textBoxFind.TextChanged += new System.EventHandler(this.textBoxFind_TextChanged);
             // 
             // comboBox2
             // 
@@ -415,22 +360,6 @@
             this.label8.Size = new System.Drawing.Size(88, 22);
             this.label8.TabIndex = 44;
             this.label8.Text = "Порядок:";
-            // 
-            // butFind
-            // 
-            this.butFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butFind.FillColor = System.Drawing.Color.PeachPuff;
-            this.butFind.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFind.ForeColor = System.Drawing.Color.Black;
-            this.butFind.Location = new System.Drawing.Point(831, 604);
-            this.butFind.Name = "butFind";
-            this.butFind.Size = new System.Drawing.Size(221, 30);
-            this.butFind.TabIndex = 43;
-            this.butFind.Text = "Поиск по Названию";
-            this.butFind.Click += new System.EventHandler(this.butFind_Click);
             // 
             // butSort
             // 
@@ -496,16 +425,18 @@
             this.butAdd.Text = "Добавить";
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
+            // видТехникиДляМенеджераTableAdapter
+            // 
+            this.видТехникиДляМенеджераTableAdapter.ClearBeforeFill = true;
+            // 
             // TypeEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.butAll);
             this.Controls.Add(this.butClear);
             this.Controls.Add(this.textBoxFind);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.butFind);
             this.Controls.Add(this.butSort);
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butEdit);
@@ -523,10 +454,8 @@
             this.Size = new System.Drawing.Size(1250, 660);
             this.Load += new System.EventHandler(this.TypeEquipment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видТехникиДляМенеджераBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.видтехникиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типустройстваBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.модельBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,19 +464,8 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView data1;
-        private System.Windows.Forms.BindingSource типустройстваBindingSource;
         private Тест_курсач.СделаНоDataSet сделаНоDataSet;
-        private System.Windows.Forms.BindingSource модельBindingSource;
-        private System.Windows.Forms.BindingSource видтехникиBindingSource;
-        private Тест_курсач.СделаНоDataSetTableAdapters.Вид_техникиTableAdapter вид_техникиTableAdapter;
-        private Тест_курсач.СделаНоDataSetTableAdapters.Тип_устройстваTableAdapter тип_устройстваTableAdapter;
-        private Тест_курсач.СделаНоDataSetTableAdapters.МодельTableAdapter модельTableAdapter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn идВидаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn описаниеDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn идТипаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn идМоделиDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -555,15 +473,20 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboModel;
         private Guna.UI2.WinForms.Guna2TextBox textDesc;
         private Guna.UI2.WinForms.Guna2TextBox textName;
-        private Guna.UI2.WinForms.Guna2Button butAll;
         private Guna.UI2.WinForms.Guna2Button butClear;
         private Guna.UI2.WinForms.Guna2TextBox textBoxFind;
         private Guna.UI2.WinForms.Guna2ComboBox comboBox2;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2Button butFind;
         private Guna.UI2.WinForms.Guna2Button butSort;
         private Guna.UI2.WinForms.Guna2Button butDelete;
         private Guna.UI2.WinForms.Guna2Button butEdit;
         private Guna.UI2.WinForms.Guna2Button butAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn идВидаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn описаниеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типУстройстваDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn модельDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource видТехникиДляМенеджераBindingSource;
+        private Тест_курсач.СделаНоDataSetTableAdapters.ВидТехникиДляМенеджераTableAdapter видТехникиДляМенеджераTableAdapter;
     }
 }
