@@ -67,11 +67,23 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AcceptZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\AcceptZakaz.Designer.cs">
+      <DependentUpon>AcceptZakaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\DeviceType.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Manager\DeviceType.Designer.cs">
       <DependentUpon>DeviceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DiagnZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\DiagnZakaz.Designer.cs">
+      <DependentUpon>DiagnZakaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\Manager.cs">
       <SubType>Form</SubType>
@@ -84,6 +96,12 @@
     </Compile>
     <Compile Include="Manager\NewZakaz.Designer.cs">
       <DependentUpon>NewZakaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\RepairZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\RepairZakaz.Designer.cs">
+      <DependentUpon>RepairZakaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Master\MainMaster.cs">
       <SubType>UserControl</SubType>
@@ -146,14 +164,23 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\AcceptZakaz.resx">
+      <DependentUpon>AcceptZakaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\DeviceType.resx">
       <DependentUpon>DeviceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\DiagnZakaz.resx">
+      <DependentUpon>DiagnZakaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\NewZakaz.resx">
       <DependentUpon>NewZakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\RepairZakaz.resx">
+      <DependentUpon>RepairZakaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>

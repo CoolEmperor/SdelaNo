@@ -19,7 +19,6 @@ namespace СделаНо
             InitializeComponent();
             fns1 = fns;
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Здравствуйте, " + fns1);
@@ -48,17 +47,20 @@ namespace СделаНо
 
         private void butZakDiag_Click(object sender, EventArgs e)
         {
-
+            DiagnZakaz spr = new DiagnZakaz();
+            Controler(spr);
         }
 
         private void butZakRep_Click(object sender, EventArgs e)
         {
-
+            RepairZakaz spr = new RepairZakaz();
+            Controler(spr);
         }
 
         private void butDelZak_Click(object sender, EventArgs e)
         {
-
+            AcceptZakaz spr = new AcceptZakaz();
+            Controler(spr);
         }
 
         private void butExit_Click(object sender, EventArgs e)

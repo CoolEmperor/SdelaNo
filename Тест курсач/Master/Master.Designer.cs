@@ -92,15 +92,9 @@
             this.panelContainer.Size = new System.Drawing.Size(1500, 700);
             this.panelContainer.TabIndex = 3;
             // 
-            // сделаНоDataSet
-            // 
-            // 
             // заказBindingSource
             // 
             this.заказBindingSource.DataMember = "Заказ";
-            // 
-            // заказTableAdapter
-            // 
             // 
             // butZakaz
             // 
