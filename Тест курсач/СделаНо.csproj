@@ -79,6 +79,12 @@
     <Compile Include="Manager\Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\NewZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\NewZakaz.Designer.cs">
+      <DependentUpon>NewZakaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\MainMaster.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\NewZakaz.resx">
+      <DependentUpon>NewZakaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>

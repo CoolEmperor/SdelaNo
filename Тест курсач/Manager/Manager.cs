@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Тест_курсач.Manager;
 
 namespace СделаНо
 {
@@ -41,7 +42,8 @@ namespace СделаНо
 
         private void butNewZak_Click(object sender, EventArgs e)
         {
-
+            NewZakaz spr = new NewZakaz();
+            Controler(spr);
         }
 
         private void butZakDiag_Click(object sender, EventArgs e)

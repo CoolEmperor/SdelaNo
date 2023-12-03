@@ -24,3 +24,4 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Work.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Master.SelectZakaz.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Master.MainMaster.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.NewZakaz.resources

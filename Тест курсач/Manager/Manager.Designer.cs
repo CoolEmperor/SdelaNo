@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.butDel = new Guna.UI2.WinForms.Guna2Button();
-            this.butZak = new Guna.UI2.WinForms.Guna2Button();
             this.butExit = new Guna.UI2.WinForms.Guna2Button();
             this.butZakRep = new Guna.UI2.WinForms.Guna2Button();
             this.butZakDiag = new Guna.UI2.WinForms.Guna2Button();
@@ -92,7 +91,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.PeachPuff;
             this.panel2.Controls.Add(this.butDel);
-            this.panel2.Controls.Add(this.butZak);
             this.panel2.Controls.Add(this.butExit);
             this.panel2.Controls.Add(this.butZakRep);
             this.panel2.Controls.Add(this.butZakDiag);
@@ -113,26 +111,11 @@
             this.butDel.FillColor = System.Drawing.Color.PeachPuff;
             this.butDel.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDel.ForeColor = System.Drawing.Color.Black;
-            this.butDel.Location = new System.Drawing.Point(3, 397);
+            this.butDel.Location = new System.Drawing.Point(2, 336);
             this.butDel.Name = "butDel";
             this.butDel.Size = new System.Drawing.Size(245, 55);
             this.butDel.TabIndex = 12;
             this.butDel.Text = "Выдача заказа";
-            // 
-            // butZak
-            // 
-            this.butZak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butZak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butZak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butZak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butZak.FillColor = System.Drawing.Color.PeachPuff;
-            this.butZak.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butZak.ForeColor = System.Drawing.Color.Black;
-            this.butZak.Location = new System.Drawing.Point(3, 194);
-            this.butZak.Name = "butZak";
-            this.butZak.Size = new System.Drawing.Size(245, 55);
-            this.butZak.TabIndex = 11;
-            this.butZak.Text = "Список заказов";
             // 
             // butExit
             // 
@@ -159,7 +142,7 @@
             this.butZakRep.FillColor = System.Drawing.Color.PeachPuff;
             this.butZakRep.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butZakRep.ForeColor = System.Drawing.Color.Black;
-            this.butZakRep.Location = new System.Drawing.Point(3, 328);
+            this.butZakRep.Location = new System.Drawing.Point(3, 267);
             this.butZakRep.Name = "butZakRep";
             this.butZakRep.Size = new System.Drawing.Size(245, 63);
             this.butZakRep.TabIndex = 8;
@@ -175,7 +158,7 @@
             this.butZakDiag.FillColor = System.Drawing.Color.PeachPuff;
             this.butZakDiag.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butZakDiag.ForeColor = System.Drawing.Color.Black;
-            this.butZakDiag.Location = new System.Drawing.Point(3, 255);
+            this.butZakDiag.Location = new System.Drawing.Point(3, 194);
             this.butZakDiag.Name = "butZakDiag";
             this.butZakDiag.Size = new System.Drawing.Size(245, 67);
             this.butZakDiag.TabIndex = 7;
@@ -257,7 +240,6 @@
         private Guna.UI2.WinForms.Guna2Button butNewZak;
         private Guna.UI2.WinForms.Guna2Button butExit;
         private Guna.UI2.WinForms.Guna2Button butDel;
-        private Guna.UI2.WinForms.Guna2Button butZak;
     }
 }
 
