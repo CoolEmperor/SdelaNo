@@ -42,7 +42,7 @@ namespace СделаНо
         }
         private bool IsValidName(string name)
         {
-            string pattern = @"^[А-Я][а-я]+$";
+            string pattern = @"^([А-ЯA-Z])([а-яa-z]+)$";
             return Regex.IsMatch(name, pattern);
         }
         private bool IsValidText(string name)
@@ -63,10 +63,10 @@ namespace СделаНо
 
             if (!IsValidName(name))
             {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+                MessageBox.Show("Название должно начинаться с большой буквы.");
                 return;
             }
-            if (!IsValidText(desc))
+            else if(!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
                 return;
@@ -80,8 +80,8 @@ namespace СделаНо
                     using (SqlCommand command = new SqlCommand("InsertModel", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@Название", textName.Text);
-                        command.Parameters.AddWithValue("@Описание", textDesc.Text);
+                        command.Parameters.AddWithValue("@Название", name);
+                        command.Parameters.AddWithValue("@Описание", desc);
 
                         command.ExecuteNonQuery();
                     }
@@ -107,10 +107,10 @@ namespace СделаНо
 
             if (!IsValidName(name))
             {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+                MessageBox.Show("Название должно начинаться с большой буквы.");
                 return;
             }
-            if (!IsValidText(desc))
+            else if(!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
                 return;
@@ -127,8 +127,8 @@ namespace СделаНо
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ИдТипа", selectedRowId);
-                        command.Parameters.AddWithValue("@Название", textName.Text);
-                        command.Parameters.AddWithValue("@Описание", textDesc.Text);
+                        command.Parameters.AddWithValue("@Название", name);
+                        command.Parameters.AddWithValue("@Описание", desc);
 
                         command.ExecuteNonQuery();
                     }
