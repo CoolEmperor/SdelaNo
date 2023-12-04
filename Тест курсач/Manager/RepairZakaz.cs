@@ -31,27 +31,27 @@ namespace Тест_курсач.Manager
         }
         private void butBack_Click(object sender, EventArgs e)
         {
-            //butBack.Visible = false;
-            //butZakaz.Visible = true;
-            //MainDiagnZakaz spr = new MainDiagnZakaz();
-            //spr.RowSelected += MainDiagnZakaz_RowSelected;
-            //Controler(spr);
+            butBack.Visible = false;
+            butZakaz.Visible = true;
+            MainDiagnZakaz spr = new MainDiagnZakaz();
+            spr.RowSelected += MainRepairZakaz_RowSelected;
+            Controler(spr);
         }
 
         private void butZakaz_Click(object sender, EventArgs e)
         {
-            //butBack.Visible = true;
-            //butZakaz.Visible = false;
-            //SelectDiagnZakaz spr = new SelectDiagnZakaz(this.selectId);
-            //Controler(spr);
+            butBack.Visible = true;
+            butZakaz.Visible = false;
+            SelectDiagnZakaz spr = new SelectDiagnZakaz(this.selectId);
+            Controler(spr);
         }
 
         private void RepairZakaz_Load(object sender, EventArgs e)
         {
-            //MainDiagnZakaz spr = new MainDiagnZakaz();
+            MainDiagnZakaz spr = new MainDiagnZakaz();
 
-            //spr.RowSelected += MainDiagnZakaz_RowSelected;
-            //Controler(spr);
+            spr.RowSelected += MainRepairZakaz_RowSelected;
+            Controler(spr);
         }
     }
 }

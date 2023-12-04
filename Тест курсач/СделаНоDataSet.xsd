@@ -570,7 +570,7 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
               <DbSource ConnectionRef="СделаНоConnectionString (Settings)" DbObjectName="СделаНо.dbo.ЗаказДляУчетаЗаказовНаДиагностику" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ИдЗаказа, [Дата принятия заказа], [ФИО Мастера], [Вид техники], Статус, Аванс, [ФИО Клиента], [Номер телефона], [Стоимость материалов], [Общая стоимость] FROM dbo.ЗаказДляУчетаЗаказовНаДиагностику</CommandText>
+                    <CommandText>SELECT ИдЗаказа, [Дата принятия заказа], [ФИО Мастера], [Вид техники], Статус, Аванс, [ФИО Клиента], [Номер телефона], [Общая стоимость], [Стоимость работ] FROM ЗаказДляУчетаЗаказовНаДиагностику</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -585,7 +585,34 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
               <Mapping SourceColumn="Аванс" DataSetColumn="Аванс" />
               <Mapping SourceColumn="ФИО Клиента" DataSetColumn="ФИО Клиента" />
               <Mapping SourceColumn="Номер телефона" DataSetColumn="Номер телефона" />
+              <Mapping SourceColumn="Общая стоимость" DataSetColumn="Общая стоимость" />
+              <Mapping SourceColumn="Стоимость работ" DataSetColumn="Стоимость работ" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ЗаказДляУчетаЗаказовНаРемонтTableAdapter" GeneratorDataComponentClassName="ЗаказДляУчетаЗаказовНаРемонтTableAdapter" Name="ЗаказДляУчетаЗаказовНаРемонт" UserDataComponentName="ЗаказДляУчетаЗаказовНаРемонтTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="СделаНоConnectionString (Settings)" DbObjectName="СделаНо.dbo.ЗаказДляУчетаЗаказовНаРемонт" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ИдЗаказа, [Дата принятия заказа], [Дата начала ремонта], [ФИО Мастера], [Вид техники], Статус, Аванс, [ФИО Клиента], [Номер телефона], [Стоимость материалов], [Стоимость работ], [Общая стоимость] FROM dbo.ЗаказДляУчетаЗаказовНаРемонт</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ИдЗаказа" DataSetColumn="ИдЗаказа" />
+              <Mapping SourceColumn="Дата принятия заказа" DataSetColumn="Дата принятия заказа" />
+              <Mapping SourceColumn="Дата начала ремонта" DataSetColumn="Дата начала ремонта" />
+              <Mapping SourceColumn="ФИО Мастера" DataSetColumn="ФИО Мастера" />
+              <Mapping SourceColumn="Вид техники" DataSetColumn="Вид техники" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
+              <Mapping SourceColumn="Аванс" DataSetColumn="Аванс" />
+              <Mapping SourceColumn="ФИО Клиента" DataSetColumn="ФИО Клиента" />
+              <Mapping SourceColumn="Номер телефона" DataSetColumn="Номер телефона" />
               <Mapping SourceColumn="Стоимость материалов" DataSetColumn="Стоимость материалов" />
+              <Mapping SourceColumn="Стоимость работ" DataSetColumn="Стоимость работ" />
               <Mapping SourceColumn="Общая стоимость" DataSetColumn="Общая стоимость" />
             </Mappings>
             <Sources />
@@ -830,7 +857,7 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ИдВида" msprop:Generator_UserColumnName="ИдВида" msprop:Generator_ColumnPropNameInTable="ИдВидаColumn" msprop:Generator_ColumnPropNameInRow="ИдВида" msprop:Generator_ColumnVarNameInTable="columnИдВида" type="xs:int" />
+              <xs:element name="ИдВида" msprop:Generator_ColumnPropNameInTable="ИдВидаColumn" msprop:Generator_ColumnPropNameInRow="ИдВида" msprop:Generator_UserColumnName="ИдВида" msprop:Generator_ColumnVarNameInTable="columnИдВида" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -846,15 +873,50 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
               </xs:element>
               <xs:element name="Стоимость" msprop:Generator_ColumnPropNameInTable="СтоимостьColumn" msprop:Generator_ColumnPropNameInRow="Стоимость" msprop:Generator_UserColumnName="Стоимость" msprop:Generator_ColumnVarNameInTable="columnСтоимость" type="xs:decimal" />
               <xs:element name="Количество" msprop:Generator_ColumnPropNameInTable="КоличествоColumn" msprop:Generator_ColumnPropNameInRow="Количество" msprop:Generator_UserColumnName="Количество" msprop:Generator_ColumnVarNameInTable="columnКоличество" type="xs:int" />
-              <xs:element name="ИдМатериала" msprop:Generator_UserColumnName="ИдМатериала" msprop:Generator_ColumnPropNameInTable="ИдМатериалаColumn" msprop:Generator_ColumnPropNameInRow="ИдМатериала" msprop:Generator_ColumnVarNameInTable="columnИдМатериала" type="xs:int" />
+              <xs:element name="ИдМатериала" msprop:Generator_ColumnPropNameInTable="ИдМатериалаColumn" msprop:Generator_ColumnPropNameInRow="ИдМатериала" msprop:Generator_UserColumnName="ИдМатериала" msprop:Generator_ColumnVarNameInTable="columnИдМатериала" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_RowEvHandlerName="ЗаказДляУчетаЗаказовНаДиагностикуRowChangeEventHandler" msprop:Generator_RowDeletedName="ЗаказДляУчетаЗаказовНаДиагностикуRowDeleted" msprop:Generator_RowDeletingName="ЗаказДляУчетаЗаказовНаДиагностикуRowDeleting" msprop:Generator_RowEvArgName="ЗаказДляУчетаЗаказовНаДиагностикуRowChangeEvent" msprop:Generator_TablePropName="ЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_RowChangedName="ЗаказДляУчетаЗаказовНаДиагностикуRowChanged" msprop:Generator_RowChangingName="ЗаказДляУчетаЗаказовНаДиагностикуRowChanging" msprop:Generator_TableClassName="ЗаказДляУчетаЗаказовНаДиагностикуDataTable" msprop:Generator_RowClassName="ЗаказДляУчетаЗаказовНаДиагностикуRow" msprop:Generator_TableVarName="tableЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_UserTableName="ЗаказДляУчетаЗаказовНаДиагностику">
+        <xs:element name="ЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_RowClassName="ЗаказДляУчетаЗаказовНаДиагностикуRow" msprop:Generator_RowEvHandlerName="ЗаказДляУчетаЗаказовНаДиагностикуRowChangeEventHandler" msprop:Generator_RowDeletedName="ЗаказДляУчетаЗаказовНаДиагностикуRowDeleted" msprop:Generator_RowDeletingName="ЗаказДляУчетаЗаказовНаДиагностикуRowDeleting" msprop:Generator_RowEvArgName="ЗаказДляУчетаЗаказовНаДиагностикуRowChangeEvent" msprop:Generator_TablePropName="ЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_RowChangedName="ЗаказДляУчетаЗаказовНаДиагностикуRowChanged" msprop:Generator_UserTableName="ЗаказДляУчетаЗаказовНаДиагностику" msprop:Generator_RowChangingName="ЗаказДляУчетаЗаказовНаДиагностикуRowChanging" msprop:Generator_TableClassName="ЗаказДляУчетаЗаказовНаДиагностикуDataTable" msprop:Generator_TableVarName="tableЗаказДляУчетаЗаказовНаДиагностику">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ИдЗаказа" msprop:Generator_UserColumnName="ИдЗаказа" msprop:Generator_ColumnPropNameInTable="ИдЗаказаColumn" msprop:Generator_ColumnPropNameInRow="ИдЗаказа" msprop:Generator_ColumnVarNameInTable="columnИдЗаказа" type="xs:int" />
+              <xs:element name="Дата_x0020_принятия_x0020_заказа" msprop:Generator_UserColumnName="Дата принятия заказа" msprop:Generator_ColumnPropNameInTable="Дата_принятия_заказаColumn" msprop:Generator_ColumnPropNameInRow="Дата_принятия_заказа" msprop:Generator_ColumnVarNameInTable="columnДата_принятия_заказа" type="xs:dateTime" />
+              <xs:element name="ФИО_x0020_Мастера" msprop:Generator_UserColumnName="ФИО Мастера" msprop:Generator_ColumnPropNameInTable="ФИО_МастераColumn" msprop:Generator_ColumnPropNameInRow="ФИО_Мастера" msprop:Generator_ColumnVarNameInTable="columnФИО_Мастера" type="xs:int" />
+              <xs:element name="Вид_x0020_техники" msprop:Generator_UserColumnName="Вид техники" msprop:Generator_ColumnPropNameInTable="Вид_техникиColumn" msprop:Generator_ColumnPropNameInRow="Вид_техники" msprop:Generator_ColumnVarNameInTable="columnВид_техники" type="xs:int" />
+              <xs:element name="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Аванс" msprop:Generator_UserColumnName="Аванс" msprop:Generator_ColumnPropNameInTable="АвансColumn" msprop:Generator_ColumnPropNameInRow="Аванс" msprop:Generator_ColumnVarNameInTable="columnАванс" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ФИО_x0020_Клиента" msprop:Generator_UserColumnName="ФИО Клиента" msprop:Generator_ColumnPropNameInTable="ФИО_КлиентаColumn" msprop:Generator_ColumnPropNameInRow="ФИО_Клиента" msprop:Generator_ColumnVarNameInTable="columnФИО_Клиента">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номер_x0020_телефона" msprop:Generator_UserColumnName="Номер телефона" msprop:Generator_ColumnPropNameInTable="Номер_телефонаColumn" msprop:Generator_ColumnPropNameInRow="Номер_телефона" msprop:Generator_ColumnVarNameInTable="columnНомер_телефона">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Общая_x0020_стоимость" msprop:Generator_UserColumnName="Общая стоимость" msprop:Generator_ColumnPropNameInTable="Общая_стоимостьColumn" msprop:Generator_ColumnPropNameInRow="Общая_стоимость" msprop:Generator_ColumnVarNameInTable="columnОбщая_стоимость" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Стоимость_x0020_работ" msprop:Generator_ColumnPropNameInRow="Стоимость_работ" msprop:Generator_ColumnPropNameInTable="Стоимость_работColumn" msprop:Generator_ColumnVarNameInTable="columnСтоимость_работ" msprop:Generator_UserColumnName="Стоимость работ" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ЗаказДляУчетаЗаказовНаРемонт" msprop:Generator_RowEvHandlerName="ЗаказДляУчетаЗаказовНаРемонтRowChangeEventHandler" msprop:Generator_RowDeletedName="ЗаказДляУчетаЗаказовНаРемонтRowDeleted" msprop:Generator_RowDeletingName="ЗаказДляУчетаЗаказовНаРемонтRowDeleting" msprop:Generator_RowEvArgName="ЗаказДляУчетаЗаказовНаРемонтRowChangeEvent" msprop:Generator_TablePropName="ЗаказДляУчетаЗаказовНаРемонт" msprop:Generator_RowChangedName="ЗаказДляУчетаЗаказовНаРемонтRowChanged" msprop:Generator_RowChangingName="ЗаказДляУчетаЗаказовНаРемонтRowChanging" msprop:Generator_TableClassName="ЗаказДляУчетаЗаказовНаРемонтDataTable" msprop:Generator_RowClassName="ЗаказДляУчетаЗаказовНаРемонтRow" msprop:Generator_TableVarName="tableЗаказДляУчетаЗаказовНаРемонт" msprop:Generator_UserTableName="ЗаказДляУчетаЗаказовНаРемонт">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ИдЗаказа" msprop:Generator_ColumnPropNameInRow="ИдЗаказа" msprop:Generator_ColumnPropNameInTable="ИдЗаказаColumn" msprop:Generator_ColumnVarNameInTable="columnИдЗаказа" msprop:Generator_UserColumnName="ИдЗаказа" type="xs:int" />
               <xs:element name="Дата_x0020_принятия_x0020_заказа" msprop:Generator_ColumnPropNameInRow="Дата_принятия_заказа" msprop:Generator_ColumnPropNameInTable="Дата_принятия_заказаColumn" msprop:Generator_ColumnVarNameInTable="columnДата_принятия_заказа" msprop:Generator_UserColumnName="Дата принятия заказа" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_начала_x0020_ремонта" msprop:Generator_ColumnPropNameInRow="Дата_начала_ремонта" msprop:Generator_ColumnPropNameInTable="Дата_начала_ремонтаColumn" msprop:Generator_ColumnVarNameInTable="columnДата_начала_ремонта" msprop:Generator_UserColumnName="Дата начала ремонта" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ФИО_x0020_Мастера" msprop:Generator_ColumnPropNameInRow="ФИО_Мастера" msprop:Generator_ColumnPropNameInTable="ФИО_МастераColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_Мастера" msprop:Generator_UserColumnName="ФИО Мастера" type="xs:int" />
               <xs:element name="Вид_x0020_техники" msprop:Generator_ColumnPropNameInRow="Вид_техники" msprop:Generator_ColumnPropNameInTable="Вид_техникиColumn" msprop:Generator_ColumnVarNameInTable="columnВид_техники" msprop:Generator_UserColumnName="Вид техники" type="xs:int" />
               <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус">
@@ -880,6 +942,7 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Стоимость_x0020_материалов" msprop:Generator_ColumnPropNameInRow="Стоимость_материалов" msprop:Generator_ColumnPropNameInTable="Стоимость_материаловColumn" msprop:Generator_ColumnVarNameInTable="columnСтоимость_материалов" msprop:Generator_UserColumnName="Стоимость материалов" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Стоимость_x0020_работ" msprop:Generator_ColumnPropNameInRow="Стоимость_работ" msprop:Generator_ColumnPropNameInTable="Стоимость_работColumn" msprop:Generator_ColumnVarNameInTable="columnСтоимость_работ" msprop:Generator_UserColumnName="Стоимость работ" type="xs:decimal" minOccurs="0" />
               <xs:element name="Общая_x0020_стоимость" msprop:Generator_ColumnPropNameInRow="Общая_стоимость" msprop:Generator_ColumnPropNameInTable="Общая_стоимостьColumn" msprop:Generator_ColumnVarNameInTable="columnОбщая_стоимость" msprop:Generator_UserColumnName="Общая стоимость" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -928,17 +991,23 @@ SELECT ИдТипа, Название, Описание FROM Тип_устрой
       <xs:field xpath="mstns:ФИО_x0020_Мастера" />
       <xs:field xpath="mstns:Вид_x0020_техники" />
     </xs:unique>
+    <xs:unique name="ЗаказДляУчетаЗаказовНаРемонт_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ЗаказДляУчетаЗаказовНаРемонт" />
+      <xs:field xpath="mstns:ИдЗаказа" />
+      <xs:field xpath="mstns:ФИО_x0020_Мастера" />
+      <xs:field xpath="mstns:Вид_x0020_техники" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Вид_техни__ИдМод__2A4B4B5E" msdata:parent="Модель" msdata:child="Вид_техники" msdata:parentkey="ИдМодели" msdata:childkey="ИдМодели" msprop:Generator_UserParentTable="Модель" msprop:Generator_UserChildTable="Вид_техники" msprop:Generator_RelationVarName="relationFK__Вид_техни__ИдМод__2A4B4B5E" msprop:Generator_ChildPropName="GetВид_техникиRows" msprop:Generator_ParentPropName="МодельRow" msprop:Generator_UserRelationName="FK__Вид_техни__ИдМод__2A4B4B5E" />
-      <msdata:Relationship name="FK__Вид_техни__ИдТип__29572725" msdata:parent="Тип_устройства" msdata:child="Вид_техники" msdata:parentkey="ИдТипа" msdata:childkey="ИдТипа" msprop:Generator_UserParentTable="Тип_устройства" msprop:Generator_UserChildTable="Вид_техники" msprop:Generator_RelationVarName="relationFK__Вид_техни__ИдТип__29572725" msprop:Generator_ChildPropName="GetВид_техникиRows" msprop:Generator_ParentPropName="Тип_устройстваRow" msprop:Generator_UserRelationName="FK__Вид_техни__ИдТип__29572725" />
-      <msdata:Relationship name="FK__Заказ__ИдВида__2E1BDC42" msdata:parent="Вид_техники" msdata:child="Заказ" msdata:parentkey="ИдВида" msdata:childkey="ИдВида" msprop:Generator_UserParentTable="Вид_техники" msprop:Generator_UserChildTable="Заказ" msprop:Generator_RelationVarName="relationFK__Заказ__ИдВида__2E1BDC42" msprop:Generator_ChildPropName="GetЗаказRows" msprop:Generator_UserRelationName="FK__Заказ__ИдВида__2E1BDC42" msprop:Generator_ParentPropName="Вид_техникиRow" />
-      <msdata:Relationship name="FK__Заказ__ИдСотрудн__2D27B809" msdata:parent="Сотрудник" msdata:child="Заказ" msdata:parentkey="ИдСотрудника" msdata:childkey="ИдСотрудника" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Заказ" msprop:Generator_RelationVarName="relationFK__Заказ__ИдСотрудн__2D27B809" msprop:Generator_ChildPropName="GetЗаказRows" msprop:Generator_ParentPropName="СотрудникRow" msprop:Generator_UserRelationName="FK__Заказ__ИдСотрудн__2D27B809" />
-      <msdata:Relationship name="FK__Затраченн__ИдЗак__37A5467C" msdata:parent="Заказ" msdata:child="Затраченный_материал" msdata:parentkey="ИдЗаказа" msdata:childkey="ИдЗаказа" msprop:Generator_UserParentTable="Заказ" msprop:Generator_UserChildTable="Затраченный_материал" msprop:Generator_RelationVarName="relationFK__Затраченн__ИдЗак__37A5467C" msprop:Generator_ChildPropName="GetЗатраченный_материалRows" msprop:Generator_UserRelationName="FK__Затраченн__ИдЗак__37A5467C" msprop:Generator_ParentPropName="ЗаказRow" />
-      <msdata:Relationship name="FK__Затраченн__ИдМат__36B12243" msdata:parent="Материал" msdata:child="Затраченный_материал" msdata:parentkey="ИдМатериала" msdata:childkey="ИдМатериала" msprop:Generator_UserParentTable="Материал" msprop:Generator_UserChildTable="Затраченный_материал" msprop:Generator_RelationVarName="relationFK__Затраченн__ИдМат__36B12243" msprop:Generator_ChildPropName="GetЗатраченный_материалRows" msprop:Generator_ParentPropName="МатериалRow" msprop:Generator_UserRelationName="FK__Затраченн__ИдМат__36B12243" />
-      <msdata:Relationship name="FK__Работа__ИдЗаказа__32E0915F" msdata:parent="Заказ" msdata:child="Работа" msdata:parentkey="ИдЗаказа" msdata:childkey="ИдЗаказа" msprop:Generator_UserParentTable="Заказ" msprop:Generator_UserChildTable="Работа" msprop:Generator_RelationVarName="relationFK__Работа__ИдЗаказа__32E0915F" msprop:Generator_ChildPropName="GetРаботаRows" msprop:Generator_UserRelationName="FK__Работа__ИдЗаказа__32E0915F" msprop:Generator_ParentPropName="ЗаказRow" />
-      <msdata:Relationship name="FK__Работа__ИдРаботы__31EC6D26" msdata:parent="Вид_ремонтных_работ" msdata:child="Работа" msdata:parentkey="ИдРаботы" msdata:childkey="ИдРаботы" msprop:Generator_UserParentTable="Вид_ремонтных_работ" msprop:Generator_UserChildTable="Работа" msprop:Generator_RelationVarName="relationFK__Работа__ИдРаботы__31EC6D26" msprop:Generator_ChildPropName="GetРаботаRows" msprop:Generator_UserRelationName="FK__Работа__ИдРаботы__31EC6D26" msprop:Generator_ParentPropName="Вид_ремонтных_работRow" />
+      <msdata:Relationship name="FK__Вид_техни__ИдМод__2A4B4B5E" msdata:parent="Модель" msdata:child="Вид_техники" msdata:parentkey="ИдМодели" msdata:childkey="ИдМодели" msprop:Generator_UserParentTable="Модель" msprop:Generator_UserChildTable="Вид_техники" msprop:Generator_RelationVarName="relationFK__Вид_техни__ИдМод__2A4B4B5E" msprop:Generator_ChildPropName="GetВид_техникиRows" msprop:Generator_UserRelationName="FK__Вид_техни__ИдМод__2A4B4B5E" msprop:Generator_ParentPropName="МодельRow" />
+      <msdata:Relationship name="FK__Вид_техни__ИдТип__29572725" msdata:parent="Тип_устройства" msdata:child="Вид_техники" msdata:parentkey="ИдТипа" msdata:childkey="ИдТипа" msprop:Generator_UserParentTable="Тип_устройства" msprop:Generator_UserChildTable="Вид_техники" msprop:Generator_RelationVarName="relationFK__Вид_техни__ИдТип__29572725" msprop:Generator_ChildPropName="GetВид_техникиRows" msprop:Generator_UserRelationName="FK__Вид_техни__ИдТип__29572725" msprop:Generator_ParentPropName="Тип_устройстваRow" />
+      <msdata:Relationship name="FK__Заказ__ИдВида__2E1BDC42" msdata:parent="Вид_техники" msdata:child="Заказ" msdata:parentkey="ИдВида" msdata:childkey="ИдВида" msprop:Generator_UserParentTable="Вид_техники" msprop:Generator_UserChildTable="Заказ" msprop:Generator_RelationVarName="relationFK__Заказ__ИдВида__2E1BDC42" msprop:Generator_ChildPropName="GetЗаказRows" msprop:Generator_ParentPropName="Вид_техникиRow" msprop:Generator_UserRelationName="FK__Заказ__ИдВида__2E1BDC42" />
+      <msdata:Relationship name="FK__Заказ__ИдСотрудн__2D27B809" msdata:parent="Сотрудник" msdata:child="Заказ" msdata:parentkey="ИдСотрудника" msdata:childkey="ИдСотрудника" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Заказ" msprop:Generator_RelationVarName="relationFK__Заказ__ИдСотрудн__2D27B809" msprop:Generator_ChildPropName="GetЗаказRows" msprop:Generator_UserRelationName="FK__Заказ__ИдСотрудн__2D27B809" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Затраченн__ИдЗак__37A5467C" msdata:parent="Заказ" msdata:child="Затраченный_материал" msdata:parentkey="ИдЗаказа" msdata:childkey="ИдЗаказа" msprop:Generator_UserParentTable="Заказ" msprop:Generator_UserChildTable="Затраченный_материал" msprop:Generator_RelationVarName="relationFK__Затраченн__ИдЗак__37A5467C" msprop:Generator_ChildPropName="GetЗатраченный_материалRows" msprop:Generator_ParentPropName="ЗаказRow" msprop:Generator_UserRelationName="FK__Затраченн__ИдЗак__37A5467C" />
+      <msdata:Relationship name="FK__Затраченн__ИдМат__36B12243" msdata:parent="Материал" msdata:child="Затраченный_материал" msdata:parentkey="ИдМатериала" msdata:childkey="ИдМатериала" msprop:Generator_UserParentTable="Материал" msprop:Generator_UserChildTable="Затраченный_материал" msprop:Generator_RelationVarName="relationFK__Затраченн__ИдМат__36B12243" msprop:Generator_ChildPropName="GetЗатраченный_материалRows" msprop:Generator_UserRelationName="FK__Затраченн__ИдМат__36B12243" msprop:Generator_ParentPropName="МатериалRow" />
+      <msdata:Relationship name="FK__Работа__ИдЗаказа__32E0915F" msdata:parent="Заказ" msdata:child="Работа" msdata:parentkey="ИдЗаказа" msdata:childkey="ИдЗаказа" msprop:Generator_UserParentTable="Заказ" msprop:Generator_UserChildTable="Работа" msprop:Generator_RelationVarName="relationFK__Работа__ИдЗаказа__32E0915F" msprop:Generator_ChildPropName="GetРаботаRows" msprop:Generator_ParentPropName="ЗаказRow" msprop:Generator_UserRelationName="FK__Работа__ИдЗаказа__32E0915F" />
+      <msdata:Relationship name="FK__Работа__ИдРаботы__31EC6D26" msdata:parent="Вид_ремонтных_работ" msdata:child="Работа" msdata:parentkey="ИдРаботы" msdata:childkey="ИдРаботы" msprop:Generator_UserParentTable="Вид_ремонтных_работ" msprop:Generator_UserChildTable="Работа" msprop:Generator_RelationVarName="relationFK__Работа__ИдРаботы__31EC6D26" msprop:Generator_ChildPropName="GetРаботаRows" msprop:Generator_ParentPropName="Вид_ремонтных_работRow" msprop:Generator_UserRelationName="FK__Работа__ИдРаботы__31EC6D26" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -28,11 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
+            this.заказДляУчетаЗаказовНаРемонтBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заказДляУчетаЗаказовНаРемонтTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказДляУчетаЗаказовНаРемонтTableAdapter();
+            this.идЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОМастераDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видТехникиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.авансDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОКлиентаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номерТелефонаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьМатериаловDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьРаботDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.общаяСтоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаРемонтBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // data1
@@ -44,6 +62,7 @@
             this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -55,6 +74,20 @@
             this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data1.ColumnHeadersHeight = 75;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.data1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.идЗаказаDataGridViewTextBoxColumn,
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn,
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn,
+            this.фИОМастераDataGridViewTextBoxColumn,
+            this.видТехникиDataGridViewTextBoxColumn,
+            this.статусDataGridViewTextBoxColumn,
+            this.авансDataGridViewTextBoxColumn,
+            this.фИОКлиентаDataGridViewTextBoxColumn,
+            this.номерТелефонаDataGridViewTextBoxColumn,
+            this.стоимостьМатериаловDataGridViewTextBoxColumn,
+            this.стоимостьРаботDataGridViewTextBoxColumn,
+            this.общаяСтоимостьDataGridViewTextBoxColumn});
+            this.data1.DataSource = this.заказДляУчетаЗаказовНаРемонтBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -94,6 +127,118 @@
             this.data1.ThemeStyle.RowsStyle.Height = 24;
             this.data1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.data1.SelectionChanged += new System.EventHandler(this.data1_SelectionChanged);
+            // 
+            // сделаНоDataSet
+            // 
+            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
+            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заказДляУчетаЗаказовНаРемонтBindingSource
+            // 
+            this.заказДляУчетаЗаказовНаРемонтBindingSource.DataMember = "ЗаказДляУчетаЗаказовНаРемонт";
+            this.заказДляУчетаЗаказовНаРемонтBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // заказДляУчетаЗаказовНаРемонтTableAdapter
+            // 
+            this.заказДляУчетаЗаказовНаРемонтTableAdapter.ClearBeforeFill = true;
+            // 
+            // идЗаказаDataGridViewTextBoxColumn
+            // 
+            this.идЗаказаDataGridViewTextBoxColumn.DataPropertyName = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.HeaderText = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идЗаказаDataGridViewTextBoxColumn.Name = "идЗаказаDataGridViewTextBoxColumn";
+            this.идЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идЗаказаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // датаПринятияЗаказаDataGridViewTextBoxColumn
+            // 
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.DataPropertyName = "Дата принятия заказа";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.HeaderText = "Дата принятия заказа";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.Name = "датаПринятияЗаказаDataGridViewTextBoxColumn";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаНачалаРемонтаDataGridViewTextBoxColumn
+            // 
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn.DataPropertyName = "Дата начала ремонта";
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn.HeaderText = "Дата начала ремонта";
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn.Name = "датаНачалаРемонтаDataGridViewTextBoxColumn";
+            this.датаНачалаРемонтаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОМастераDataGridViewTextBoxColumn
+            // 
+            this.фИОМастераDataGridViewTextBoxColumn.DataPropertyName = "ФИО Мастера";
+            this.фИОМастераDataGridViewTextBoxColumn.HeaderText = "ФИО Мастера";
+            this.фИОМастераDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фИОМастераDataGridViewTextBoxColumn.Name = "фИОМастераDataGridViewTextBoxColumn";
+            this.фИОМастераDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видТехникиDataGridViewTextBoxColumn
+            // 
+            this.видТехникиDataGridViewTextBoxColumn.DataPropertyName = "Вид техники";
+            this.видТехникиDataGridViewTextBoxColumn.HeaderText = "Вид техники";
+            this.видТехникиDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.видТехникиDataGridViewTextBoxColumn.Name = "видТехникиDataGridViewTextBoxColumn";
+            this.видТехникиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // авансDataGridViewTextBoxColumn
+            // 
+            this.авансDataGridViewTextBoxColumn.DataPropertyName = "Аванс";
+            this.авансDataGridViewTextBoxColumn.HeaderText = "Аванс";
+            this.авансDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.авансDataGridViewTextBoxColumn.Name = "авансDataGridViewTextBoxColumn";
+            this.авансDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОКлиентаDataGridViewTextBoxColumn
+            // 
+            this.фИОКлиентаDataGridViewTextBoxColumn.DataPropertyName = "ФИО Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фИОКлиентаDataGridViewTextBoxColumn.Name = "фИОКлиентаDataGridViewTextBoxColumn";
+            this.фИОКлиентаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номерТелефонаDataGridViewTextBoxColumn
+            // 
+            this.номерТелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер телефона";
+            this.номерТелефонаDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
+            this.номерТелефонаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.номерТелефонаDataGridViewTextBoxColumn.Name = "номерТелефонаDataGridViewTextBoxColumn";
+            this.номерТелефонаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьМатериаловDataGridViewTextBoxColumn
+            // 
+            this.стоимостьМатериаловDataGridViewTextBoxColumn.DataPropertyName = "Стоимость материалов";
+            this.стоимостьМатериаловDataGridViewTextBoxColumn.HeaderText = "Стоимость материалов";
+            this.стоимостьМатериаловDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьМатериаловDataGridViewTextBoxColumn.Name = "стоимостьМатериаловDataGridViewTextBoxColumn";
+            this.стоимостьМатериаловDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьРаботDataGridViewTextBoxColumn
+            // 
+            this.стоимостьРаботDataGridViewTextBoxColumn.DataPropertyName = "Стоимость работ";
+            this.стоимостьРаботDataGridViewTextBoxColumn.HeaderText = "Стоимость работ";
+            this.стоимостьРаботDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьРаботDataGridViewTextBoxColumn.Name = "стоимостьРаботDataGridViewTextBoxColumn";
+            this.стоимостьРаботDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // общаяСтоимостьDataGridViewTextBoxColumn
+            // 
+            this.общаяСтоимостьDataGridViewTextBoxColumn.DataPropertyName = "Общая стоимость";
+            this.общаяСтоимостьDataGridViewTextBoxColumn.HeaderText = "Общая стоимость";
+            this.общаяСтоимостьDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.общаяСтоимостьDataGridViewTextBoxColumn.Name = "общаяСтоимостьDataGridViewTextBoxColumn";
+            this.общаяСтоимостьDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // MainRepairZakaz
             // 
@@ -104,6 +249,8 @@
             this.Size = new System.Drawing.Size(1250, 630);
             this.Load += new System.EventHandler(this.MainRepairZakaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаРемонтBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +258,20 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView data1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn идЗаказаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаПринятияЗаказаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаНачалаРемонтаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОМастераDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn видТехникиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn авансDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОКлиентаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn номерТелефонаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьМатериаловDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn стоимостьРаботDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn общаяСтоимостьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource заказДляУчетаЗаказовНаРемонтBindingSource;
+        private СделаНоDataSet сделаНоDataSet;
+        private СделаНоDataSetTableAdapters.ЗаказДляУчетаЗаказовНаРемонтTableAdapter заказДляУчетаЗаказовНаРемонтTableAdapter;
     }
 }
