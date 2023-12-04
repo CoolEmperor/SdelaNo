@@ -91,6 +91,12 @@
     <Compile Include="Manager\MainDiagnZakaz.Designer.cs">
       <DependentUpon>MainDiagnZakaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\MainRepairZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\MainRepairZakaz.Designer.cs">
+      <DependentUpon>MainRepairZakaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="Manager\SelectDiagnZakaz.Designer.cs">
       <DependentUpon>SelectDiagnZakaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SelectRepairZakaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\SelectRepairZakaz.Designer.cs">
+      <DependentUpon>SelectRepairZakaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Master\MainMaster.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +200,9 @@
     <EmbeddedResource Include="Manager\MainDiagnZakaz.resx">
       <DependentUpon>MainDiagnZakaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\MainRepairZakaz.resx">
+      <DependentUpon>MainRepairZakaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\SelectDiagnZakaz.resx">
       <DependentUpon>SelectDiagnZakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\SelectRepairZakaz.resx">
+      <DependentUpon>SelectRepairZakaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>

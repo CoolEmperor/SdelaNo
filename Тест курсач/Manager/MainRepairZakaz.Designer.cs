@@ -1,6 +1,6 @@
 ﻿namespace Тест_курсач.Manager
 {
-    partial class MainDiagnZakaz
+    partial class MainRepairZakaz
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -72,7 +72,7 @@
             this.data1.RowHeadersWidth = 51;
             this.data1.RowTemplate.Height = 24;
             this.data1.Size = new System.Drawing.Size(1219, 596);
-            this.data1.TabIndex = 18;
+            this.data1.TabIndex = 19;
             this.data1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.data1.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.data1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -94,16 +94,15 @@
             this.data1.ThemeStyle.RowsStyle.Height = 24;
             this.data1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.data1.SelectionChanged += new System.EventHandler(this.data1_SelectionChanged);
             // 
-            // MainDiagnZakaz
+            // MainRepairZakaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.data1);
-            this.Name = "MainDiagnZakaz";
+            this.Name = "MainRepairZakaz";
             this.Size = new System.Drawing.Size(1250, 630);
-            this.Load += new System.EventHandler(this.MainDiagnRepair_Load);
+            this.Load += new System.EventHandler(this.MainRepairZakaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
             this.ResumeLayout(false);
 

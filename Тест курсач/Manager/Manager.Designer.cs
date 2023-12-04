@@ -140,7 +140,7 @@
             this.butZakRep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.butZakRep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.butZakRep.FillColor = System.Drawing.Color.PeachPuff;
-            this.butZakRep.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butZakRep.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold);
             this.butZakRep.ForeColor = System.Drawing.Color.Black;
             this.butZakRep.Location = new System.Drawing.Point(3, 267);
             this.butZakRep.Name = "butZakRep";
