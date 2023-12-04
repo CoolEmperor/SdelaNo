@@ -20,6 +20,10 @@ namespace Тест_курсач.Master
         {
             InitializeComponent();
             this.idsotr = idsotr;
+            FillDataGridView();
+        }
+        private void FillDataGridView()
+        {
             string query = $"SELECT * FROM Заказ Where ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -73,7 +77,7 @@ namespace Тест_курсач.Master
 
         private void MainMaster_Load(object sender, EventArgs e)
         {
-
+            FillDataGridView();
         }
         
         private void data1_SelectionChanged(object sender, EventArgs e)

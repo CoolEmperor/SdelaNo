@@ -103,6 +103,8 @@
             this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
             this.материалTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МатериалTableAdapter();
             this.материалыДляМастераTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.МатериалыДляМастераTableAdapter();
+            this.butDiagn = new Guna.UI2.WinForms.Guna2Button();
+            this.butRepair = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
@@ -948,10 +950,44 @@
             // 
             this.материалыДляМастераTableAdapter.ClearBeforeFill = true;
             // 
+            // butDiagn
+            // 
+            this.butDiagn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butDiagn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butDiagn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butDiagn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butDiagn.FillColor = System.Drawing.Color.PeachPuff;
+            this.butDiagn.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDiagn.ForeColor = System.Drawing.Color.Black;
+            this.butDiagn.Location = new System.Drawing.Point(1029, 645);
+            this.butDiagn.Name = "butDiagn";
+            this.butDiagn.Size = new System.Drawing.Size(258, 39);
+            this.butDiagn.TabIndex = 34;
+            this.butDiagn.Text = "Диагностика окончена";
+            this.butDiagn.Click += new System.EventHandler(this.butDiagn_Click);
+            // 
+            // butRepair
+            // 
+            this.butRepair.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butRepair.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butRepair.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butRepair.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butRepair.FillColor = System.Drawing.Color.PeachPuff;
+            this.butRepair.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butRepair.ForeColor = System.Drawing.Color.Black;
+            this.butRepair.Location = new System.Drawing.Point(227, 645);
+            this.butRepair.Name = "butRepair";
+            this.butRepair.Size = new System.Drawing.Size(258, 39);
+            this.butRepair.TabIndex = 35;
+            this.butRepair.Text = "Ремонт окончен";
+            this.butRepair.Click += new System.EventHandler(this.butRepair_Click);
+            // 
             // SelectZakaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.butRepair);
+            this.Controls.Add(this.butDiagn);
             this.Controls.Add(this.textFindWork);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textFindMat);
@@ -1050,5 +1086,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource материалыДляМастераBindingSource;
         private СделаНоDataSetTableAdapters.МатериалыДляМастераTableAdapter материалыДляМастераTableAdapter;
+        private Guna.UI2.WinForms.Guna2Button butDiagn;
+        private Guna.UI2.WinForms.Guna2Button butRepair;
     }
 }

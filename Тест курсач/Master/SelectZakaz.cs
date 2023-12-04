@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using СделаНо;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Тест_курсач.Master
@@ -36,10 +38,12 @@ namespace Тест_курсач.Master
 
             label7.Visible = false;
             textFindWork.Visible = false;
+
+            butDiagn.Visible = false;
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM Заказ Where ИдЗаказа = {selectId}";
+            string query = $"SELECT * FROM Заказ Where ИдЗаказа = {selectId} And (Статус = 'На диагностике' OR Статус = 'На ремонте')";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -100,7 +104,7 @@ namespace Тест_курсач.Master
 
             label7.Visible = true;
             textFindWork.Visible = true;
-
+            butDiagn.Visible = true;
             MessageBox.Show("Для добавление работы, кликните 2 раза по таблице 'Работы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемая работа'");            
         }
 
@@ -124,6 +128,7 @@ namespace Тест_курсач.Master
 
         private void butBack_Click(object sender, EventArgs e)
         {
+
             label2.Visible = true;
             data3.Visible = true;
             butMat.Visible = true;
@@ -145,6 +150,9 @@ namespace Тест_курсач.Master
 
             label7.Visible = false;
             textFindWork.Visible = false;
+
+            butDiagn.Visible = false;
+            CheckZakaz();
         }
         //материалы
         private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -323,7 +331,58 @@ namespace Тест_курсач.Master
 
         private void SelectZakaz_Load(object sender, EventArgs e)
         {
+            CheckZakaz();
+        }
+        private void CheckZakaz()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand zakazQuery = new SqlCommand($"SELECT ИдЗаказа, Статус FROM Заказ WHERE ИдЗаказа = {selectId}", connection);
 
+                using (SqlDataReader reader = zakazQuery.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string status = reader["Статус"].ToString();
+                        if (status == "На диагностике")
+                        {
+                            data3.Visible = false;
+                            label2.Visible = false;
+                            label7.Visible = false;
+                            textFindMat.Visible = false;
+                            butMat.Visible = false;
+                            //label1.Visible = false;
+                            //textAvans.Visible = false;
+                            //butStart.Visible = false;
+                            //butEnd.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+        private void butDiagn_Click(object sender, EventArgs e)
+        {
+            string query = $"UPDATE Заказ SET Статус = 'Диагностика окончена' WHERE ИдЗаказа = {selectId};";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void butRepair_Click(object sender, EventArgs e)
+        {
+            string query = $"UPDATE Заказ SET Статус = 'Ремонт окончен' WHERE ИдЗаказа = {selectId};";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

@@ -76,6 +76,7 @@ namespace СделаНо
             butBack.Visible = false;
             butZakaz.Visible = true;
             MainMaster spr = new MainMaster(this.idsotr);
+            spr.RowSelected += MainMaster_RowSelected;
             Controler(spr);
         }
     }
