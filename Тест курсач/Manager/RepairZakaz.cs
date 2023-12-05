@@ -33,7 +33,7 @@ namespace Тест_курсач.Manager
         {
             butBack.Visible = false;
             butZakaz.Visible = true;
-            MainDiagnZakaz spr = new MainDiagnZakaz();
+            MainRepairZakaz spr = new MainRepairZakaz();
             spr.RowSelected += MainRepairZakaz_RowSelected;
             Controler(spr);
         }
@@ -42,16 +42,21 @@ namespace Тест_курсач.Manager
         {
             butBack.Visible = true;
             butZakaz.Visible = false;
-            SelectDiagnZakaz spr = new SelectDiagnZakaz(this.selectId);
+            SelectRepairZakaz spr = new SelectRepairZakaz(this.selectId);
             Controler(spr);
         }
 
         private void RepairZakaz_Load(object sender, EventArgs e)
         {
-            MainDiagnZakaz spr = new MainDiagnZakaz();
+            MainRepairZakaz spr = new MainRepairZakaz();
 
             spr.RowSelected += MainRepairZakaz_RowSelected;
             Controler(spr);
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

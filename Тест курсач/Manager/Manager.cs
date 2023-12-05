@@ -57,11 +57,6 @@ namespace СделаНо
             Controler(spr);
         }
 
-        private void butDelZak_Click(object sender, EventArgs e)
-        {
-            AcceptZakaz spr = new AcceptZakaz();
-            Controler(spr);
-        }
 
         private void butExit_Click(object sender, EventArgs e)
         {
@@ -77,6 +72,12 @@ namespace СделаНо
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butDel_Click(object sender, EventArgs e)
+        {
+            AcceptZakaz spr = new AcceptZakaz();
+            Controler(spr);
         }
     }
 }

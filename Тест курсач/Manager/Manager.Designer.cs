@@ -116,6 +116,7 @@
             this.butDel.Size = new System.Drawing.Size(245, 55);
             this.butDel.TabIndex = 12;
             this.butDel.Text = "Выдача заказа";
+            this.butDel.Click += new System.EventHandler(this.butDel_Click);
             // 
             // butExit
             // 

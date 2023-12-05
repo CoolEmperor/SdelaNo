@@ -30,3 +30,5 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.RepairZakaz.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.MainDiagnZakaz.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.SelectDiagnZakaz.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.MainRepairZakaz.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.SelectRepairZakaz.resources
