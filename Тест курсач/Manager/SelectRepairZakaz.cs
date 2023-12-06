@@ -79,7 +79,7 @@ namespace Тест_курсач.Manager
         }
         private void butStart_Click(object sender, EventArgs e)
         {
-            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче' WHERE ИдЗаказа = {selectId};";
+            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче', Дата_конца = GETDATE() WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -87,6 +87,7 @@ namespace Тест_курсач.Manager
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+
         }
     }
 }

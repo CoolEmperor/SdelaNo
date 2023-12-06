@@ -30,7 +30,7 @@ namespace Тест_курсач.Manager
         {
             if(textAvans == null)
             {
-                string query = $"UPDATE Заказ SET Статус = 'На ремонте' WHERE ИдЗаказа = {selectId};";
+                string query = $"UPDATE Заказ SET Статус = 'На ремонте', Дата_начала = GETDATE() WHERE ИдЗаказа = {selectId};";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
