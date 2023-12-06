@@ -38,7 +38,7 @@ namespace Тест_курсач.Master
 
             label7.Visible = false;
             textFindWork.Visible = false;
-
+            butRepair.Visible = false;
             butDiagn.Visible = false;
         }
         private void FillDataGridView()
@@ -110,6 +110,7 @@ namespace Тест_курсач.Master
 
         private void butMat_Click(object sender, EventArgs e)
         {
+            butRepair.Visible = true;
             label1.Visible = false;
             data2.Visible = false;
             butWork.Visible = false;
@@ -122,6 +123,7 @@ namespace Тест_курсач.Master
 
             label6.Visible = true;
             textFindMat.Visible = true;
+            butMat.Visible = false;
 
             MessageBox.Show("Для добавление материала, кликните 2 раза таблице 'Материалы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемые материалы'");
         }
@@ -151,6 +153,7 @@ namespace Тест_курсач.Master
             label7.Visible = false;
             textFindWork.Visible = false;
 
+            butRepair.Visible = false;
             butDiagn.Visible = false;
             CheckZakaz();
         }
@@ -352,10 +355,6 @@ namespace Тест_курсач.Master
                             label7.Visible = false;
                             textFindMat.Visible = false;
                             butMat.Visible = false;
-                            //label1.Visible = false;
-                            //textAvans.Visible = false;
-                            //butStart.Visible = false;
-                            //butEnd.Visible = false;
                         }
                     }
                 }
@@ -363,6 +362,7 @@ namespace Тест_курсач.Master
         }
         private void butDiagn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Диагностика окончен");
             string query = $"UPDATE Заказ SET Статус = 'Диагностика окончена' WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -375,13 +375,20 @@ namespace Тест_курсач.Master
 
         private void butRepair_Click(object sender, EventArgs e)
         {
-            string query = $"UPDATE Заказ SET Статус = 'Ремонт окончен' WHERE ИдЗаказа = {selectId};";
-
+            MessageBox.Show("Ремонт окончен");
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
-                command.ExecuteNonQuery();
+
+                string query = $"UPDATE Заказ SET Статус = 'Ремонт окончен', Дата_конца = @CurrentDate WHERE ИдЗаказа = @Id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
+                    command.Parameters.AddWithValue("@Id", selectId);
+
+                    command.ExecuteNonQuery();
+                }
             }
         }
     }

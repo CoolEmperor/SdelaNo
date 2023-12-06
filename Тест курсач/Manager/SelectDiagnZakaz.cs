@@ -28,15 +28,30 @@ namespace Тест_курсач.Manager
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            if(textAvans == null)
+            MessageBox.Show("Заказ в ремонте");
+            if (textAvans == null)
             {
-                string query = $"UPDATE Заказ SET Статус = 'На ремонте', Дата_начала = GETDATE() WHERE ИдЗаказа = {selectId};";
-
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    SqlCommand command = new SqlCommand(query, connection);
                     connection.Open();
-                    command.ExecuteNonQuery();
+
+                    string query = "UPDATE Заказ SET Статус = 'На ремонте', Дата_начала = @CurrentDate WHERE ИдЗаказа = @Id";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
+                        command.Parameters.AddWithValue("@Id", selectId);
+
+                        try
+                        {
+                            int rowsAffected = command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message);
+                            // Дополнительная обработка исключения
+                        }
+                    }
                 }
             }
             else
@@ -49,12 +64,14 @@ namespace Тест_курсач.Manager
                 }
                 else
                 {
-                    string query = $"UPDATE Заказ SET Статус = 'На ремонте', Аванс = {cost} WHERE ИдЗаказа = {selectId};";
+                    string query = $"UPDATE Заказ SET Статус = 'На ремонте', Аванс = {cost}, Дата_начала = @CurrentDate WHERE ИдЗаказа = {selectId};";
 
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
+                        
                         SqlCommand command = new SqlCommand(query, connection);
                         connection.Open();
+                        command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -67,6 +84,7 @@ namespace Тест_курсач.Manager
         }
         private void butEnd_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Отказ от ремонта");
             string query = $"UPDATE Заказ SET Статус = 'Отказ в ремонте' WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

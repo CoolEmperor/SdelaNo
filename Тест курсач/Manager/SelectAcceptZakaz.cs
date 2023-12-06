@@ -15,8 +15,6 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using OfficeOpenXml;
-using System.IO;
-using System.Data.SqlClient;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace Тест_курсач.Manager
@@ -90,6 +88,7 @@ namespace Тест_курсач.Manager
 
         private void butStart_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Заказ выдан");
             string query = $"UPDATE Заказ SET Статус = 'Выдан', Дата_выдачи = GETDATE() WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -190,7 +189,7 @@ namespace Тест_курсач.Manager
                                             worksheet.Cells[rowMaterial, 4].Value = reader["СтоимостьМатериала"].ToString();
                                             worksheet.Cells[rowMaterial, 3].Value = reader["КоличествоМатериала"].ToString();
                                             rowMaterial++;
-                                        } while (reader.Read()) ;
+                                        } while (reader.Read());
 
                                     }
 
