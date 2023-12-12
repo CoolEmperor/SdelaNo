@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace СделаНо
         {
             InitializeComponent();
             fns1 = fns;
+            //textTel.TextChanged += textTel_TextChanged;
         }
         
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -34,9 +36,11 @@ namespace СделаНо
             // TODO: данная строка кода позволяет загрузить данные в таблицу "сделаНоDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
             this.сотрудникTableAdapter.Fill(this.сделаНоDataSet.Сотрудник);
 
+
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
-
+            //textTel.KeyPress += textTel_KeyPress;
+            //textTel.TextChanged += textTel_TextChanged;
         }
 
         private void butExit_Click(object sender, EventArgs e)
@@ -150,18 +154,18 @@ namespace СделаНо
                 string login = textLogin.Text;
                 string pass = textPass.Text;
                 string role = comboRole.Text;
-                string tel = textTel.Text;
+                string tel = textTel.Text.ToString();
 
                 if (!IsValidName(FIO))
                 {
                     MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
                     return;
                 }
-                else if (!IsValidTelefon(tel))
-                {
-                    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
-                    return;
-                }
+                //else if (!IsValidTelefon(tel))
+                //{
+                //    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
+                //    return;
+                //}
                 else
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
@@ -258,16 +262,7 @@ namespace СделаНо
             }
         }
 
-        private void butFind_Click(object sender, EventArgs e)
-        {
-            string filterText = textBoxFindFam.Text;
-            сотрудникBindingSource.Filter = string.Format("ФИО LIKE '{0}%'", filterText);
-        }
-
-        private void butAll_Click(object sender, EventArgs e)
-        {
-            сотрудникBindingSource.RemoveFilter();
-        }
+       
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int selectedEmployeeId;
@@ -285,7 +280,68 @@ namespace СделаНо
 
         private void textBoxFindFam_TextChanged(object sender, EventArgs e)
         {
+            string filterText = textBoxFindFam.Text;
+            string findField = "ФИО";
 
+            if (!string.IsNullOrWhiteSpace(filterText))
+            {
+                сотрудникBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+            }
+            else
+            {
+                сотрудникBindingSource.RemoveFilter();
+            }
+        }
+
+        private void textTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '(' && e.KeyChar != ')' && e.KeyChar != '-' && e.KeyChar != '+')
+            //{
+            //    e.Handled = true;
+            //}
+        }
+   
+        private const int MaxLength = 20;
+        private void textTel_TextChanged(object sender, EventArgs e)
+        {
+            //string phoneNumber = textTel.Text.Replace("+", "").Replace("(", "").Replace(")", "").Replace("-", "");
+
+            //if (phoneNumber.Length > 0 && phoneNumber[0] != '+' && phoneNumber[0] != '3' && phoneNumber[0] != '7' && phoneNumber[0] != '5') // Проверка на корректный код страны
+            //{
+            //    phoneNumber = "375" + phoneNumber; // Добавляем код страны по умолчанию
+            //}
+            //if (!phoneNumber.StartsWith("+")) // Добавляем плюс, если его еще нет в начале номера
+            //{
+            //    phoneNumber = "+" + phoneNumber;
+            //}
+         
+            //if (phoneNumber.Length > 3) // Добавляем открывающую скобку после кода страны
+            //{
+            //    phoneNumber = phoneNumber.Insert(4, "(");
+            //}
+            //if (phoneNumber.Length > 7) // Добавляем закрывающую скобку после кода оператора
+            //{
+            //    phoneNumber = phoneNumber.Insert(7, ")");
+            //}
+            //if (phoneNumber.Length > 10) // Добавляем первый дефис после кода оператора
+            //{
+            //    phoneNumber = phoneNumber.Insert(10, "-");
+            //}
+            //if (phoneNumber.Length > 13) // Добавляем второй дефис после первых трех цифр номера
+            //{
+            //    phoneNumber = phoneNumber.Insert(13, "-");
+            //}
+
+            //if (phoneNumber.Length > MaxLength) // Ограничение длины номера телефона с маской
+            //{
+            //    phoneNumber = phoneNumber.Substring(0, MaxLength);
+            //}
+
+
+            //textTel.TextChanged -= textTel_TextChanged; // Удаляем обработчик временно
+            //textTel.Text = phoneNumber;
+            //textTel.SelectionStart = textTel.Text.Length; // Перемещаем курсор в конец текста
+            //textTel.TextChanged += textTel_TextChanged; // Восстанавливаем обработчик
         }
     }
 }

@@ -15,13 +15,13 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace СделаНо
 {
-    public partial class Master : Form
+    public partial class MasterForm : Form
     {
         private int selectId;
         private string fns1;
         private int idsotr;
         string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
-        public Master(string fns, int idsotr)
+        public MasterForm(string fns, int idsotr)
         {
             InitializeComponent();
             this.fns1 = fns;
@@ -32,23 +32,22 @@ namespace СделаНо
         {
 
         }
-        private void MainMaster_RowSelected(object sender, int selectId)
+        public void MainMaster_RowSelected(object sender, int selectId)
         {
             this.selectId = selectId; 
         }
         private void Master_Load(object sender, EventArgs e)
         {
-            
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
-            MainMaster spr = new MainMaster(this.idsotr);
-           
 
-            spr.RowSelected += MainMaster_RowSelected; // Подписываемся на событие
+            MainMaster spr = new MainMaster(this.idsotr);
+            spr.RowSelected += MainMaster_RowSelected;
             Controler(spr);
+            
             butBack.Visible = false;
         }
-        private void Controler(UserControl userControl)
+        public void Controler(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();

@@ -16,7 +16,6 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Authorization.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.DeviceType.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Manager.resources
-C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Master.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Material.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Model.resources
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.Directory.resources
@@ -110,3 +109,4 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\EPPlus.xml
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.MasterForm.resources

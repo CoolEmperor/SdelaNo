@@ -34,7 +34,7 @@ namespace СделаНо
 
                 if (adminCount == 0)
                 {
-                    SqlCommand createAdminQuery = new SqlCommand("INSERT INTO Сотрудник (ФИО, Логин, Пароль, Роль, Телефон, Адрес) VALUES (@ФИО, @Логин, @Пароль, 'Администратор', @Телефон, @Адрес)", connection);
+                    SqlCommand createAdminQuery = new SqlCommand("INSERT INTO Сотрудник (ФИО, Логин, Пароль, Роль, Телефон) VALUES (@ФИО, @Логин, @Пароль, 'Администратор', @Телефон)", connection);
                     createAdminQuery.Parameters.AddWithValue("@ФИО", "Администратор");
                     createAdminQuery.Parameters.AddWithValue("@Логин", "Администратор");
                     createAdminQuery.Parameters.AddWithValue("@Пароль", "Администратор");
@@ -65,7 +65,7 @@ namespace СделаНо
                                 managerForm.Show();
                                 break;
                             case "Мастер":
-                                Master masterForm = new Master(fns,idsotr);
+                                MasterForm masterForm = new MasterForm(fns,idsotr);
                                 masterForm.Show();
                                 break;
                         }

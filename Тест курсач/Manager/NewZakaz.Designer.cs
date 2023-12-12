@@ -126,7 +126,7 @@
             this.texttel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.texttel.FillColor = System.Drawing.Color.Silver;
             this.texttel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.texttel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.texttel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.texttel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.texttel.Location = new System.Drawing.Point(501, 302);
             this.texttel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -179,7 +179,7 @@
             this.textfio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textfio.FillColor = System.Drawing.Color.Silver;
             this.textfio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textfio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textfio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textfio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textfio.Location = new System.Drawing.Point(501, 258);
             this.textfio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -194,7 +194,7 @@
             // 
             this.textdate.Checked = true;
             this.textdate.FillColor = System.Drawing.Color.Silver;
-            this.textdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textdate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.textdate.Location = new System.Drawing.Point(501, 112);
             this.textdate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,12 +60,10 @@
             this.butEdit = new Guna.UI2.WinForms.Guna2Button();
             this.butDelete = new Guna.UI2.WinForms.Guna2Button();
             this.butSort = new Guna.UI2.WinForms.Guna2Button();
-            this.butFind = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxSort2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxFindFam = new Guna.UI2.WinForms.Guna2TextBox();
             this.butClear = new Guna.UI2.WinForms.Guna2Button();
-            this.butAll = new Guna.UI2.WinForms.Guna2Button();
             this.сотрудникTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
@@ -136,21 +134,21 @@
             // 
             this.data1.AllowUserToAddRows = false;
             this.data1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.data1.ColumnHeadersHeight = 35;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,14 +159,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.data1.DataSource = this.сотрудникBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data1.DefaultCellStyle = dataGridViewCellStyle12;
             this.data1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.Location = new System.Drawing.Point(18, 87);
             this.data1.Name = "data1";
@@ -305,7 +303,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1066, 282);
+            this.label7.Location = new System.Drawing.Point(1066, 294);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 24);
             this.label7.TabIndex = 21;
@@ -399,17 +397,17 @@
             // textTel
             // 
             this.textTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textTel.DefaultText = "+375";
+            this.textTel.DefaultText = "";
             this.textTel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textTel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textTel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textTel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textTel.FillColor = System.Drawing.Color.Gainsboro;
             this.textTel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textTel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTel.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textTel.ForeColor = System.Drawing.Color.Red;
             this.textTel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textTel.Location = new System.Drawing.Point(1172, 282);
+            this.textTel.Location = new System.Drawing.Point(1172, 294);
             this.textTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textTel.Name = "textTel";
             this.textTel.PasswordChar = '\0';
@@ -427,9 +425,9 @@
             this.butAdd.FillColor = System.Drawing.Color.PeachPuff;
             this.butAdd.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAdd.ForeColor = System.Drawing.Color.Black;
-            this.butAdd.Location = new System.Drawing.Point(1172, 375);
+            this.butAdd.Location = new System.Drawing.Point(1139, 383);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(237, 36);
+            this.butAdd.Size = new System.Drawing.Size(313, 36);
             this.butAdd.TabIndex = 29;
             this.butAdd.Text = "Добавить";
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
@@ -443,9 +441,9 @@
             this.butEdit.FillColor = System.Drawing.Color.PeachPuff;
             this.butEdit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butEdit.ForeColor = System.Drawing.Color.Black;
-            this.butEdit.Location = new System.Drawing.Point(1172, 417);
+            this.butEdit.Location = new System.Drawing.Point(1139, 425);
             this.butEdit.Name = "butEdit";
-            this.butEdit.Size = new System.Drawing.Size(237, 36);
+            this.butEdit.Size = new System.Drawing.Size(313, 36);
             this.butEdit.TabIndex = 30;
             this.butEdit.Text = "Редактировать";
             this.butEdit.Click += new System.EventHandler(this.butEdit_Click);
@@ -459,9 +457,9 @@
             this.butDelete.FillColor = System.Drawing.Color.PeachPuff;
             this.butDelete.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDelete.ForeColor = System.Drawing.Color.Black;
-            this.butDelete.Location = new System.Drawing.Point(1172, 459);
+            this.butDelete.Location = new System.Drawing.Point(1139, 467);
             this.butDelete.Name = "butDelete";
-            this.butDelete.Size = new System.Drawing.Size(237, 36);
+            this.butDelete.Size = new System.Drawing.Size(313, 36);
             this.butDelete.TabIndex = 31;
             this.butDelete.Text = "Удалить";
             this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
@@ -475,28 +473,12 @@
             this.butSort.FillColor = System.Drawing.Color.PeachPuff;
             this.butSort.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butSort.ForeColor = System.Drawing.Color.Black;
-            this.butSort.Location = new System.Drawing.Point(1172, 561);
+            this.butSort.Location = new System.Drawing.Point(1171, 571);
             this.butSort.Name = "butSort";
             this.butSort.Size = new System.Drawing.Size(237, 43);
             this.butSort.TabIndex = 32;
             this.butSort.Text = "Сортировать по ФИО";
             this.butSort.Click += new System.EventHandler(this.butSort_Click);
-            // 
-            // butFind
-            // 
-            this.butFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butFind.FillColor = System.Drawing.Color.PeachPuff;
-            this.butFind.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFind.ForeColor = System.Drawing.Color.Black;
-            this.butFind.Location = new System.Drawing.Point(1104, 668);
-            this.butFind.Name = "butFind";
-            this.butFind.Size = new System.Drawing.Size(172, 30);
-            this.butFind.TabIndex = 33;
-            this.butFind.Text = "Поиск по ФИО";
-            this.butFind.Click += new System.EventHandler(this.butFind_Click);
             // 
             // comboBoxSort2
             // 
@@ -511,7 +493,7 @@
             this.comboBoxSort2.Items.AddRange(new object[] {
             "По возрастанию",
             "По убыванию"});
-            this.comboBoxSort2.Location = new System.Drawing.Point(1170, 510);
+            this.comboBoxSort2.Location = new System.Drawing.Point(1169, 520);
             this.comboBoxSort2.Name = "comboBoxSort2";
             this.comboBoxSort2.Size = new System.Drawing.Size(305, 36);
             this.comboBoxSort2.TabIndex = 35;
@@ -520,7 +502,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1078, 510);
+            this.label8.Location = new System.Drawing.Point(1077, 520);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 24);
             this.label8.TabIndex = 34;
@@ -539,7 +521,7 @@
             this.textBoxFindFam.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFindFam.ForeColor = System.Drawing.Color.Red;
             this.textBoxFindFam.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxFindFam.Location = new System.Drawing.Point(1125, 630);
+            this.textBoxFindFam.Location = new System.Drawing.Point(1111, 644);
             this.textBoxFindFam.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFindFam.Name = "textBoxFindFam";
             this.textBoxFindFam.PasswordChar = '\0';
@@ -558,28 +540,12 @@
             this.butClear.FillColor = System.Drawing.Color.PeachPuff;
             this.butClear.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClear.ForeColor = System.Drawing.Color.Black;
-            this.butClear.Location = new System.Drawing.Point(1172, 330);
+            this.butClear.Location = new System.Drawing.Point(1172, 337);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(237, 31);
             this.butClear.TabIndex = 37;
             this.butClear.Text = "Очистить";
             this.butClear.Click += new System.EventHandler(this.butClear_Click);
-            // 
-            // butAll
-            // 
-            this.butAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butAll.FillColor = System.Drawing.Color.PeachPuff;
-            this.butAll.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butAll.ForeColor = System.Drawing.Color.Black;
-            this.butAll.Location = new System.Drawing.Point(1282, 668);
-            this.butAll.Name = "butAll";
-            this.butAll.Size = new System.Drawing.Size(206, 30);
-            this.butAll.TabIndex = 38;
-            this.butAll.Text = "Отобразить все";
-            this.butAll.Click += new System.EventHandler(this.butAll_Click);
             // 
             // сотрудникTableAdapter
             // 
@@ -590,12 +556,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 800);
-            this.Controls.Add(this.butAll);
             this.Controls.Add(this.butClear);
             this.Controls.Add(this.textBoxFindFam);
             this.Controls.Add(this.comboBoxSort2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.butFind);
             this.Controls.Add(this.butSort);
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butEdit);
@@ -656,12 +620,10 @@
         private Guna.UI2.WinForms.Guna2Button butEdit;
         private Guna.UI2.WinForms.Guna2Button butDelete;
         private Guna.UI2.WinForms.Guna2Button butSort;
-        private Guna.UI2.WinForms.Guna2Button butFind;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxSort2;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox textBoxFindFam;
         private Guna.UI2.WinForms.Guna2Button butClear;
-        private Guna.UI2.WinForms.Guna2Button butAll;
         private Тест_курсач.СделаНоDataSet сделаНоDataSet;
         private System.Windows.Forms.BindingSource сотрудникBindingSource;
         private Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;

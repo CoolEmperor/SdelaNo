@@ -43,7 +43,7 @@ namespace Тест_курсач.Master
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM Заказ Where ИдЗаказа = {selectId} And (Статус = 'На диагностике' OR Статус = 'На ремонте')";
+            string query = $"SELECT * FROM Заказ Where ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -356,13 +356,29 @@ namespace Тест_курсач.Master
                             textFindMat.Visible = false;
                             butMat.Visible = false;
                         }
+                        else if (status == "На ремонте")
+                        {
+                            butWork.Visible = false;
+                        }
+                        else if (status == "Диагностика окончена")
+                        {
+                            butWork.Visible = false;
+                            butMat.Visible = false;
+                            data3.Visible = false;
+                            label2.Visible = false;
+                        }
+                        else if (status == "Ремонт окончен")
+                        {
+                            butWork.Visible = false;
+                            butMat.Visible = false;
+                        }
                     }
                 }
             }
         }
         private void butDiagn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Диагностика окончен");
+            MessageBox.Show("Диагностика окончена");
             string query = $"UPDATE Заказ SET Статус = 'Диагностика окончена' WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -371,6 +387,13 @@ namespace Тест_курсач.Master
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+            butDiagn.Visible = false;
+            label7.Visible = false;
+            textFindWork.Visible = false;
+            data4.Visible = false;
+            label3.Visible = false;
+            butBack.Visible = false;
+            butWork.Visible = false;
         }
 
         private void butRepair_Click(object sender, EventArgs e)
@@ -390,6 +413,14 @@ namespace Тест_курсач.Master
                     command.ExecuteNonQuery();
                 }
             }
+            butBack.Visible = false;
+            butRepair.Visible = false;
+            label6.Visible = false;
+            textFindMat.Visible = false;
+            text1.Visible = false;
+            label5.Visible = false;
+            data5.Visible = false;
+            data2.Visible = true;
         }
     }
 }

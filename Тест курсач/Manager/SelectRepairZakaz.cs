@@ -80,12 +80,13 @@ namespace Тест_курсач.Manager
         private void butStart_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Заказ готов к выдаче");
-            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче' WHERE ИдЗаказа = {selectId};";
+            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче', Дата_конца = @CurrentDate WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
+                command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
                 command.ExecuteNonQuery();
             }
 

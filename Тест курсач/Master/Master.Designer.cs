@@ -1,6 +1,6 @@
 ﻿namespace СделаНо
 {
-    partial class Master
+    partial class MasterForm
     {
         /// <summary>
         /// Required designer variable.

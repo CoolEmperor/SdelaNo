@@ -31,7 +31,7 @@ namespace Тест_курсач.Manager
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM ЗаказДляУчетаЗаказовНаРемонт Where ИдЗаказа = {selectId}";
+            string query = $"SELECT * FROM ЗаказДляВыдачиЗаказов Where ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -65,7 +65,7 @@ namespace Тест_курсач.Manager
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand zakazQuery = new SqlCommand($"SELECT ИдЗаказа, Статус FROM ЗаказДляУчетаЗаказовНаДиагностику WHERE ИдЗаказа = {selectId}", connection);
+                SqlCommand zakazQuery = new SqlCommand($"SELECT ИдЗаказа, Статус FROM ЗаказДляВыдачиЗаказов WHERE ИдЗаказа = {selectId}", connection);
 
                 using (SqlDataReader reader = zakazQuery.ExecuteReader())
                 {
@@ -75,8 +75,14 @@ namespace Тест_курсач.Manager
                         if (status == "Выдан")
                         {
                             butStart.Visible = false;
+                            //butReport.Visible = false;
+                        }
+                        else if (status == "Готов к выдаче")
+                        {
+                            //butStart.Visible = false;
                             butReport.Visible = false;
                         }
+
                     }
                 }
             }
@@ -88,25 +94,62 @@ namespace Тест_курсач.Manager
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Заказ выдан");
-            string query = $"UPDATE Заказ SET Статус = 'Выдан', Дата_выдачи = GETDATE() WHERE ИдЗаказа = {selectId};";
+            uppAccZakaz();
+            report();
+        }
+
+        private void uppAccZakaz()
+        {
+            int lastReceiptNumber = 0;
+
+            try
+            {
+                string query = "SELECT MAX(Номер_квитанции) AS Последний_номер FROM Заказ;";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != DBNull.Value)
+                        {
+                            lastReceiptNumber = Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            lastReceiptNumber = 1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+            }
+
+            string query1 = $"UPDATE Заказ SET Статус = 'Выдан', Номер_квитанции = @Номер_квитанции, Дата_выдачи = GETDATE() WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query1, connection);
                 connection.Open();
+                command.Parameters.AddWithValue("@Номер_квитанции", lastReceiptNumber);
                 command.ExecuteNonQuery();
             }
         }
 
-        private void butReport_Click(object sender, EventArgs e)
+        private void report()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             int orderId = selectId;
 
             // Путь к вашему Excel-шаблону
             string templateFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция.xlsx";
-            string outputFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Отчет_Заказ_" + orderId + ".xlsx";
+
+            string outputFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция " + selectId + ".xlsx";
 
             try
             {
@@ -121,8 +164,8 @@ namespace Тест_курсач.Manager
                             С.ФИО AS ФИОМастера, ВТ.Название AS НазваниеВида, З.Статус, З.Аванс, З.Скидка, З.ФИО_Клиента, З.Номер_телефона, 
                             З.Стоимость_материалов, З.Стоимость_работ, З.Общая_стоимость, 
                             М.Название AS НазваниеМодели, Т.Название AS НазваниеТипа,
-                            РР.Название AS НазваниеРаботы, РР.Описание AS ОписаниеРаботы, РР.Стоимость AS СтоимостьРаботы,
-                            МТ.Название AS НазваниеМатериала, МТ.Стоимость AS СтоимостьМатериала, ЗМ.Количество AS КоличествоМатериала
+                            РР.ИдРаботы, РР.Название AS НазваниеРаботы, РР.Описание AS ОписаниеРаботы, РР.Стоимость AS СтоимостьРаботы,
+                            МТ.ИдМатериала, МТ.Название AS НазваниеМатериала, МТ.Стоимость AS СтоимостьМатериала, ЗМ.Количество AS КоличествоМатериала
                         FROM 
                             Заказ З
                         LEFT JOIN 
@@ -156,12 +199,10 @@ namespace Тест_курсач.Manager
                             {
                                 if (reader.HasRows)
                                 {
-                                    int rowWork = 14; // Начало строк для записи информации о работах
-                                    int rowMaterial = 24; // Начало строк для записи информации о материалах
 
                                     while (reader.Read())
                                     {
-
+                                        worksheet.Cells["E1"].Value = reader["Номер_квитанции"].ToString();
                                         worksheet.Cells["C4"].Value = reader["ФИО_Клиента"].ToString();
                                         worksheet.Cells["C5"].Value = reader["Номер_телефона"].ToString();
                                         worksheet.Cells["C6"].Value = reader["НазваниеВида"].ToString();
@@ -174,23 +215,57 @@ namespace Тест_курсач.Manager
                                         worksheet.Cells["E8"].Value = reader["ФИОМастера"].ToString();
                                         worksheet.Cells["E9"].Value = reader["Скидка"].ToString();
                                         worksheet.Cells["E10"].Value = reader["Общая_стоимость"].ToString();
-                                        reader.NextResult();
-                                        do
-                                        {
-                                            worksheet.Cells[rowWork, 2].Value = reader["НазваниеРаботы"].ToString();
-                                            worksheet.Cells[rowWork, 3].Value = reader["ОписаниеРаботы"].ToString();
-                                            worksheet.Cells[rowWork, 4].Value = reader["СтоимостьРаботы"].ToString();
-                                            rowWork++;
-                                        } while (reader.Read());
-                                        reader.NextResult();
-                                        do
-                                        {
-                                            worksheet.Cells[rowMaterial, 2].Value = reader["НазваниеМатериала"].ToString();
-                                            worksheet.Cells[rowMaterial, 4].Value = reader["СтоимостьМатериала"].ToString();
-                                            worksheet.Cells[rowMaterial, 3].Value = reader["КоличествоМатериала"].ToString();
-                                            rowMaterial++;
-                                        } while (reader.Read());
 
+                                        Dictionary<int, string> works = new Dictionary<int, string>();
+                                        Dictionary<int, string> materials = new Dictionary<int, string>();
+
+                                        while (reader.Read())
+                                        {
+
+                                            if (!reader.IsDBNull(reader.GetOrdinal("НазваниеРаботы")))
+                                            {
+                                                int workId = Convert.ToInt32(reader["ИдРаботы"]); // Предположим, что IdРаботы уникален
+                                                string workInfo = $"{reader["НазваниеРаботы"]}, {reader["ОписаниеРаботы"]}, {reader["СтоимостьРаботы"]}";
+
+                                                if (!works.ContainsKey(workId))
+                                                {
+                                                    works.Add(workId, workInfo);
+                                                }
+                                            }
+
+                                            if (!reader.IsDBNull(reader.GetOrdinal("НазваниеМатериала")))
+                                            {
+                                                int materialId = Convert.ToInt32(reader["ИдМатериала"]); // Предположим, что IdМатериала уникален
+                                                string materialInfo = $"{reader["НазваниеМатериала"]}, {reader["СтоимостьМатериала"]}, {reader["КоличествоМатериала"]}";
+
+                                                if (!materials.ContainsKey(materialId))
+                                                {
+                                                    materials.Add(materialId, materialInfo);
+                                                }
+                                            }
+                                        }
+
+                                        // Запись данных из словарей в Excel после окончания цикла while
+                                        int rowWork = 14;
+                                        int rowMaterial = 24;
+
+                                        foreach (var work in works)
+                                        {
+                                            string[] workInfo = work.Value.Split(',');
+                                            worksheet.Cells[rowWork, 2].Value = workInfo[0].Trim();
+                                            worksheet.Cells[rowWork, 3].Value = workInfo[1].Trim();
+                                            worksheet.Cells[rowWork, 4].Value = workInfo[2].Trim();
+                                            rowWork++;
+                                        }
+
+                                        foreach (var material in materials)
+                                        {
+                                            string[] materialInfo = material.Value.Split(',');
+                                            worksheet.Cells[rowMaterial, 2].Value = materialInfo[0].Trim();
+                                            worksheet.Cells[rowMaterial, 4].Value = materialInfo[1].Trim();
+                                            worksheet.Cells[rowMaterial, 3].Value = materialInfo[2].Trim();
+                                            rowMaterial++;
+                                        }
                                     }
 
                                     package.SaveAs(new FileInfo(outputFilePath));
@@ -209,6 +284,10 @@ namespace Тест_курсач.Manager
             {
                 MessageBox.Show("Ошибка: " + ex.Message);
             }
+        }
+        private void butReport_Click(object sender, EventArgs e)
+        {
+            report();
         }
     }
 }
