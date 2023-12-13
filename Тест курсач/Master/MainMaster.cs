@@ -35,12 +35,6 @@ namespace Тест_курсач.Master
                 data1.DataSource = table;
             }
         }
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             FillDataGridView();

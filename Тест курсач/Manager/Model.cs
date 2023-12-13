@@ -40,11 +40,6 @@ namespace СделаНо
         {
             ClearInputFields();
         }
-        private bool IsValidName(string name)
-        {
-            string pattern = @"^([А-ЯA-Z])([а-яa-z]+)$";
-            return Regex.IsMatch(name, pattern);
-        }
         private bool IsValidText(string name)
         {
             string pattern = @"^[А-ЯЁ][а-яё\s,]+$";
@@ -61,12 +56,6 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            //if (!IsValidName(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы.");
-            //    return;
-            //}
-            //else 
             if(!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -106,12 +95,6 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            //if (!IsValidName(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы.");
-            //    return;
-            //}
-            //else 
             if(!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -204,11 +187,8 @@ namespace СделаНо
 
         private void data1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedEmployeeId;
             if (data1.CurrentRow != null)
             {
-                selectedEmployeeId = Convert.ToInt32(data1.CurrentRow.Cells[0].Value);
-
                 textName.Text = data1.CurrentRow.Cells[1].Value.ToString();
                 textDesc.Text = data1.CurrentRow.Cells[2].Value.ToString();
             }

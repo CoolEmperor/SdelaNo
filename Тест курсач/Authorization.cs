@@ -20,7 +20,7 @@ namespace СделаНо
             InitializeComponent();
         }
 
-        private void aut_Click(object sender, EventArgs e)
+        private void butAut_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
@@ -78,18 +78,11 @@ namespace СделаНо
             }
             usernameTextBox.Clear();
             passwordTextBox.Clear();
-
-            
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void butExit(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

@@ -23,10 +23,6 @@ namespace СделаНо
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        private void Spr1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void butTech_Click(object sender, EventArgs e)
         {

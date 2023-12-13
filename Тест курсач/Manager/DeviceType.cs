@@ -47,11 +47,6 @@ namespace СделаНо
         {
             ClearInputFields();
         }
-        private bool IsValidName(string name)
-        {
-            string pattern = @"^[А-Я][а-я]+$";
-            return Regex.IsMatch(name, pattern);
-        }
         private bool IsValidText(string name)
         {
             string pattern = @"^[А-ЯЁ][а-яё\s,]+$";
@@ -68,11 +63,6 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            //if (!IsValidName(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-            //    return;
-            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -112,11 +102,6 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            //if (!IsValidName(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-            //    return;
-            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -134,8 +119,8 @@ namespace СделаНо
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ИдТипа", selectedRowId);
-                        command.Parameters.AddWithValue("@Название", textName.Text);
-                        command.Parameters.AddWithValue("@Описание", textDesc.Text);
+                        command.Parameters.AddWithValue("@Название", name);
+                        command.Parameters.AddWithValue("@Описание", desc);
 
                         command.ExecuteNonQuery();
                     }
@@ -219,11 +204,8 @@ namespace СделаНо
 
         private void data1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedEmployeeId;
             if (data1.CurrentRow != null)
             {
-                selectedEmployeeId = Convert.ToInt32(data1.CurrentRow.Cells[0].Value);
-
                 textName.Text = data1.CurrentRow.Cells[1].Value.ToString();
                 textDesc.Text = data1.CurrentRow.Cells[2].Value.ToString();
             }

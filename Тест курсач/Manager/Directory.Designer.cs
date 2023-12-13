@@ -148,7 +148,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Directory";
             this.Size = new System.Drawing.Size(1250, 730);
-            this.Load += new System.EventHandler(this.Spr1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -225,6 +225,12 @@
     <Compile Include="Manager\SelectRepairZakaz.Designer.cs">
       <DependentUpon>SelectRepairZakaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Technick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Technick.Designer.cs">
+      <DependentUpon>Technick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\MainMaster.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\SelectRepairZakaz.resx">
       <DependentUpon>SelectRepairZakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Technick.resx">
+      <DependentUpon>Technick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>

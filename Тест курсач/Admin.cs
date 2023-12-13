@@ -23,12 +23,6 @@ namespace СделаНо
         {
             InitializeComponent();
             fns1 = fns;
-            //textTel.TextChanged += textTel_TextChanged;
-        }
-        
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -39,8 +33,6 @@ namespace СделаНо
 
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
-            //textTel.KeyPress += textTel_KeyPress;
-            //textTel.TextChanged += textTel_TextChanged;
         }
 
         private void butExit_Click(object sender, EventArgs e)
@@ -161,11 +153,6 @@ namespace СделаНо
                     MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
                     return;
                 }
-                //else if (!IsValidTelefon(tel))
-                //{
-                //    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
-                //    return;
-                //}
                 else
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
@@ -265,11 +252,8 @@ namespace СделаНо
        
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedEmployeeId;
             if (data1.SelectedRows.Count > 0)
             {
-                selectedEmployeeId = Convert.ToInt32(data1.CurrentRow.Cells[0].Value);
-
                 textFIO.Text = data1.CurrentRow.Cells[1].Value.ToString();
                 textLogin.Text = data1.CurrentRow.Cells[2].Value.ToString();
                 textPass.Text = data1.CurrentRow.Cells[3].Value.ToString();

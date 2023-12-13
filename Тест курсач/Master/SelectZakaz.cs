@@ -156,7 +156,6 @@ namespace Тест_курсач.Master
             butDiagn.Visible = false;
             CheckZakaz();
         }
-        //материалы
         private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
@@ -233,7 +232,6 @@ namespace Тест_курсач.Master
             }
         }
 
-        //работы
         private void data4_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -305,29 +303,29 @@ namespace Тест_курсач.Master
 
         private void textFindMat_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = textFindMat.Text.Trim(); // Получаем текст из TextBox для поиска
+            string searchValue = textFindMat.Text.Trim();
 
             if (!string.IsNullOrEmpty(searchValue))
             {
-                материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
+                материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
             }
             else
             {
-                материалыДляМастераBindingSource.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
+                материалыДляМастераBindingSource.Filter = "";
             }
         }
 
         private void textFindWork_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = textFindWork.Text.Trim(); // Получаем текст из TextBox для поиска
+            string searchValue = textFindWork.Text.Trim();
 
             if (!string.IsNullOrEmpty(searchValue))
             {
-                видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue); // Фильтрация по заданному условию
+                видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
             }
             else
             {
-                видремонтныхработBindingSource1.Filter = ""; // Очищаем фильтр, чтобы отобразить все данные
+                видремонтныхработBindingSource1.Filter = "";
             }
         }
 
@@ -365,6 +363,11 @@ namespace Тест_курсач.Master
                             butMat.Visible = false;
                             data3.Visible = false;
                             label2.Visible = false;
+                        }
+                        else if (status == "Отказ в ремонте")
+                        {
+                            butWork.Visible = false;
+                            butMat.Visible = false;
                         }
                         else if (status == "Ремонт окончен")
                         {

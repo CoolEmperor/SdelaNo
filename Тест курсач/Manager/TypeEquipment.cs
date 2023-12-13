@@ -31,7 +31,6 @@ namespace СделаНо
         private void FillDataGridView()
         {
             string query = "SELECT * FROM ВидТехникиДляМенеджера";
-            //string query = "SELECT * FROM [Вид_техники]";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -48,11 +47,6 @@ namespace СделаНо
         private void butClear_Click(object sender, EventArgs e)
         {
             ClearInputFields();
-        }
-        private bool IsValidName(string name)
-        {
-            string pattern = @"^[А-Я][а-я]+$";
-            return Regex.IsMatch(name, pattern);
         }
         private bool IsValidText(string name)
         {
@@ -73,11 +67,6 @@ namespace СделаНо
             string type = comboType.SelectedValue.ToString();
             string model = comboModel.SelectedValue.ToString();
 
-            //if (!IsValidText(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-            //    return;
-            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -107,7 +96,6 @@ namespace СделаНо
                 }
             }
         }
-
         private void butEdit_Click(object sender, EventArgs e)
         {
             string name = textName.Text;
@@ -115,11 +103,6 @@ namespace СделаНо
             string type = comboType.SelectedValue.ToString();
             string model = comboModel.SelectedValue.ToString();
 
-            //if (!IsValidName(name))
-            //{
-            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-            //    return;
-            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -152,7 +135,6 @@ namespace СделаНо
                 }
             }
         }
-
         private void butDelete_Click(object sender, EventArgs e)
         {
             int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
@@ -173,7 +155,6 @@ namespace СделаНо
                 MessageBox.Show("Данные удалены успешно.");
             }
         }
-
         private void butSort_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -209,11 +190,8 @@ namespace СделаНо
 
         private void data1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedEmployeeId;
             if (data1.CurrentRow != null && data1.CurrentRow.Cells[3].Value != null)
             {
-                selectedEmployeeId = Convert.ToInt32(data1.CurrentRow.Cells[0].Value);
-
                 textName.Text = data1.CurrentRow.Cells[1].Value.ToString();
                 textDesc.Text = data1.CurrentRow.Cells[2].Value.ToString();
                 comboType.Text = data1.CurrentRow.Cells[3].Value.ToString();
@@ -222,7 +200,7 @@ namespace СделаНо
         }
         private void FillComboModel()
         {
-            string query = "SELECT Название, ИдМодели FROM Модель"; // SQL-запрос для выбора мастеров
+            string query = "SELECT Название, ИдМодели FROM Модель";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -231,13 +209,13 @@ namespace СделаНо
                 adapter.Fill(dataSet, "Модель");
 
                 comboModel.DataSource = dataSet.Tables["Модель"];
-                comboModel.DisplayMember = "Название"; // Укажите имя поля, которое нужно отображать в комбо-боксе
-                comboModel.ValueMember = "ИдМодели"; // Укажите имя поля, которое будет использоваться как значение
+                comboModel.DisplayMember = "Название";
+                comboModel.ValueMember = "ИдМодели";
             }
         }
         private void FillComboType()
         {
-            string query = "SELECT Название, ИдТипа FROM Тип_устройства"; // SQL-запрос для выбора мастеров
+            string query = "SELECT Название, ИдТипа FROM Тип_устройства";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -246,11 +224,10 @@ namespace СделаНо
                 adapter.Fill(dataSet, "Тип_устройства");
 
                 comboType.DataSource = dataSet.Tables["Тип_устройства"];
-                comboType.DisplayMember = "Название"; // Укажите имя поля, которое нужно отображать в комбо-боксе
-                comboType.ValueMember = "ИдТипа"; // Укажите имя поля, которое будет использоваться как значение
+                comboType.DisplayMember = "Название";
+                comboType.ValueMember = "ИдТипа";
             }
         }
-
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
             string filterText = textBoxFind.Text;
@@ -262,7 +239,7 @@ namespace СделаНо
             }
             else
             {
-                видТехникиДляМенеджераBindingSource.RemoveFilter(); // Очищаем фильтр, если строка поиска пуста
+                видТехникиДляМенеджераBindingSource.RemoveFilter();
             }
         }
     }

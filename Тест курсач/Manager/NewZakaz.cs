@@ -20,11 +20,11 @@ namespace Тест_курсач.Manager
     public partial class NewZakaz : UserControl
     {
         string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
+        public int id;
         public NewZakaz()
         {
             InitializeComponent();
             FillComboMaster();
-            FillComboTechnick();
         }
         private bool IsValidName(string name)
         {
@@ -39,7 +39,7 @@ namespace Тест_курсач.Manager
         }
         private void FillComboMaster()
         {
-            string query = "SELECT ФИО, ИдСотрудника FROM Сотрудник WHERE Роль = 'Мастер'"; // SQL-запрос для выбора мастеров
+            string query = "SELECT ФИО, ИдСотрудника FROM Сотрудник WHERE Роль = 'Мастер'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -48,31 +48,17 @@ namespace Тест_курсач.Manager
                 adapter.Fill(dataSet, "Сотрудник");
 
                 combomaster.DataSource = dataSet.Tables["Сотрудник"];
-                combomaster.DisplayMember = "ФИО"; // Укажите имя поля, которое нужно отображать в комбо-боксе
-                combomaster.ValueMember = "ИдСотрудника"; // Укажите имя поля, которое будет использоваться как значение
+                combomaster.DisplayMember = "ФИО";
+                combomaster.ValueMember = "ИдСотрудника";
             }
         }
-        private void FillComboTechnick()
-        {
-            string query = "SELECT Название, ИдВида FROM Вид_техники"; // SQL-запрос для выбора мастеров
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Вид_техники");
-
-                combotechnick.DataSource = dataSet.Tables["Вид_техники"];
-                combotechnick.DisplayMember = "Название"; // Укажите имя поля, которое нужно отображать в комбо-боксе
-                combotechnick.ValueMember = "ИдВида"; // Укажите имя поля, которое будет использоваться как значение
-            }
-        }
+        
         private void butAcceptZakaz_Click(object sender, EventArgs e)
         {
             try
             {
                 if (string.IsNullOrWhiteSpace(textdate.Text) || string.IsNullOrWhiteSpace(combomaster.Text)
-                        || string.IsNullOrWhiteSpace(combotechnick.Text) || string.IsNullOrWhiteSpace(textfio.Text)
+                        || string.IsNullOrWhiteSpace(textTypeEq.Text) || string.IsNullOrWhiteSpace(textfio.Text)
                         || string.IsNullOrWhiteSpace(texttel.Text))
                 {
                     MessageBox.Show("Пожалуйста, заполните все поля.");
@@ -80,7 +66,7 @@ namespace Тест_курсач.Manager
                 }
                 string date = textdate.Value.ToString();
                 string master = combomaster.SelectedValue.ToString();
-                string technic = combotechnick.SelectedValue.ToString();
+                int technic = id;
                 string FIO = textfio.Text;
                 string tel = texttel.Text;
 
@@ -119,6 +105,7 @@ namespace Тест_курсач.Manager
                 
                 textfio.Clear();
                 texttel.Clear();
+                textTypeEq.Clear();
 
             }
             catch (System.Data.SqlClient.SqlException)
@@ -127,10 +114,15 @@ namespace Тест_курсач.Manager
                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void NewZakaz_Load(object sender, EventArgs e)
+        private void TechnickIdSelectedHandler(int selectedId)
         {
-
+            id = selectedId;
+        }
+        private void CheckTechnick_Click(object sender, EventArgs e)
+        {
+            Technick tch = new Technick(textTypeEq, id);
+            tch.TechnickIdSelected += TechnickIdSelectedHandler;
+            tch.Show();
         }
     }
 }

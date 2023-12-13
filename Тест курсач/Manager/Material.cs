@@ -218,11 +218,8 @@ namespace СделаНо
 
         private void data1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedEmployeeId;
             if (data1.CurrentRow != null)
             {
-                selectedEmployeeId = Convert.ToInt32(data1.CurrentRow.Cells[0].Value);
-
                 textName.Text = data1.CurrentRow.Cells[1].Value.ToString();
                 textCost.Text = data1.CurrentRow.Cells[2].Value.ToString();
             }

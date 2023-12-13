@@ -50,7 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1219, 63);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // guna2Button1
             // 
@@ -67,13 +66,13 @@
             this.guna2Button1.Size = new System.Drawing.Size(96, 31);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Выход";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button1.Click += new System.EventHandler(this.butExit);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(100, 18);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(244, 27);
             this.label1.TabIndex = 0;
@@ -142,7 +141,7 @@
             this.aut.Size = new System.Drawing.Size(251, 66);
             this.aut.TabIndex = 5;
             this.aut.Text = "Войти";
-            this.aut.Click += new System.EventHandler(this.aut_Click);
+            this.aut.Click += new System.EventHandler(this.butAut_Click);
             // 
             // pictureBox1
             // 
@@ -166,6 +165,7 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

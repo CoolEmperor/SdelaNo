@@ -110,3 +110,4 @@ C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест �
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\EPPlus.xml
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\СделаНо.MasterForm.resources
+C:\Users\dimas\OneDrive\Рабочий стол\Тест курсач\Тест курсач\obj\Debug\Тест_курсач.Manager.Technick.resources

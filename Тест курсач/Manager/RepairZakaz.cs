@@ -53,10 +53,5 @@ namespace Тест_курсач.Manager
             spr.RowSelected += MainRepairZakaz_RowSelected;
             Controler(spr);
         }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

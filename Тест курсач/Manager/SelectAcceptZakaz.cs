@@ -75,11 +75,9 @@ namespace Тест_курсач.Manager
                         if (status == "Выдан")
                         {
                             butStart.Visible = false;
-                            //butReport.Visible = false;
                         }
                         else if (status == "Готов к выдаче")
                         {
-                            //butStart.Visible = false;
                             butReport.Visible = false;
                         }
 
@@ -90,6 +88,7 @@ namespace Тест_курсач.Manager
         private void SelectAcceptZakaz_Load(object sender, EventArgs e)
         {
             CheckZakaz();
+
         }
 
         private void butStart_Click(object sender, EventArgs e)
@@ -146,7 +145,6 @@ namespace Тест_курсач.Manager
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             int orderId = selectId;
 
-            // Путь к вашему Excel-шаблону
             string templateFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция.xlsx";
 
             string outputFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция " + selectId + ".xlsx";
@@ -156,7 +154,7 @@ namespace Тест_курсач.Manager
                 FileInfo templateFile = new FileInfo(templateFilePath);
                 using (ExcelPackage package = new ExcelPackage(templateFile))
                 {
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets["Квитанция"]; // Укажите название листа в файле Excel
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets["Квитанция"];
 
                     string query = @"
                         SELECT 
@@ -224,7 +222,7 @@ namespace Тест_курсач.Manager
 
                                             if (!reader.IsDBNull(reader.GetOrdinal("НазваниеРаботы")))
                                             {
-                                                int workId = Convert.ToInt32(reader["ИдРаботы"]); // Предположим, что IdРаботы уникален
+                                                int workId = Convert.ToInt32(reader["ИдРаботы"]); 
                                                 string workInfo = $"{reader["НазваниеРаботы"]}, {reader["ОписаниеРаботы"]}, {reader["СтоимостьРаботы"]}";
 
                                                 if (!works.ContainsKey(workId))
@@ -235,7 +233,7 @@ namespace Тест_курсач.Manager
 
                                             if (!reader.IsDBNull(reader.GetOrdinal("НазваниеМатериала")))
                                             {
-                                                int materialId = Convert.ToInt32(reader["ИдМатериала"]); // Предположим, что IdМатериала уникален
+                                                int materialId = Convert.ToInt32(reader["ИдМатериала"]);
                                                 string materialInfo = $"{reader["НазваниеМатериала"]}, {reader["СтоимостьМатериала"]}, {reader["КоличествоМатериала"]}";
 
                                                 if (!materials.ContainsKey(materialId))
@@ -245,7 +243,6 @@ namespace Тест_курсач.Manager
                                             }
                                         }
 
-                                        // Запись данных из словарей в Excel после окончания цикла while
                                         int rowWork = 14;
                                         int rowMaterial = 24;
 

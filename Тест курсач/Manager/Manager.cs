@@ -61,17 +61,6 @@ namespace СделаНо
         private void butExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            //this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void butDel_Click(object sender, EventArgs e)
