@@ -25,7 +25,7 @@ namespace Тест_курсач.Master
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM Заказ WHERE ИдСотрудника = {idsotr} AND Статус NOT IN ('Выдан', 'Готов к выдаче')";
+            string query = $"SELECT * FROM ЗаказДляМастера WHERE ИдСотрудника = {idsotr} AND Статус NOT IN ('Выдан', 'Готов к выдаче')";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -48,7 +48,7 @@ namespace Тест_курсач.Master
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM Заказ Where Статус = 'На диагностике' And ИдСотрудника = {idsotr}";
+            string query = $"SELECT * FROM ЗаказДляМастера WHERE Статус = 'На диагностике' And ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -60,7 +60,7 @@ namespace Тест_курсач.Master
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM Заказ Where Статус = 'На ремонте' And ИдСотрудника = {idsotr}";
+            string query = $"SELECT * FROM ЗаказДляМастера WHERE Статус = 'На ремонте' And ИдСотрудника = {idsotr}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);

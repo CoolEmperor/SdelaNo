@@ -144,7 +144,7 @@
             this.butBack.Text = "Вернуться назад";
             this.butBack.Click += new System.EventHandler(this.butBack_Click);
             // 
-            // Master
+            // MasterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,9 +155,9 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Master";
+            this.Name = "MasterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Master";
+            this.Text = "Мастер";
             this.Load += new System.EventHandler(this.Master_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

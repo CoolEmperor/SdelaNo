@@ -28,7 +28,6 @@ namespace Тест_курсач.Manager
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Заказ в ремонте");
             if (textAvans == null)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -52,9 +51,14 @@ namespace Тест_курсач.Manager
                             // Дополнительная обработка исключения
                         }
                     }
+                    label1.Visible = false;
+                    textAvans.Visible = false;
+                    butStart.Visible = false;
+                    butEnd.Visible = false;
+                    MessageBox.Show("Принятие в ремонт произведено");
                 }
             }
-            else
+            else if (textAvans != null)
             {
                 string cost = textAvans.Text;
                 if (!IsValidDecimal(cost))
@@ -74,8 +78,14 @@ namespace Тест_курсач.Manager
                         command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
                         command.ExecuteNonQuery();
                     }
+                    label1.Visible = false;
+                    textAvans.Visible = false;
+                    butStart.Visible = false;
+                    butEnd.Visible = false;
+                    MessageBox.Show("Принятие в ремонт произведено");
                 }
             }
+            
         }
         private bool IsValidDecimal(string input)
         {
@@ -93,6 +103,11 @@ namespace Тест_курсач.Manager
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+            label1.Visible = false;
+            textAvans.Visible = false;
+            butStart.Visible = false;
+            butEnd.Visible = false;
+            MessageBox.Show("Отказ от ремонта произведен");
         }
 
         private void SelectDiagnZakaz_Load(object sender, EventArgs e)

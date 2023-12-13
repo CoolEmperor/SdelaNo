@@ -68,11 +68,11 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            if (!IsValidName(name))
-            {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-                return;
-            }
+            //if (!IsValidName(name))
+            //{
+            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+            //    return;
+            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -112,11 +112,11 @@ namespace СделаНо
             string name = textName.Text;
             string desc = textDesc.Text;
 
-            if (!IsValidName(name))
-            {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-                return;
-            }
+            //if (!IsValidName(name))
+            //{
+            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+            //    return;
+            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");

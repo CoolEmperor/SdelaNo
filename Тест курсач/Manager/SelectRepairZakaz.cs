@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,10 +78,21 @@ namespace Тест_курсач.Manager
                 }
             }
         }
+        private bool IsValidDecimal(string input)
+        {
+            string pattern = @"^[-+]?\d*\.?\d+$";
+            return Regex.IsMatch(input, pattern);
+        }
         private void butStart_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Заказ готов к выдаче");
-            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче', Дата_конца = @CurrentDate WHERE ИдЗаказа = {selectId};";
+            string cost = textDisc.Text;
+            if (!IsValidDecimal(cost))
+            {
+                MessageBox.Show("Аванс должен быть числовым значением (десятичные числа указываются точкой).");
+                return;
+            }
+            
+            string query = $"UPDATE Заказ SET Статус = 'Готов к выдаче', Скидка = {cost},Дата_конца = @CurrentDate WHERE ИдЗаказа = {selectId};";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -89,7 +101,10 @@ namespace Тест_курсач.Manager
                 command.Parameters.AddWithValue("@CurrentDate", DateTime.Today);
                 command.ExecuteNonQuery();
             }
-
+            label1.Visible = false;
+            textDisc.Visible = false;
+            butStart.Visible = false;
+            MessageBox.Show("Заказ готов к выдаче");
         }
     }
 }

@@ -116,6 +116,9 @@ namespace Тест_курсач.Manager
                         MessageBox.Show("Данные добавлены успешно.");
                     }
                 }
+                
+                textfio.Clear();
+                texttel.Clear();
 
             }
             catch (System.Data.SqlClient.SqlException)

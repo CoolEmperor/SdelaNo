@@ -43,7 +43,7 @@ namespace Тест_курсач.Master
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM Заказ Where ИдЗаказа = {selectId}";
+            string query = $"SELECT * FROM ЗаказДляМастера Where ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -62,8 +62,7 @@ namespace Тест_курсач.Master
                 adapter1.Fill(table1);
                 data2.DataSource = table1;
             }
-
-            string query2 = $@"SELECT * FROM МатериалыДляМастера";
+            string query2 = $@"SELECT МатериалыДляМастера.* FROM МатериалыДляМастера JOIN Затраченный_материал ON МатериалыДляМастера.ИдМатериала = Затраченный_материал.ИдМатериала JOIN Заказ ON Затраченный_материал.ИдЗаказа = Заказ.ИдЗаказа Where Заказ.ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

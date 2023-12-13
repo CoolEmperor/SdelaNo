@@ -73,11 +73,11 @@ namespace СделаНо
             string type = comboType.SelectedValue.ToString();
             string model = comboModel.SelectedValue.ToString();
 
-            if (!IsValidName(name))
-            {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-                return;
-            }
+            //if (!IsValidText(name))
+            //{
+            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+            //    return;
+            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
@@ -115,11 +115,11 @@ namespace СделаНо
             string type = comboType.SelectedValue.ToString();
             string model = comboModel.SelectedValue.ToString();
 
-            if (!IsValidName(name))
-            {
-                MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
-                return;
-            }
+            //if (!IsValidName(name))
+            //{
+            //    MessageBox.Show("Название должно начинаться с большой буквы и быть на русском языке.");
+            //    return;
+            //}
             if (!IsValidText(desc))
             {
                 MessageBox.Show("Описание должно начинаться с большой буквы и быть на русском языке.");
