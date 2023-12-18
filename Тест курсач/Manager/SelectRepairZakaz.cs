@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -15,6 +16,7 @@ namespace Тест_курсач.Manager
 {
     public partial class SelectRepairZakaz : UserControl
     {
+        
         string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
         int selectId;
         public SelectRepairZakaz(int selectId)
@@ -73,6 +75,8 @@ namespace Тест_курсач.Manager
                         if (status == "На ремонте")
                         {
                             butStart.Visible = false;
+                            textDisc.Visible = false;
+                            label1.Visible = false;
                         }
                     }
                 }

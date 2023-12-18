@@ -147,7 +147,7 @@
             this.butZakRep.Name = "butZakRep";
             this.butZakRep.Size = new System.Drawing.Size(245, 63);
             this.butZakRep.TabIndex = 8;
-            this.butZakRep.Text = "Заказы на ремонте";
+            this.butZakRep.Text = "Заказы в ремонте";
             this.butZakRep.Click += new System.EventHandler(this.butZakRep_Click);
             // 
             // butZakDiag

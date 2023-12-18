@@ -99,7 +99,7 @@ namespace Тест_курсач.Manager
                             command.ExecuteNonQuery();
                         }
 
-                        MessageBox.Show("Данные добавлены успешно.");
+                        MessageBox.Show("Заказ принят.");
                     }
                 }
                 

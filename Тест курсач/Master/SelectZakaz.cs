@@ -93,6 +93,7 @@ namespace Тест_курсач.Master
         }
         private void butWork_Click(object sender, EventArgs e)
         {
+            butWork.Visible = false;
             label2.Visible = false;
             data3.Visible = false;
             butMat.Visible = false;
@@ -104,7 +105,9 @@ namespace Тест_курсач.Master
             label7.Visible = true;
             textFindWork.Visible = true;
             butDiagn.Visible = true;
-            MessageBox.Show("Для добавление работы, кликните 2 раза по таблице 'Работы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемая работа'");            
+            MessageBox.Show("Для добавление работы, кликните 2 раза по таблице 'Работы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемая работа'");
+
+            data2.MouseDoubleClick += data2_MouseDoubleClick;
         }
 
         private void butMat_Click(object sender, EventArgs e)
@@ -125,6 +128,8 @@ namespace Тест_курсач.Master
             butMat.Visible = false;
 
             MessageBox.Show("Для добавление материала, кликните 2 раза таблице 'Материалы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемые материалы'");
+
+            data3.MouseDoubleClick += data3_MouseDoubleClick;
         }
 
         private void butBack_Click(object sender, EventArgs e)
@@ -155,6 +160,8 @@ namespace Тест_курсач.Master
             butRepair.Visible = false;
             butDiagn.Visible = false;
             CheckZakaz();
+            data2.MouseDoubleClick -= data2_MouseDoubleClick;
+            data3.MouseDoubleClick -= data3_MouseDoubleClick;
         }
         private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -389,6 +396,7 @@ namespace Тест_курсач.Master
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+
             butDiagn.Visible = false;
             label7.Visible = false;
             textFindWork.Visible = false;

@@ -4367,13 +4367,9 @@ namespace Тест_курсач {
             
             private global::System.Data.DataColumn columnСтатус;
             
-            private global::System.Data.DataColumn columnАванс;
-            
             private global::System.Data.DataColumn columnФИО_Клиента;
             
             private global::System.Data.DataColumn columnНомер_телефона;
-            
-            private global::System.Data.DataColumn columnОбщая_стоимость;
             
             private global::System.Data.DataColumn columnСтоимость_работ;
             
@@ -4452,14 +4448,6 @@ namespace Тест_курсач {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn АвансColumn {
-                get {
-                    return this.columnАванс;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn ФИО_КлиентаColumn {
                 get {
                     return this.columnФИО_Клиента;
@@ -4471,14 +4459,6 @@ namespace Тест_курсач {
             public global::System.Data.DataColumn Номер_телефонаColumn {
                 get {
                     return this.columnНомер_телефона;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Общая_стоимостьColumn {
-                get {
-                    return this.columnОбщая_стоимость;
                 }
             }
             
@@ -4527,7 +4507,7 @@ namespace Тест_курсач {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ЗаказДляУчетаЗаказовНаДиагностикуRow AddЗаказДляУчетаЗаказовНаДиагностикуRow(int ИдЗаказа, System.DateTime Дата_принятия_заказа, int ФИО_Мастера, int Вид_техники, string Статус, decimal Аванс, string ФИО_Клиента, string Номер_телефона, decimal Общая_стоимость, decimal Стоимость_работ) {
+            public ЗаказДляУчетаЗаказовНаДиагностикуRow AddЗаказДляУчетаЗаказовНаДиагностикуRow(int ИдЗаказа, System.DateTime Дата_принятия_заказа, int ФИО_Мастера, int Вид_техники, string Статус, string ФИО_Клиента, string Номер_телефона, decimal Стоимость_работ) {
                 ЗаказДляУчетаЗаказовНаДиагностикуRow rowЗаказДляУчетаЗаказовНаДиагностикуRow = ((ЗаказДляУчетаЗаказовНаДиагностикуRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ИдЗаказа,
@@ -4535,10 +4515,8 @@ namespace Тест_курсач {
                         ФИО_Мастера,
                         Вид_техники,
                         Статус,
-                        Аванс,
                         ФИО_Клиента,
                         Номер_телефона,
-                        Общая_стоимость,
                         Стоимость_работ};
                 rowЗаказДляУчетаЗаказовНаДиагностикуRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЗаказДляУчетаЗаказовНаДиагностикуRow);
@@ -4576,10 +4554,8 @@ namespace Тест_курсач {
                 this.columnФИО_Мастера = base.Columns["ФИО Мастера"];
                 this.columnВид_техники = base.Columns["Вид техники"];
                 this.columnСтатус = base.Columns["Статус"];
-                this.columnАванс = base.Columns["Аванс"];
                 this.columnФИО_Клиента = base.Columns["ФИО Клиента"];
                 this.columnНомер_телефона = base.Columns["Номер телефона"];
-                this.columnОбщая_стоимость = base.Columns["Общая стоимость"];
                 this.columnСтоимость_работ = base.Columns["Стоимость работ"];
             }
             
@@ -4600,8 +4576,6 @@ namespace Тест_курсач {
                 base.Columns.Add(this.columnВид_техники);
                 this.columnСтатус = new global::System.Data.DataColumn("Статус", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСтатус);
-                this.columnАванс = new global::System.Data.DataColumn("Аванс", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnАванс);
                 this.columnФИО_Клиента = new global::System.Data.DataColumn("ФИО Клиента", typeof(string), null, global::System.Data.MappingType.Element);
                 this.columnФИО_Клиента.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "ФИО_Клиента");
                 this.columnФИО_Клиента.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ФИО_КлиентаColumn");
@@ -4614,12 +4588,6 @@ namespace Тест_курсач {
                 this.columnНомер_телефона.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnНомер_телефона");
                 this.columnНомер_телефона.ExtendedProperties.Add("Generator_UserColumnName", "Номер телефона");
                 base.Columns.Add(this.columnНомер_телефона);
-                this.columnОбщая_стоимость = new global::System.Data.DataColumn("Общая стоимость", typeof(decimal), null, global::System.Data.MappingType.Element);
-                this.columnОбщая_стоимость.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Общая_стоимость");
-                this.columnОбщая_стоимость.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Общая_стоимостьColumn");
-                this.columnОбщая_стоимость.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnОбщая_стоимость");
-                this.columnОбщая_стоимость.ExtendedProperties.Add("Generator_UserColumnName", "Общая стоимость");
-                base.Columns.Add(this.columnОбщая_стоимость);
                 this.columnСтоимость_работ = new global::System.Data.DataColumn("Стоимость работ", typeof(decimal), null, global::System.Data.MappingType.Element);
                 this.columnСтоимость_работ.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Стоимость_работ");
                 this.columnСтоимость_работ.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Стоимость_работColumn");
@@ -7240,23 +7208,6 @@ namespace Тест_курсач {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Аванс {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableЗаказДляУчетаЗаказовНаДиагностику.АвансColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Аванс\' в таблице \'ЗаказДляУчетаЗаказовНаДиагностику\' равно " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableЗаказДляУчетаЗаказовНаДиагностику.АвансColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ФИО_Клиента {
                 get {
                     return ((string)(this[this.tableЗаказДляУчетаЗаказовНаДиагностику.ФИО_КлиентаColumn]));
@@ -7279,23 +7230,6 @@ namespace Тест_курсач {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Общая_стоимость {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableЗаказДляУчетаЗаказовНаДиагностику.Общая_стоимостьColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Общая стоимость\' в таблице \'ЗаказДляУчетаЗаказовНаДиагности" +
-                                "ку\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableЗаказДляУчетаЗаказовНаДиагностику.Общая_стоимостьColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal Стоимость_работ {
                 get {
                     try {
@@ -7309,30 +7243,6 @@ namespace Тест_курсач {
                 set {
                     this[this.tableЗаказДляУчетаЗаказовНаДиагностику.Стоимость_работColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsАвансNull() {
-                return this.IsNull(this.tableЗаказДляУчетаЗаказовНаДиагностику.АвансColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetАвансNull() {
-                this[this.tableЗаказДляУчетаЗаказовНаДиагностику.АвансColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsОбщая_стоимостьNull() {
-                return this.IsNull(this.tableЗаказДляУчетаЗаказовНаДиагностику.Общая_стоимостьColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetОбщая_стоимостьNull() {
-                this[this.tableЗаказДляУчетаЗаказовНаДиагностику.Общая_стоимостьColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12400,10 +12310,8 @@ SELECT ИдСотрудника, ФИО, Логин, Пароль, Роль, Т�
             tableMapping.ColumnMappings.Add("ФИО Мастера", "ФИО Мастера");
             tableMapping.ColumnMappings.Add("Вид техники", "Вид техники");
             tableMapping.ColumnMappings.Add("Статус", "Статус");
-            tableMapping.ColumnMappings.Add("Аванс", "Аванс");
             tableMapping.ColumnMappings.Add("ФИО Клиента", "ФИО Клиента");
             tableMapping.ColumnMappings.Add("Номер телефона", "Номер телефона");
-            tableMapping.ColumnMappings.Add("Общая стоимость", "Общая стоимость");
             tableMapping.ColumnMappings.Add("Стоимость работ", "Стоимость работ");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -12421,9 +12329,9 @@ SELECT ИдСотрудника, ФИО, Логин, Пароль, Роль, Т�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ИдЗаказа, [Дата принятия заказа], [ФИО Мастера], [Вид техники], Статус, Ав" +
-                "анс, [ФИО Клиента], [Номер телефона], [Общая стоимость], [Стоимость работ] FROM " +
-                "ЗаказДляУчетаЗаказовНаДиагностику";
+            this._commandCollection[0].CommandText = "SELECT ИдЗаказа, [Дата принятия заказа], [ФИО Мастера], [Вид техники], Статус, [Ф" +
+                "ИО Клиента], [Номер телефона], [Стоимость работ] FROM ЗаказДляУчетаЗаказовНаДиаг" +
+                "ностику";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

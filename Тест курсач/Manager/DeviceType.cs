@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -16,7 +17,7 @@ namespace СделаНо
 {
     public partial class DeviceType : UserControl
     {
-        string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
 
         public DeviceType()
         {
@@ -90,7 +91,6 @@ namespace СделаНо
                 }
             }
         }
-
         private void butEdit_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textName.Text) || string.IsNullOrWhiteSpace(textDesc.Text))
@@ -132,7 +132,6 @@ namespace СделаНо
                 }
             }
         }
-
         private void butDelete_Click(object sender, EventArgs e)
         {
             int selectedTypeId = (int)data1.CurrentRow.Cells[0].Value;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -17,7 +18,8 @@ namespace СделаНо
     
     public partial class Admin : Form
     {
-        string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
+        //string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
         private string fns1;
         public Admin(string fns)
         {
@@ -29,7 +31,6 @@ namespace СделаНо
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "сделаНоDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
             this.сотрудникTableAdapter.Fill(this.сделаНоDataSet.Сотрудник);
-
 
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
@@ -49,7 +50,6 @@ namespace СделаНо
         }
         private void FillDataGridView()
         {
-
             string query = "SELECT * FROM Сотрудник";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -249,7 +249,6 @@ namespace СделаНо
             }
         }
 
-       
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (data1.SelectedRows.Count > 0)
