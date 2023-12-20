@@ -922,7 +922,7 @@
             this.butRepair.FillColor = System.Drawing.Color.PeachPuff;
             this.butRepair.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butRepair.ForeColor = System.Drawing.Color.Black;
-            this.butRepair.Location = new System.Drawing.Point(227, 626);
+            this.butRepair.Location = new System.Drawing.Point(227, 645);
             this.butRepair.Name = "butRepair";
             this.butRepair.Size = new System.Drawing.Size(258, 39);
             this.butRepair.TabIndex = 35;

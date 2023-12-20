@@ -69,6 +69,7 @@ namespace СделаНо
                                 masterForm.Show();
                                 break;
                         }
+                        this.Hide();
                     }
                     else
                     {

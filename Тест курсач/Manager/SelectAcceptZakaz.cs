@@ -145,9 +145,25 @@ namespace Тест_курсач.Manager
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             int orderId = selectId;
 
-            string templateFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция.xlsx";
+            string templateFilePath = "Квитанция.xlsx";
 
-            string outputFilePath = "C:\\Users\\dimas\\OneDrive\\Рабочий стол\\Тест курсач\\Квитанция " + selectId + ".xlsx";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter = "Excel файлы (*.xlsx)|*.xlsx|Все файлы (*.*)|*.*";
+
+            DialogResult result = saveFileDialog.ShowDialog();
+            string outputFilePath = "";
+            if (result == DialogResult.OK)
+            {
+                outputFilePath = saveFileDialog.FileName;
+
+                MessageBox.Show("Выбранный путь к файлу: " + outputFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Пользователь отменил операцию выбора файла.");
+            }
 
             try
             {
