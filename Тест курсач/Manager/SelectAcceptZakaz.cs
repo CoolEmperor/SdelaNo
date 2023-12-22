@@ -16,12 +16,14 @@ using System.Xml.Linq;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using OfficeOpenXml;
 using LicenseContext = OfficeOpenXml.LicenseContext;
+using System.Configuration;
 
 namespace Тест_курсач.Manager
 {
     public partial class SelectAcceptZakaz : UserControl
     {
-        string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
+        string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
+
         int selectId;
         public SelectAcceptZakaz(int selectId)
         {

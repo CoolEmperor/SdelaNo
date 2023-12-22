@@ -16,8 +16,9 @@ namespace Тест_курсач.Manager
 {
     public partial class SelectRepairZakaz : UserControl
     {
-        
-        string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
+
+        string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
+
         int selectId;
         public SelectRepairZakaz(int selectId)
         {
