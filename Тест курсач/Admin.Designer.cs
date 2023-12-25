@@ -88,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1089, 22);
+            this.label3.Location = new System.Drawing.Point(1077, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 27);
             this.label3.TabIndex = 2;
@@ -98,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(899, 22);
+            this.label2.Location = new System.Drawing.Point(871, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 27);
             this.label2.TabIndex = 1;
@@ -423,7 +423,7 @@
             this.butAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.butAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.butAdd.FillColor = System.Drawing.Color.PeachPuff;
-            this.butAdd.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butAdd.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold);
             this.butAdd.ForeColor = System.Drawing.Color.Black;
             this.butAdd.Location = new System.Drawing.Point(1139, 383);
             this.butAdd.Name = "butAdd";
@@ -434,12 +434,13 @@
             // 
             // butEdit
             // 
+            this.butEdit.Animated = true;
             this.butEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.butEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.butEdit.FillColor = System.Drawing.Color.PeachPuff;
-            this.butEdit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butEdit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold);
             this.butEdit.ForeColor = System.Drawing.Color.Black;
             this.butEdit.Location = new System.Drawing.Point(1139, 425);
             this.butEdit.Name = "butEdit";

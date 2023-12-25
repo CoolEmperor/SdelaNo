@@ -215,38 +215,38 @@ namespace СделаНо
 
         private void butSort_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string sortField = "ФИО";
-                string sortOrder = comboBoxSort2.Text;
-
-                sortOrder = comboBoxSort2.Text;
-                switch (sortOrder)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    case "По возрастанию":
-                        sortOrder = "ASC";
-                        break;
-                    case "По убыванию":
-                        sortOrder = "DESC";
-                        break;
+                    connection.Open();
+
+                    string sortField = "ФИО";
+                    string sortOrder = comboBoxSort2.Text;
+
+                    sortOrder = comboBoxSort2.Text;
+                    switch (sortOrder)
+                    {
+                        case "По возрастанию":
+                            sortOrder = "ASC";
+                            break;
+                        case "По убыванию":
+                            sortOrder = "DESC";
+                            break;
+                    }
+
+                    using (SqlCommand command = new SqlCommand("SortEmployees", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@SortField", sortField);
+                        command.Parameters.AddWithValue("@SortOrder", sortOrder);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+                        data1.DataSource = table;
+                    }
+
+                    MessageBox.Show("Список отсортирован.");
                 }
-
-                using (SqlCommand command = new SqlCommand("SortEmployees", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@SortField", sortField);
-                    command.Parameters.AddWithValue("@SortOrder", sortOrder);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    data1.DataSource = table;
-                }
-
-                MessageBox.Show("Список отсортирован.");
-            }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

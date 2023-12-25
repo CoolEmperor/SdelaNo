@@ -189,7 +189,7 @@ namespace Тест_курсач.Master
                     MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
                     FillDataGridView();
                 }
-                
+
             }
         }
         private bool CheckIfMaterialExists(int materialID)
@@ -291,15 +291,23 @@ namespace Тест_курсач.Master
         {
             if (e.Button == MouseButtons.Left)
             {
-                int selectedWorkID = Convert.ToInt32(data2.CurrentRow.Cells[0].Value);
+                if (data2.RowCount > 0)
+                {
+                    int selectedWorkID = Convert.ToInt32(data2.CurrentRow.Cells[0].Value);
 
-                DeleteWorkFromAdditional(selectedWorkID);
-                MessageBox.Show("Запись успешно удалена из таблицы Требуемые работы");
-                FillDataGridView();
+                    DeleteWorkFromAdditional(selectedWorkID);
+                    MessageBox.Show("Запись успешно удалена из таблицы Требуемые работы");
+                    FillDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Отсутсвуют строки для удаления");
+                }
             }
         }
         private void DeleteWorkFromAdditional(int workID)
         {
+
             string deleteQuery = $"DELETE FROM Работа WHERE ИдРаботы = {workID}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -308,6 +316,8 @@ namespace Тест_курсач.Master
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+
+
         }
 
         private void textFindMat_TextChanged(object sender, EventArgs e)
