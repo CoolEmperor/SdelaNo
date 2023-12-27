@@ -53,6 +53,8 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(216, 112);
@@ -63,6 +65,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(216, 154);
@@ -73,6 +77,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(216, 208);
@@ -83,6 +89,8 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(216, 252);
@@ -93,6 +101,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(216, 296);
@@ -103,6 +113,8 @@
             // 
             // butAcceptZakaz
             // 
+            this.butAcceptZakaz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.butAcceptZakaz.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butAcceptZakaz.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butAcceptZakaz.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -119,6 +131,8 @@
             // 
             // texttel
             // 
+            this.texttel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.texttel.BorderColor = System.Drawing.Color.Black;
             this.texttel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.texttel.DefaultText = "";
@@ -142,6 +156,8 @@
             // 
             // combomaster
             // 
+            this.combomaster.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.combomaster.BackColor = System.Drawing.Color.Transparent;
             this.combomaster.BorderColor = System.Drawing.Color.Black;
             this.combomaster.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -159,6 +175,8 @@
             // 
             // textfio
             // 
+            this.textfio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textfio.BorderColor = System.Drawing.Color.Black;
             this.textfio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textfio.DefaultText = "";
@@ -182,6 +200,8 @@
             // 
             // textdate
             // 
+            this.textdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textdate.Checked = true;
             this.textdate.FillColor = System.Drawing.Color.Silver;
             this.textdate.Font = new System.Drawing.Font("Segoe UI", 10.2F);
@@ -219,6 +239,8 @@
             // 
             // textTypeEq
             // 
+            this.textTypeEq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textTypeEq.BorderColor = System.Drawing.Color.Black;
             this.textTypeEq.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textTypeEq.DefaultText = "";
@@ -244,6 +266,8 @@
             // 
             // CheckTechnick
             // 
+            this.CheckTechnick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckTechnick.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.CheckTechnick.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.CheckTechnick.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

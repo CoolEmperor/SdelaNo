@@ -48,5 +48,41 @@ namespace Тест_курсач.Manager
                 RowSelected?.Invoke(this, selectId);
             }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM ЗаказДляУчетаЗаказовНаДиагностику Where Статус = 'Диагностика окончена' OR Статус = 'На диагностике'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                data1.DataSource = table;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM ЗаказДляУчетаЗаказовНаДиагностику WHERE Статус = 'На диагностике'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                data1.DataSource = table;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM ЗаказДляУчетаЗаказовНаДиагностику WHERE Статус = 'Диагностика окончена'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                data1.DataSource = table;
+            }
+        }
     }
 }

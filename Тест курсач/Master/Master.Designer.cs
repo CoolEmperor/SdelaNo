@@ -58,9 +58,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1016, 22);
+            this.label3.Location = new System.Drawing.Point(1083, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 27);
             this.label3.TabIndex = 2;
@@ -68,9 +69,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(891, 22);
+            this.label2.Location = new System.Drawing.Point(982, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 27);
             this.label2.TabIndex = 1;
@@ -88,6 +90,9 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContainer.Location = new System.Drawing.Point(0, 70);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1500, 700);
@@ -99,6 +104,7 @@
             // 
             // butZakaz
             // 
+            this.butZakaz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butZakaz.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butZakaz.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butZakaz.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -115,6 +121,7 @@
             // 
             // butExit
             // 
+            this.butExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -131,6 +138,7 @@
             // 
             // butBack
             // 
+            this.butBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -149,13 +157,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1500, 850);
             this.Controls.Add(this.butBack);
             this.Controls.Add(this.butZakaz);
             this.Controls.Add(this.butExit);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MasterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

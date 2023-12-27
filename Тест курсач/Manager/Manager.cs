@@ -68,5 +68,10 @@ namespace СделаНо
             AcceptZakaz spr = new AcceptZakaz();
             Controler(spr);
         }
+
+        private void Manager_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }

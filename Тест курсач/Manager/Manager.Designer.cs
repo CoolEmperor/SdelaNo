@@ -59,9 +59,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1077, 18);
+            this.label3.Location = new System.Drawing.Point(1064, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 27);
             this.label3.TabIndex = 2;
@@ -69,6 +70,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(931, 18);
@@ -111,7 +113,7 @@
             this.butDel.FillColor = System.Drawing.Color.PeachPuff;
             this.butDel.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDel.ForeColor = System.Drawing.Color.Black;
-            this.butDel.Location = new System.Drawing.Point(2, 336);
+            this.butDel.Location = new System.Drawing.Point(1, 350);
             this.butDel.Name = "butDel";
             this.butDel.Size = new System.Drawing.Size(245, 55);
             this.butDel.TabIndex = 12;
@@ -120,6 +122,7 @@
             // 
             // butExit
             // 
+            this.butExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.butExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -143,7 +146,7 @@
             this.butZakRep.FillColor = System.Drawing.Color.PeachPuff;
             this.butZakRep.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold);
             this.butZakRep.ForeColor = System.Drawing.Color.Black;
-            this.butZakRep.Location = new System.Drawing.Point(3, 267);
+            this.butZakRep.Location = new System.Drawing.Point(2, 281);
             this.butZakRep.Name = "butZakRep";
             this.butZakRep.Size = new System.Drawing.Size(245, 63);
             this.butZakRep.TabIndex = 8;
@@ -161,7 +164,7 @@
             this.butZakDiag.ForeColor = System.Drawing.Color.Black;
             this.butZakDiag.Location = new System.Drawing.Point(3, 194);
             this.butZakDiag.Name = "butZakDiag";
-            this.butZakDiag.Size = new System.Drawing.Size(245, 67);
+            this.butZakDiag.Size = new System.Drawing.Size(241, 81);
             this.butZakDiag.TabIndex = 7;
             this.butZakDiag.Text = "Заказы на диагностике";
             this.butZakDiag.Click += new System.EventHandler(this.butZakDiag_Click);
@@ -200,7 +203,10 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContainer.AutoSize = true;
             this.panelContainer.Location = new System.Drawing.Point(250, 70);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1250, 730);
@@ -214,16 +220,18 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Менеджер";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Manager_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

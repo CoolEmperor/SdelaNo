@@ -36,20 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.data2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.butStart = new Guna.UI2.WinForms.Guna2Button();
-            this.butEnd = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textAvans = new Guna.UI2.WinForms.Guna2TextBox();
-            this.идРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.стоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
-            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
-            this.заказДляУчетаЗаказовНаДиагностикуBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказДляУчетаЗаказовНаДиагностикуTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказДляУчетаЗаказовНаДиагностикуTableAdapter();
             this.идЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаПринятияЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фИОМастераDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +44,25 @@
             this.фИОКлиентаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.номерТелефонаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стоимостьРаботDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.заказДляУчетаЗаказовНаДиагностикуBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
+            this.data2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.идРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.butStart = new Guna.UI2.WinForms.Guna2Button();
+            this.butEnd = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textAvans = new Guna.UI2.WinForms.Guna2TextBox();
+            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
+            this.заказДляУчетаЗаказовНаДиагностикуTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказДляУчетаЗаказовНаДиагностикуTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаДиагностикуBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаДиагностикуBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // data1
@@ -71,8 +71,7 @@
             this.data1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
@@ -135,6 +134,81 @@
             this.data1.ThemeStyle.RowsStyle.Height = 24;
             this.data1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // идЗаказаDataGridViewTextBoxColumn
+            // 
+            this.идЗаказаDataGridViewTextBoxColumn.DataPropertyName = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.HeaderText = "ИдЗаказа";
+            this.идЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.идЗаказаDataGridViewTextBoxColumn.Name = "идЗаказаDataGridViewTextBoxColumn";
+            this.идЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.идЗаказаDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // датаПринятияЗаказаDataGridViewTextBoxColumn
+            // 
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.DataPropertyName = "Дата принятия заказа";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.HeaderText = "Дата принятия заказа";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.Name = "датаПринятияЗаказаDataGridViewTextBoxColumn";
+            this.датаПринятияЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОМастераDataGridViewTextBoxColumn
+            // 
+            this.фИОМастераDataGridViewTextBoxColumn.DataPropertyName = "ФИО Мастера";
+            this.фИОМастераDataGridViewTextBoxColumn.HeaderText = "ФИО Мастера";
+            this.фИОМастераDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фИОМастераDataGridViewTextBoxColumn.Name = "фИОМастераDataGridViewTextBoxColumn";
+            this.фИОМастераDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видТехникиDataGridViewTextBoxColumn
+            // 
+            this.видТехникиDataGridViewTextBoxColumn.DataPropertyName = "Вид техники";
+            this.видТехникиDataGridViewTextBoxColumn.HeaderText = "Вид техники";
+            this.видТехникиDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.видТехникиDataGridViewTextBoxColumn.Name = "видТехникиDataGridViewTextBoxColumn";
+            this.видТехникиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОКлиентаDataGridViewTextBoxColumn
+            // 
+            this.фИОКлиентаDataGridViewTextBoxColumn.DataPropertyName = "ФИО Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
+            this.фИОКлиентаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фИОКлиентаDataGridViewTextBoxColumn.Name = "фИОКлиентаDataGridViewTextBoxColumn";
+            this.фИОКлиентаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // номерТелефонаDataGridViewTextBoxColumn
+            // 
+            this.номерТелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер телефона";
+            this.номерТелефонаDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
+            this.номерТелефонаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.номерТелефонаDataGridViewTextBoxColumn.Name = "номерТелефонаDataGridViewTextBoxColumn";
+            this.номерТелефонаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // стоимостьРаботDataGridViewTextBoxColumn
+            // 
+            this.стоимостьРаботDataGridViewTextBoxColumn.DataPropertyName = "Стоимость работ";
+            this.стоимостьРаботDataGridViewTextBoxColumn.HeaderText = "Стоимость работ";
+            this.стоимостьРаботDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.стоимостьРаботDataGridViewTextBoxColumn.Name = "стоимостьРаботDataGridViewTextBoxColumn";
+            this.стоимостьРаботDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // заказДляУчетаЗаказовНаДиагностикуBindingSource
+            // 
+            this.заказДляУчетаЗаказовНаДиагностикуBindingSource.DataMember = "ЗаказДляУчетаЗаказовНаДиагностику";
+            this.заказДляУчетаЗаказовНаДиагностикуBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // сделаНоDataSet
+            // 
+            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
+            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // data2
             // 
@@ -203,70 +277,6 @@
             this.data2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // butStart
-            // 
-            this.butStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butStart.FillColor = System.Drawing.Color.PeachPuff;
-            this.butStart.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butStart.ForeColor = System.Drawing.Color.Black;
-            this.butStart.Location = new System.Drawing.Point(950, 319);
-            this.butStart.Name = "butStart";
-            this.butStart.Size = new System.Drawing.Size(226, 50);
-            this.butStart.TabIndex = 23;
-            this.butStart.Text = "Начать ремонт";
-            this.butStart.Click += new System.EventHandler(this.butStart_Click);
-            // 
-            // butEnd
-            // 
-            this.butEnd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butEnd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butEnd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butEnd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butEnd.FillColor = System.Drawing.Color.PeachPuff;
-            this.butEnd.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butEnd.ForeColor = System.Drawing.Color.Black;
-            this.butEnd.Location = new System.Drawing.Point(950, 390);
-            this.butEnd.Name = "butEnd";
-            this.butEnd.Size = new System.Drawing.Size(226, 50);
-            this.butEnd.TabIndex = 24;
-            this.butEnd.Text = "Отказ от ремонта";
-            this.butEnd.Click += new System.EventHandler(this.butEnd_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(956, 209);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 20);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Аванс (необязательно)";
-            // 
-            // textAvans
-            // 
-            this.textAvans.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textAvans.DefaultText = "0";
-            this.textAvans.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textAvans.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textAvans.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textAvans.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textAvans.FillColor = System.Drawing.Color.Silver;
-            this.textAvans.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textAvans.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.textAvans.ForeColor = System.Drawing.Color.Black;
-            this.textAvans.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textAvans.Location = new System.Drawing.Point(935, 239);
-            this.textAvans.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textAvans.Name = "textAvans";
-            this.textAvans.PasswordChar = '\0';
-            this.textAvans.PlaceholderText = "";
-            this.textAvans.SelectedText = "";
-            this.textAvans.Size = new System.Drawing.Size(254, 33);
-            this.textAvans.TabIndex = 26;
-            // 
             // идРаботыDataGridViewTextBoxColumn
             // 
             this.идРаботыDataGridViewTextBoxColumn.DataPropertyName = "ИдРаботы";
@@ -305,88 +315,81 @@
             this.видремонтныхработBindingSource.DataMember = "Вид_ремонтных_работ";
             this.видремонтныхработBindingSource.DataSource = this.сделаНоDataSet;
             // 
-            // сделаНоDataSet
+            // butStart
             // 
-            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
-            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.butStart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.butStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butStart.FillColor = System.Drawing.Color.PeachPuff;
+            this.butStart.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butStart.ForeColor = System.Drawing.Color.Black;
+            this.butStart.Location = new System.Drawing.Point(950, 319);
+            this.butStart.Name = "butStart";
+            this.butStart.Size = new System.Drawing.Size(226, 50);
+            this.butStart.TabIndex = 23;
+            this.butStart.Text = "Начать ремонт";
+            this.butStart.Click += new System.EventHandler(this.butStart_Click);
+            // 
+            // butEnd
+            // 
+            this.butEnd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.butEnd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butEnd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butEnd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butEnd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butEnd.FillColor = System.Drawing.Color.PeachPuff;
+            this.butEnd.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butEnd.ForeColor = System.Drawing.Color.Black;
+            this.butEnd.Location = new System.Drawing.Point(950, 390);
+            this.butEnd.Name = "butEnd";
+            this.butEnd.Size = new System.Drawing.Size(226, 50);
+            this.butEnd.TabIndex = 24;
+            this.butEnd.Text = "Отказ от ремонта";
+            this.butEnd.Click += new System.EventHandler(this.butEnd_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(956, 209);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Аванс (необязательно)";
+            // 
+            // textAvans
+            // 
+            this.textAvans.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textAvans.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textAvans.DefaultText = "0";
+            this.textAvans.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textAvans.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textAvans.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textAvans.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textAvans.FillColor = System.Drawing.Color.Silver;
+            this.textAvans.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textAvans.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.textAvans.ForeColor = System.Drawing.Color.Black;
+            this.textAvans.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textAvans.Location = new System.Drawing.Point(935, 239);
+            this.textAvans.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textAvans.Name = "textAvans";
+            this.textAvans.PasswordChar = '\0';
+            this.textAvans.PlaceholderText = "";
+            this.textAvans.SelectedText = "";
+            this.textAvans.Size = new System.Drawing.Size(254, 33);
+            this.textAvans.TabIndex = 26;
             // 
             // вид_ремонтных_работTableAdapter
             // 
             this.вид_ремонтных_работTableAdapter.ClearBeforeFill = true;
             // 
-            // заказДляУчетаЗаказовНаДиагностикуBindingSource
-            // 
-            this.заказДляУчетаЗаказовНаДиагностикуBindingSource.DataMember = "ЗаказДляУчетаЗаказовНаДиагностику";
-            this.заказДляУчетаЗаказовНаДиагностикуBindingSource.DataSource = this.сделаНоDataSet;
-            // 
             // заказДляУчетаЗаказовНаДиагностикуTableAdapter
             // 
             this.заказДляУчетаЗаказовНаДиагностикуTableAdapter.ClearBeforeFill = true;
-            // 
-            // идЗаказаDataGridViewTextBoxColumn
-            // 
-            this.идЗаказаDataGridViewTextBoxColumn.DataPropertyName = "ИдЗаказа";
-            this.идЗаказаDataGridViewTextBoxColumn.HeaderText = "ИдЗаказа";
-            this.идЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.идЗаказаDataGridViewTextBoxColumn.Name = "идЗаказаDataGridViewTextBoxColumn";
-            this.идЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.идЗаказаDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // датаПринятияЗаказаDataGridViewTextBoxColumn
-            // 
-            this.датаПринятияЗаказаDataGridViewTextBoxColumn.DataPropertyName = "Дата принятия заказа";
-            this.датаПринятияЗаказаDataGridViewTextBoxColumn.HeaderText = "Дата принятия заказа";
-            this.датаПринятияЗаказаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датаПринятияЗаказаDataGridViewTextBoxColumn.Name = "датаПринятияЗаказаDataGridViewTextBoxColumn";
-            this.датаПринятияЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фИОМастераDataGridViewTextBoxColumn
-            // 
-            this.фИОМастераDataGridViewTextBoxColumn.DataPropertyName = "ФИО Мастера";
-            this.фИОМастераDataGridViewTextBoxColumn.HeaderText = "ФИО Мастера";
-            this.фИОМастераDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.фИОМастераDataGridViewTextBoxColumn.Name = "фИОМастераDataGridViewTextBoxColumn";
-            this.фИОМастераDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // видТехникиDataGridViewTextBoxColumn
-            // 
-            this.видТехникиDataGridViewTextBoxColumn.DataPropertyName = "Вид техники";
-            this.видТехникиDataGridViewTextBoxColumn.HeaderText = "Вид техники";
-            this.видТехникиDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.видТехникиDataGridViewTextBoxColumn.Name = "видТехникиDataGridViewTextBoxColumn";
-            this.видТехникиDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // статусDataGridViewTextBoxColumn
-            // 
-            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
-            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.статусDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
-            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фИОКлиентаDataGridViewTextBoxColumn
-            // 
-            this.фИОКлиентаDataGridViewTextBoxColumn.DataPropertyName = "ФИО Клиента";
-            this.фИОКлиентаDataGridViewTextBoxColumn.HeaderText = "ФИО Клиента";
-            this.фИОКлиентаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.фИОКлиентаDataGridViewTextBoxColumn.Name = "фИОКлиентаDataGridViewTextBoxColumn";
-            this.фИОКлиентаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // номерТелефонаDataGridViewTextBoxColumn
-            // 
-            this.номерТелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер телефона";
-            this.номерТелефонаDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
-            this.номерТелефонаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.номерТелефонаDataGridViewTextBoxColumn.Name = "номерТелефонаDataGridViewTextBoxColumn";
-            this.номерТелефонаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // стоимостьРаботDataGridViewTextBoxColumn
-            // 
-            this.стоимостьРаботDataGridViewTextBoxColumn.DataPropertyName = "Стоимость работ";
-            this.стоимостьРаботDataGridViewTextBoxColumn.HeaderText = "Стоимость работ";
-            this.стоимостьРаботDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.стоимостьРаботDataGridViewTextBoxColumn.Name = "стоимостьРаботDataGridViewTextBoxColumn";
-            this.стоимостьРаботDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // SelectDiagnZakaz
             // 
@@ -402,10 +405,10 @@
             this.Size = new System.Drawing.Size(1250, 630);
             this.Load += new System.EventHandler(this.SelectDiagnZakaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаДиагностикуBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказДляУчетаЗаказовНаДиагностикуBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

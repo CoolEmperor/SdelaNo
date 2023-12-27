@@ -35,6 +35,7 @@
             // 
             // butZakaz
             // 
+            this.butZakaz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butZakaz.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butZakaz.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butZakaz.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -51,6 +52,7 @@
             // 
             // butBack
             // 
+            this.butBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -67,6 +69,9 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1250, 630);

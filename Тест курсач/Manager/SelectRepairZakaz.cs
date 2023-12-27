@@ -93,7 +93,12 @@ namespace Тест_курсач.Manager
             string cost = textDisc.Text;
             if (!IsValidDecimal(cost))
             {
-                MessageBox.Show("Аванс должен быть числовым значением (десятичные числа указываются точкой).");
+                MessageBox.Show("Скидка должен быть числовым значением (десятичные числа указываются точкой).");
+                return;
+            }
+            if(Convert.ToInt32(cost) > 70)
+            {
+                MessageBox.Show("Скидка может быть максимум 70 процентов.");
                 return;
             }
             

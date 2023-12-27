@@ -29,18 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.заказBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
-            this.заказTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказTableAdapter();
-            this.заказДляМастераBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказДляМастераTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказДляМастераTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаПринятияЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаНачалаРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,31 +43,39 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.заказДляМастераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.заказBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заказTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказTableAdapter();
+            this.заказДляМастераTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.ЗаказДляМастераTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказДляМастераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // data1
             // 
             this.data1.AllowUserToAddRows = false;
             this.data1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.data1.ColumnHeadersHeight = 75;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,14 +90,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.data1.DataSource = this.заказДляМастераBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data1.DefaultCellStyle = dataGridViewCellStyle15;
             this.data1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.Location = new System.Drawing.Point(16, 69);
             this.data1.Name = "data1";
@@ -130,68 +130,6 @@
             this.data1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data1.SelectionChanged += new System.EventHandler(this.data1_SelectionChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(474, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(122, 28);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Все заказы";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(621, 15);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(215, 28);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Заказы на диагностику";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(863, 15);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(175, 28);
-            this.radioButton3.TabIndex = 19;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Заказы на ремонт";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // заказBindingSource
-            // 
-            this.заказBindingSource.DataMember = "Заказ";
-            this.заказBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // сделаНоDataSet
-            // 
-            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
-            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // заказTableAdapter
-            // 
-            this.заказTableAdapter.ClearBeforeFill = true;
-            // 
-            // заказДляМастераBindingSource
-            // 
-            this.заказДляМастераBindingSource.DataMember = "ЗаказДляМастера";
-            this.заказДляМастераBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // заказДляМастераTableAdapter
-            // 
-            this.заказДляМастераTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -275,6 +213,71 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // заказДляМастераBindingSource
+            // 
+            this.заказДляМастераBindingSource.DataMember = "ЗаказДляМастера";
+            this.заказДляМастераBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // сделаНоDataSet
+            // 
+            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
+            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(474, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(122, 28);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Все заказы";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(637, 15);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(215, 28);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Заказы на диагностику";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(912, 15);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(175, 28);
+            this.radioButton3.TabIndex = 19;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Заказы на ремонт";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // заказBindingSource
+            // 
+            this.заказBindingSource.DataMember = "Заказ";
+            this.заказBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // заказTableAdapter
+            // 
+            this.заказTableAdapter.ClearBeforeFill = true;
+            // 
+            // заказДляМастераTableAdapter
+            // 
+            this.заказДляМастераTableAdapter.ClearBeforeFill = true;
+            // 
             // MainMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -287,9 +290,9 @@
             this.Size = new System.Drawing.Size(1500, 730);
             this.Load += new System.EventHandler(this.MainMaster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказДляМастераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

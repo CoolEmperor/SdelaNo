@@ -45,22 +45,23 @@
             this.butEdit = new Guna.UI2.WinForms.Guna2Button();
             this.butAdd = new Guna.UI2.WinForms.Guna2Button();
             this.data1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.textDesc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
-            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
             this.идРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.стоимостьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.описаниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видремонтныхработBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сделаНоDataSet = new Тест_курсач.СделаНоDataSet();
+            this.textDesc = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.вид_ремонтных_работTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.Вид_ремонтных_работTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // butClear
             // 
+            this.butClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -77,6 +78,7 @@
             // 
             // textName
             // 
+            this.textName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textName.DefaultText = "";
             this.textName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -98,6 +100,7 @@
             // 
             // textCost
             // 
+            this.textCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textCost.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textCost.DefaultText = "";
             this.textCost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -119,6 +122,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(854, 70);
@@ -129,6 +133,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(854, 26);
@@ -139,6 +144,7 @@
             // 
             // textBoxFind
             // 
+            this.textBoxFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFind.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxFind.DefaultText = "";
             this.textBoxFind.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -162,6 +168,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox2.BackColor = System.Drawing.Color.Transparent;
             this.comboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -180,6 +187,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(821, 398);
@@ -190,6 +198,7 @@
             // 
             // butSort
             // 
+            this.butSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butSort.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butSort.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butSort.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -206,6 +215,7 @@
             // 
             // butDelete
             // 
+            this.butDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -222,6 +232,7 @@
             // 
             // butEdit
             // 
+            this.butEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -238,6 +249,7 @@
             // 
             // butAdd
             // 
+            this.butAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -320,51 +332,6 @@
             this.data1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data1.SelectionChanged += new System.EventHandler(this.data1_SelectionChanged);
             // 
-            // textDesc
-            // 
-            this.textDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textDesc.DefaultText = "";
-            this.textDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textDesc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textDesc.ForeColor = System.Drawing.Color.Black;
-            this.textDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textDesc.Location = new System.Drawing.Point(979, 114);
-            this.textDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textDesc.Name = "textDesc";
-            this.textDesc.PasswordChar = '\0';
-            this.textDesc.PlaceholderText = "";
-            this.textDesc.SelectedText = "";
-            this.textDesc.Size = new System.Drawing.Size(251, 36);
-            this.textDesc.TabIndex = 104;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(854, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 22);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "Описание:";
-            // 
-            // сделаНоDataSet
-            // 
-            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
-            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // видремонтныхработBindingSource
-            // 
-            this.видремонтныхработBindingSource.DataMember = "Вид_ремонтных_работ";
-            this.видремонтныхработBindingSource.DataSource = this.сделаНоDataSet;
-            // 
-            // вид_ремонтных_работTableAdapter
-            // 
-            this.вид_ремонтных_работTableAdapter.ClearBeforeFill = true;
-            // 
             // идРаботыDataGridViewTextBoxColumn
             // 
             this.идРаботыDataGridViewTextBoxColumn.DataPropertyName = "ИдРаботы";
@@ -398,6 +365,53 @@
             this.описаниеDataGridViewTextBoxColumn.Name = "описаниеDataGridViewTextBoxColumn";
             this.описаниеDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // видремонтныхработBindingSource
+            // 
+            this.видремонтныхработBindingSource.DataMember = "Вид_ремонтных_работ";
+            this.видремонтныхработBindingSource.DataSource = this.сделаНоDataSet;
+            // 
+            // сделаНоDataSet
+            // 
+            this.сделаНоDataSet.DataSetName = "СделаНоDataSet";
+            this.сделаНоDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textDesc
+            // 
+            this.textDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDesc.DefaultText = "";
+            this.textDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textDesc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textDesc.ForeColor = System.Drawing.Color.Black;
+            this.textDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textDesc.Location = new System.Drawing.Point(979, 114);
+            this.textDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textDesc.Name = "textDesc";
+            this.textDesc.PasswordChar = '\0';
+            this.textDesc.PlaceholderText = "";
+            this.textDesc.SelectedText = "";
+            this.textDesc.Size = new System.Drawing.Size(251, 36);
+            this.textDesc.TabIndex = 104;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(854, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 22);
+            this.label3.TabIndex = 103;
+            this.label3.Text = "Описание:";
+            // 
+            // вид_ремонтных_работTableAdapter
+            // 
+            this.вид_ремонтных_работTableAdapter.ClearBeforeFill = true;
+            // 
             // Work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,8 +435,8 @@
             this.Size = new System.Drawing.Size(1250, 660);
             this.Load += new System.EventHandler(this.Work_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.видремонтныхработBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сделаНоDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

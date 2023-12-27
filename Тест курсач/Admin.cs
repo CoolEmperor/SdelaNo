@@ -153,6 +153,11 @@ namespace СделаНо
                     MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
                     return;
                 }
+                else if (!IsValidTelefon(tel))
+                {
+                    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
+                    return;
+                }
                 else
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))

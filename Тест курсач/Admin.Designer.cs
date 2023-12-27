@@ -86,9 +86,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1077, 22);
+            this.label3.Location = new System.Drawing.Point(1120, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 27);
             this.label3.TabIndex = 2;
@@ -96,9 +97,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("News706 BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(871, 22);
+            this.label2.Location = new System.Drawing.Point(923, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 27);
             this.label2.TabIndex = 1;
@@ -116,6 +118,7 @@
             // 
             // butExit
             // 
+            this.butExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -261,6 +264,7 @@
             // 
             // labelFIO
             // 
+            this.labelFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFIO.AutoSize = true;
             this.labelFIO.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFIO.Location = new System.Drawing.Point(1066, 108);
@@ -271,6 +275,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(1066, 152);
@@ -281,6 +286,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(1066, 196);
@@ -291,6 +297,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(1066, 239);
@@ -301,6 +308,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(1066, 294);
@@ -311,6 +319,7 @@
             // 
             // textFIO
             // 
+            this.textFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textFIO.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textFIO.DefaultText = "";
             this.textFIO.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -333,6 +342,7 @@
             // 
             // comboRole
             // 
+            this.comboRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboRole.BackColor = System.Drawing.Color.Transparent;
             this.comboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -352,6 +362,7 @@
             // 
             // textLogin
             // 
+            this.textLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textLogin.DefaultText = "";
             this.textLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -374,6 +385,7 @@
             // 
             // textPass
             // 
+            this.textPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textPass.DefaultText = "";
             this.textPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -396,6 +408,7 @@
             // 
             // textTel
             // 
+            this.textTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textTel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textTel.DefaultText = "";
             this.textTel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -418,6 +431,7 @@
             // 
             // butAdd
             // 
+            this.butAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -434,6 +448,7 @@
             // 
             // butEdit
             // 
+            this.butEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butEdit.Animated = true;
             this.butEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -451,6 +466,7 @@
             // 
             // butDelete
             // 
+            this.butDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -467,6 +483,7 @@
             // 
             // butSort
             // 
+            this.butSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butSort.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butSort.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butSort.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -483,6 +500,7 @@
             // 
             // comboBoxSort2
             // 
+            this.comboBoxSort2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxSort2.BackColor = System.Drawing.Color.Transparent;
             this.comboBoxSort2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxSort2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -501,6 +519,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(1077, 520);
@@ -511,6 +530,7 @@
             // 
             // textBoxFindFam
             // 
+            this.textBoxFindFam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFindFam.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxFindFam.DefaultText = "";
             this.textBoxFindFam.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -534,6 +554,7 @@
             // 
             // butClear
             // 
+            this.butClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.butClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -556,6 +577,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1500, 800);
             this.Controls.Add(this.butClear);
             this.Controls.Add(this.textBoxFindFam);
@@ -578,7 +600,7 @@
             this.Controls.Add(this.data1);
             this.Controls.Add(this.butExit);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

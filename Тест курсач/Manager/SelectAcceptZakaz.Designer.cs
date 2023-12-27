@@ -86,9 +86,8 @@
             this.data3.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.data3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.data3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.data3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.data3.AutoGenerateColumns = false;
             this.data3.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -192,6 +191,7 @@
             // 
             // butStart
             // 
+            this.butStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -212,8 +212,7 @@
             this.data2.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.data2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.data2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.data2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data2.AutoGenerateColumns = false;
             this.data2.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
@@ -317,8 +316,7 @@
             this.data1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             this.data1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.data1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.AutoGenerateColumns = false;
             this.data1.BackgroundColor = System.Drawing.Color.BlanchedAlmond;
@@ -499,6 +497,7 @@
             // 
             // butReport
             // 
+            this.butReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

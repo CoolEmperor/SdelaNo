@@ -35,11 +35,11 @@ namespace Тест_курсач.Master
             label5.Visible = false;
             text1.Visible = false;
 
-            label6.Visible = false;
-            textFindMat.Visible = false;
+            //label6.Visible = false;
+            //textFindMat.Visible = false;
 
-            label7.Visible = false;
-            textFindWork.Visible = false;
+            //label7.Visible = false;
+            //textFindWork.Visible = false;
             butRepair.Visible = false;
             butDiagn.Visible = false;
         }
@@ -104,8 +104,8 @@ namespace Тест_курсач.Master
             label3.Visible = true;
             data4.Visible = true;
 
-            label7.Visible = true;
-            textFindWork.Visible = true;
+            //label7.Visible = true;
+            //textFindWork.Visible = true;
             butDiagn.Visible = true;
             MessageBox.Show("Для добавление работы, кликните 2 раза по таблице 'Работы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемая работа'");
 
@@ -125,8 +125,8 @@ namespace Тест_курсач.Master
             label5.Visible = true;
             text1.Visible = true;
 
-            label6.Visible = true;
-            textFindMat.Visible = true;
+            //label6.Visible = true;
+            //textFindMat.Visible = true;
             butMat.Visible = false;
 
             MessageBox.Show("Для добавление материала, кликните 2 раза таблице 'Материалы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемые материалы'");
@@ -153,11 +153,11 @@ namespace Тест_курсач.Master
             label5.Visible = false;
             text1.Visible = false;
 
-            label6.Visible = false;
-            textFindMat.Visible = false;
+            //label6.Visible = false;
+            //textFindMat.Visible = false;
 
-            label7.Visible = false;
-            textFindWork.Visible = false;
+            //label7.Visible = false;
+            //textFindWork.Visible = false;
 
             butRepair.Visible = false;
             butDiagn.Visible = false;
@@ -320,33 +320,33 @@ namespace Тест_курсач.Master
 
         }
 
-        private void textFindMat_TextChanged(object sender, EventArgs e)
-        {
-            string searchValue = textFindMat.Text.Trim();
+        //private void textFindMat_TextChanged(object sender, EventArgs e)
+        //{
+        //    string searchValue = textFindMat.Text.Trim();
 
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
-            }
-            else
-            {
-                материалыДляМастераBindingSource.Filter = "";
-            }
-        }
+        //    if (!string.IsNullOrEmpty(searchValue))
+        //    {
+        //        материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
+        //    }
+        //    else
+        //    {
+        //        материалыДляМастераBindingSource.Filter = "";
+        //    }
+        //}
 
-        private void textFindWork_TextChanged(object sender, EventArgs e)
-        {
-            string searchValue = textFindWork.Text.Trim();
+        //private void textFindWork_TextChanged(object sender, EventArgs e)
+        //{
+        //    string searchValue = textFindWork.Text.Trim();
 
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
-            }
-            else
-            {
-                видремонтныхработBindingSource1.Filter = "";
-            }
-        }
+        //    if (!string.IsNullOrEmpty(searchValue))
+        //    {
+        //        видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
+        //    }
+        //    else
+        //    {
+        //        видремонтныхработBindingSource1.Filter = "";
+        //    }
+        //}
 
         private void SelectZakaz_Load(object sender, EventArgs e)
         {
@@ -368,8 +368,8 @@ namespace Тест_курсач.Master
                         {
                             data3.Visible = false;
                             label2.Visible = false;
-                            label7.Visible = false;
-                            textFindMat.Visible = false;
+                            //label7.Visible = false;
+                            //textFindMat.Visible = false;
                             butMat.Visible = false;
                         }
                         else if (status == "На ремонте")
@@ -410,8 +410,8 @@ namespace Тест_курсач.Master
             }
 
             butDiagn.Visible = false;
-            label7.Visible = false;
-            textFindWork.Visible = false;
+            //label7.Visible = false;
+            //textFindWork.Visible = false;
             data4.Visible = false;
             label3.Visible = false;
             butBack.Visible = false;
@@ -437,8 +437,8 @@ namespace Тест_курсач.Master
             }
             butBack.Visible = false;
             butRepair.Visible = false;
-            label6.Visible = false;
-            textFindMat.Visible = false;
+            //label6.Visible = false;
+            //textFindMat.Visible = false;
             text1.Visible = false;
             label5.Visible = false;
             data5.Visible = false;
