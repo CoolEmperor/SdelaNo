@@ -43,6 +43,118 @@ namespace Тест_курсач.Master
             butRepair.Visible = false;
             butDiagn.Visible = false;
         }
+        private void FillData3GridView(int materialID)
+        {
+            string query = $@"SELECT МатериалыДляМастера.* 
+                      FROM МатериалыДляМастера 
+                      JOIN Затраченный_материал ON МатериалыДляМастера.ИдМатериала = Затраченный_материал.ИдМатериала 
+                      WHERE Затраченный_материал.ИдМатериала = {materialID}";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    DataRow newRow = table.Rows[0];
+
+                    // Находим индекс строки в таблице data3, соответствующей добавленному материалу
+                    int rowIndex = -1;
+                    foreach (DataGridViewRow row in data3.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells[0].Value) == materialID)
+                        {
+                            rowIndex = row.Index;
+                            break;
+                        }
+                    }
+
+                    // Если строка найдена, обновляем её данными из таблицы
+                    if (rowIndex != -1)
+                    {
+                        foreach (DataGridViewCell cell in data3.Rows[rowIndex].Cells)
+                        {
+                            cell.Value = newRow[cell.OwningColumn.DataPropertyName];
+                        }
+                    }
+                }
+            }
+
+            string query1 = $@"SELECT МатериалыДляМастера.* 
+                      FROM МатериалыДляМастера 
+                      JOIN Затраченный_материал ON МатериалыДляМастера.ИдМатериала = Затраченный_материал.ИдМатериала 
+                      WHERE Затраченный_материал.ИдЗаказа = {selectId}";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query1, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                data3.DataSource = table; // Устанавливаем обновленную таблицу как источник данных для data3
+            }
+        }
+
+        private void FillData2GridView(int workID)
+        {
+            string query = $@"SELECT Вид_ремонтных_работ.* FROM Вид_ремонтных_работ JOIN Работа ON Вид_ремонтных_работ.ИдРаботы = Работа.ИдРаботы WHERE Работа.ИдРаботы = {workID}";
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    DataRow newRow = table.Rows[0];
+
+                    // Находим индекс строки в таблице data3, соответствующей добавленному материалу
+                    int rowIndex = -1;
+                    foreach (DataGridViewRow row in data2.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells[0].Value) == workID)
+                        {
+                            rowIndex = row.Index;
+                            break;
+                        }
+                    }
+
+                    // Если строка найдена, обновляем её данными из таблицы
+                    if (rowIndex != -1)
+                    {
+                        foreach (DataGridViewCell cell in data2.Rows[rowIndex].Cells)
+                        {
+                            cell.Value = newRow[cell.OwningColumn.DataPropertyName];
+                        }
+                    }
+                }
+            }
+
+            string query1 = $@"SELECT Вид_ремонтных_работ.* FROM Вид_ремонтных_работ JOIN Работа ON Вид_ремонтных_работ.ИдРаботы = Работа.ИдРаботы WHERE Работа.ИдЗаказа = {selectId}";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter1 = new SqlDataAdapter(query1, connection);
+                DataTable table1 = new DataTable();
+                adapter1.Fill(table1);
+                data2.DataSource = table1;
+            }
+        }
+        private void FillData1GridView()
+        {
+            string query = $"SELECT * FROM ЗаказДляМастера Where ИдЗаказа = {selectId}";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                data1.DataSource = table;
+            }
+        }
         private void FillDataGridView()
         {
             string query = $"SELECT * FROM ЗаказДляМастера Where ИдЗаказа = {selectId}";
@@ -167,7 +279,6 @@ namespace Тест_курсач.Master
         }
         private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
             if (e.Button == MouseButtons.Left)
             {
                 if (!int.TryParse(text1.Text, out int quantity))
@@ -187,10 +298,11 @@ namespace Тест_курсач.Master
                 {
                     AddMaterialToRequired(selectedMaterialID);
                     MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
-                    FillDataGridView();
+                    FillData3GridView(selectedMaterialID);
+                    FillData1GridView();
                 }
-
             }
+
         }
         private bool CheckIfMaterialExists(int materialID)
         {
@@ -218,6 +330,9 @@ namespace Тест_курсач.Master
                 command.ExecuteNonQuery();
             }
         }
+
+
+
         private void data3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -241,6 +356,8 @@ namespace Тест_курсач.Master
             }
         }
 
+
+
         private void data4_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -257,7 +374,8 @@ namespace Тест_курсач.Master
                 {
                     AddWorkToRequired(selectedWorkID);
                     MessageBox.Show("Запись успешно добавлена в таблицу Требуемые работы");
-                    FillDataGridView();
+                    FillData2GridView(selectedWorkID);
+                    FillData1GridView();
                 }
 
             }
@@ -286,6 +404,8 @@ namespace Тест_курсач.Master
                 command.ExecuteNonQuery();
             }
         }
+
+
 
         private void data2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -320,33 +440,7 @@ namespace Тест_курсач.Master
 
         }
 
-        //private void textFindMat_TextChanged(object sender, EventArgs e)
-        //{
-        //    string searchValue = textFindMat.Text.Trim();
 
-        //    if (!string.IsNullOrEmpty(searchValue))
-        //    {
-        //        материалыДляМастераBindingSource.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
-        //    }
-        //    else
-        //    {
-        //        материалыДляМастераBindingSource.Filter = "";
-        //    }
-        //}
-
-        //private void textFindWork_TextChanged(object sender, EventArgs e)
-        //{
-        //    string searchValue = textFindWork.Text.Trim();
-
-        //    if (!string.IsNullOrEmpty(searchValue))
-        //    {
-        //        видремонтныхработBindingSource1.Filter = string.Format("Название LIKE '%{0}%'", searchValue);
-        //    }
-        //    else
-        //    {
-        //        видремонтныхработBindingSource1.Filter = "";
-        //    }
-        //}
 
         private void SelectZakaz_Load(object sender, EventArgs e)
         {

@@ -20,7 +20,6 @@ namespace СделаНо
         private int selectId;
         private string fns1;
         private int idsotr;
-        string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
         public MasterForm(string fns, int idsotr)
         {
             InitializeComponent();

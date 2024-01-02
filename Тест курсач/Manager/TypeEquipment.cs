@@ -138,23 +138,40 @@ namespace СделаНо
         }
         private void butDelete_Click(object sender, EventArgs e)
         {
-            int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
+            int selectedEquipmentTypeId = (int)data1.CurrentRow.Cells[0].Value;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("DeleteTypeOfEquipment", connection))
+                string checkQuery = "SELECT COUNT(*) FROM Заказ WHERE ИдВида = @ИдВида";
+
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@ИдВида", selectedEmployeeId);
-                    command.ExecuteNonQuery();
+                    checkCommand.Parameters.AddWithValue("@ИдВида", selectedEquipmentTypeId);
+
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Этот вид техники имеет зависимые данные и не может быть удален.");
+                    }
+                    else
+                    {
+                        using (SqlCommand deleteCommand = new SqlCommand("DeleteTypeOfEquipment", connection))
+                        {
+                            deleteCommand.CommandType = CommandType.StoredProcedure;
+                            deleteCommand.Parameters.AddWithValue("@ИдВида", selectedEquipmentTypeId);
+                            deleteCommand.ExecuteNonQuery();
+                        }
+
+                        FillDataGridView();
+
+                        MessageBox.Show("Данные удалены успешно.");
+                    }
                 }
-
-                FillDataGridView();
-
-                MessageBox.Show("Данные удалены успешно.");
             }
+
         }
         private void butSort_Click(object sender, EventArgs e)
         {
@@ -231,17 +248,29 @@ namespace СделаНо
         }
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
-            string filterText = textBoxFind.Text;
-            string findField = "Название";
+            try
+            {
+                string filterText = textBoxFind.Text;
+                string findField = "Название";
 
-            if (!string.IsNullOrWhiteSpace(filterText))
-            {
-                видТехникиДляМенеджераBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+                if (data1.DataSource is DataTable dataTable)
+                {
+                    if (!string.IsNullOrWhiteSpace(filterText))
+                    {
+                        dataTable.DefaultView.RowFilter = $"{findField} LIKE '{filterText}%'";
+                    }
+                    else
+                    {
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                видТехникиДляМенеджераBindingSource.RemoveFilter();
+                MessageBox.Show($"Ошибка фильтрации: {ex.Message}");
             }
+
+
         }
     }
 }

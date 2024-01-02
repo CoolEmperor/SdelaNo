@@ -129,22 +129,38 @@ namespace СделаНо
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            int selectedTypeId = (int)data1.CurrentRow.Cells[0].Value;
+            int selectedModelId = (int)data1.CurrentRow.Cells[0].Value;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("DeleteModel", connection))
+                string checkQuery = "SELECT COUNT(*) FROM Вид_техники WHERE ИдМодели = @ИдМодели";
+
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@ИдМодели", selectedTypeId);
-                    command.ExecuteNonQuery();
+                    checkCommand.Parameters.AddWithValue("@ИдМодели", selectedModelId);
+
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Эта модель имеет зависимые данные и не может быть удалена.");
+                    }
+                    else
+                    {
+                        using (SqlCommand deleteCommand = new SqlCommand("DeleteModel", connection))
+                        {
+                            deleteCommand.CommandType = CommandType.StoredProcedure;
+                            deleteCommand.Parameters.AddWithValue("@ИдМодели", selectedModelId);
+                            deleteCommand.ExecuteNonQuery();
+                        }
+
+                        FillDataGridView();
+
+                        MessageBox.Show("Данные удалены успешно.");
+                    }
                 }
-
-                FillDataGridView();
-
-                MessageBox.Show("Данные удалены успешно.");
             }
         }
 
@@ -197,17 +213,28 @@ namespace СделаНо
 
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
-            string filterText = textBoxFind.Text;
-            string findField = "Название";
+            try
+            {
+                string filterText = textBoxFind.Text;
+                string findField = "Название";
 
-            if (!string.IsNullOrWhiteSpace(filterText))
-            {
-                модельBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+                if (data1.DataSource is DataTable dataTable)
+                {
+                    if (!string.IsNullOrWhiteSpace(filterText))
+                    {
+                        dataTable.DefaultView.RowFilter = $"{findField} LIKE '{filterText}%'";
+                    }
+                    else
+                    {
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                модельBindingSource.RemoveFilter();
+                MessageBox.Show($"Ошибка фильтрации: {ex.Message}");
             }
+
         }
     }
 }

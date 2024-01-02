@@ -19,8 +19,8 @@ namespace СделаНо
     public partial class Admin : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
-        //string connectionString = "Data Source=DMITRYBUGAI-LAP\\SQLEXPRESS;Initial Catalog=СделаНо;Integrated Security=True";
         private string fns1;
+        private int click = 0;
         public Admin(string fns)
         {
             InitializeComponent();
@@ -34,19 +34,160 @@ namespace СделаНо
 
             MessageBox.Show("Здравствуйте, " + fns1);
             label3.Text = fns1;
-        }
 
+            FillDataGridView();
+
+            textFIO.Enabled = false;
+            textLogin.Enabled = false;
+            textPass.Enabled = false;
+            comboRole.Enabled = false;
+            textTel.Enabled = false;
+
+            butGood.Visible = false;
+            butBack.Visible = false;
+
+        }
+        
         private void butExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void butClear_Click(object sender, EventArgs e)
+        private void clear()
         {
             textFIO.Clear();
             textLogin.Clear();
             textPass.Clear();
             textTel.Clear();
+        }
+        private void butClear_Click(object sender, EventArgs e)
+        {
+            if(click == 1)
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(textFIO.Text) || string.IsNullOrWhiteSpace(textLogin.Text)
+                            || string.IsNullOrWhiteSpace(textPass.Text) || string.IsNullOrWhiteSpace(textTel.Text))
+                    {
+                        MessageBox.Show("Пожалуйста, заполните все поля.");
+                        return;
+                    }
+
+                    string FIO = textFIO.Text;
+                    string login = textLogin.Text;
+                    string pass = textPass.Text;
+                    string role = comboRole.Text;
+                    string tel = textTel.Text;
+
+                    if (!IsValidName(FIO))
+                    {
+                        MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
+                        return;
+                    }
+                    else if (!IsValidTelefon(tel))
+                    {
+                        MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
+                        return;
+                    }
+                    else
+                    {
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+
+                            using (SqlCommand command = new SqlCommand("InsertEmployee", connection))
+                            {
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@ФИО", FIO);
+                                command.Parameters.AddWithValue("@Логин", login);
+                                command.Parameters.AddWithValue("@Пароль", pass);
+                                command.Parameters.AddWithValue("@Роль", role);
+                                command.Parameters.AddWithValue("@Телефон", tel);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            FillDataGridView();
+
+                            MessageBox.Show("Данные добавлены успешно.");
+                        }
+                    }
+
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Строка не может быть добавление!!!",
+                   "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(textFIO.Text) || string.IsNullOrWhiteSpace(textLogin.Text)
+                        || string.IsNullOrWhiteSpace(textPass.Text) || string.IsNullOrWhiteSpace(textTel.Text))
+                    {
+                        MessageBox.Show("Пожалуйста, заполните все поля.");
+                        return;
+                    }
+                    int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
+                    string FIO = textFIO.Text;
+                    string login = textLogin.Text;
+                    string pass = textPass.Text;
+                    string role = comboRole.Text;
+                    string tel = textTel.Text.ToString();
+
+                    if (!IsValidName(FIO))
+                    {
+                        MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
+                        return;
+                    }
+                    else if (!IsValidTelefon(tel))
+                    {
+                        MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
+                        return;
+                    }
+                    else
+                    {
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+
+                            using (SqlCommand command = new SqlCommand("UpdateEmployee", connection))
+                            {
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@ИдСотрудника", selectedEmployeeId);
+                                command.Parameters.AddWithValue("@ФИО", FIO);
+                                command.Parameters.AddWithValue("@Логин", login);
+                                command.Parameters.AddWithValue("@Пароль", pass);
+                                command.Parameters.AddWithValue("@Роль", role);
+                                command.Parameters.AddWithValue("@Телефон", tel);
+
+                                command.ExecuteNonQuery();
+                            }
+                            FillDataGridView();
+                        }
+                        MessageBox.Show("Данные изменены успешно.");
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Строка не может быть добавление!!!",
+                   "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            click = 0;
+            textFIO.Enabled = false;
+            textLogin.Enabled = false;
+            textPass.Enabled = false;
+            comboRole.Enabled = false;
+            textTel.Enabled = false;
+
+            butGood.Visible = false;
+            butBack.Visible = false;
+
+            butAdd.Visible = true;
+            butEdit.Visible = true;
+            butDelete.Visible = true;
         }
         private void FillDataGridView()
         {
@@ -74,142 +215,73 @@ namespace СделаНо
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(textFIO.Text) || string.IsNullOrWhiteSpace(textLogin.Text)
-                        || string.IsNullOrWhiteSpace(textPass.Text)|| string.IsNullOrWhiteSpace(textTel.Text))
-                {
-                    MessageBox.Show("Пожалуйста, заполните все поля.");
-                    return;
-                }
+            textFIO.Enabled = true;
+            textLogin.Enabled = true;
+            textPass.Enabled = true;
+            comboRole.Enabled = true;
+            textTel.Enabled = true;
 
-                string FIO = textFIO.Text;
-                string login = textLogin.Text;
-                string pass = textPass.Text;
-                string role = comboRole.Text;
-                string tel = textTel.Text;
+            clear();
 
-                if (!IsValidName(FIO))
-                {
-                    MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
-                    return;
-                }
-                else if (!IsValidTelefon(tel))
-                {
-                    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
-                    return;
-                }
-                else
-                {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
+            click = 1;
 
-                        using (SqlCommand command = new SqlCommand("InsertEmployee", connection))
-                        {
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@ФИО", FIO);
-                            command.Parameters.AddWithValue("@Логин", login);
-                            command.Parameters.AddWithValue("@Пароль", pass);
-                            command.Parameters.AddWithValue("@Роль", role);
-                            command.Parameters.AddWithValue("@Телефон", tel);
+            butGood.Visible = true;
+            butBack.Visible = true;
 
-                            command.ExecuteNonQuery();
-                        }
-
-                        FillDataGridView();
-
-                        MessageBox.Show("Данные добавлены успешно.");
-                    }
-                }
-                
-            }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox.Show("Строка не может быть добавление!!!",
-               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            butAdd.Visible = false;
+            butEdit.Visible = false;
+            butDelete.Visible = false;
         }
 
         private void butEdit_Click(object sender, EventArgs e)
         {
+            textFIO.Enabled = true;
+            textLogin.Enabled = true;
+            textPass.Enabled = true;
+            comboRole.Enabled = true;
+            textTel.Enabled = true;
+
+            click = 1;
+
+            butGood.Visible = true;
+            butBack.Visible = true;
+
+            butAdd.Visible = false;
+            butEdit.Visible = false;
+            butDelete.Visible = false;
+        }
+
+        private void butDelete_Click(object sender, EventArgs e)
+        {
             try
             {
-                if (string.IsNullOrWhiteSpace(textFIO.Text) || string.IsNullOrWhiteSpace(textLogin.Text)
-                    || string.IsNullOrWhiteSpace(textPass.Text) || string.IsNullOrWhiteSpace(textTel.Text))
-                {
-                    MessageBox.Show("Пожалуйста, заполните все поля.");
-                    return;
-                }
                 int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
-                string FIO = textFIO.Text;
-                string login = textLogin.Text;
-                string pass = textPass.Text;
-                string role = comboRole.Text;
-                string tel = textTel.Text.ToString();
 
-                if (!IsValidName(FIO))
-                {
-                    MessageBox.Show("ФИО должно: состоять из 3 слов, каждое слово начинаться с большой буквы и быть на русском языке.");
-                    return;
-                }
-                else if (!IsValidTelefon(tel))
-                {
-                    MessageBox.Show("Номер телефона должен начинаться на +375 и состоять из 12 цифр");
-                    return;
-                }
-                else
+                // Count the number of administrators before deleting
+                int adminCount = CountAdministrators();
+
+                if (adminCount > 1)
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
 
-                        using (SqlCommand command = new SqlCommand("UpdateEmployee", connection))
+                        using (SqlCommand command = new SqlCommand("DeleteEmployee", connection))
                         {
                             command.CommandType = CommandType.StoredProcedure;
                             command.Parameters.AddWithValue("@ИдСотрудника", selectedEmployeeId);
-                            command.Parameters.AddWithValue("@ФИО", FIO);
-                            command.Parameters.AddWithValue("@Логин", login);
-                            command.Parameters.AddWithValue("@Пароль", pass);
-                            command.Parameters.AddWithValue("@Роль", role);
-                            command.Parameters.AddWithValue("@Телефон", tel);
-
                             command.ExecuteNonQuery();
                         }
+
                         FillDataGridView();
                     }
-                    MessageBox.Show("Данные изменены успешно.");
+
+                    MessageBox.Show("Данные удалены успешно.");
                 }
-            }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox.Show("Строка не может быть добавление!!!",
-               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void butDelete_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                else
                 {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand("DeleteEmployee", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@ИдСотрудника", selectedEmployeeId);
-                        command.ExecuteNonQuery();
-                    }
-
-                    FillDataGridView();
+                    MessageBox.Show("Нельзя удалить последнего администратора.");
                 }
-
-                MessageBox.Show("Данные удалены успешно.");
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -217,6 +289,25 @@ namespace СделаНо
                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private int CountAdministrators()
+        {
+            int adminCount = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM Сотрудник WHERE Роль = 'Администратор'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    adminCount = (int)command.ExecuteScalar();
+                }
+            }
+
+            return adminCount;
+        }
+
 
         private void butSort_Click(object sender, EventArgs e)
         {
@@ -268,16 +359,26 @@ namespace СделаНо
 
         private void textBoxFindFam_TextChanged(object sender, EventArgs e)
         {
-            string filterText = textBoxFindFam.Text;
-            string findField = "ФИО";
-
-            if (!string.IsNullOrWhiteSpace(filterText))
+            try
             {
-                сотрудникBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+                string filterText = textBoxFindFam.Text;
+                string findField = "ФИО";
+                
+                if (data1.DataSource is DataTable dataTable)
+                {
+                    if (!string.IsNullOrWhiteSpace(filterText))
+                    {
+                        dataTable.DefaultView.RowFilter = $"{findField} LIKE '{filterText}%'";
+                    }
+                    else
+                    {
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                сотрудникBindingSource.RemoveFilter();
+                MessageBox.Show($"Ошибка фильтрации: {ex.Message}");
             }
         }
 
@@ -330,6 +431,23 @@ namespace СделаНо
             //textTel.Text = phoneNumber;
             //textTel.SelectionStart = textTel.Text.Length; // Перемещаем курсор в конец текста
             //textTel.TextChanged += textTel_TextChanged; // Восстанавливаем обработчик
+        }
+
+        private void butBack_Click(object sender, EventArgs e)
+        {
+            click = 0;
+            textFIO.Enabled = false;
+            textLogin.Enabled = false;
+            textPass.Enabled = false;
+            comboRole.Enabled = false;
+            textTel.Enabled = false;
+
+            butGood.Visible = false;
+            butBack.Visible = false;
+
+            butAdd.Visible = true;
+            butEdit.Visible = true;
+            butDelete.Visible = true;
         }
     }
 }

@@ -140,16 +140,32 @@ namespace СделаНо
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("DeleteTypeOfDevice", connection))
+                string checkQuery = "SELECT COUNT(*) FROM Вид_техники WHERE ИдТипа = @ИдТипа";
+
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@ИдТипа", selectedTypeId);
-                    command.ExecuteNonQuery();
+                    checkCommand.Parameters.AddWithValue("@ИдТипа", selectedTypeId);
+
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Этот тип устройства используется и не может быть удален.");
+                    }
+                    else
+                    {
+                        using (SqlCommand deleteCommand = new SqlCommand("DeleteTypeOfDevice", connection))
+                        {
+                            deleteCommand.CommandType = CommandType.StoredProcedure;
+                            deleteCommand.Parameters.AddWithValue("@ИдТипа", selectedTypeId);
+                            deleteCommand.ExecuteNonQuery();
+                        }
+
+                        FillDataGridView();
+
+                        MessageBox.Show("Данные удалены успешно.");
+                    }
                 }
-
-                FillDataGridView();
-
-                MessageBox.Show("Данные удалены успешно.");
             }
         }
 
@@ -188,16 +204,26 @@ namespace СделаНо
 
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
-            string filterText = textBoxFind.Text;
-            string findField = "Название";
+            try
+            {
+                string filterText = textBoxFind.Text;
+                string findField = "Название";
 
-            if (!string.IsNullOrWhiteSpace(filterText))
-            {
-                типустройстваBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+                if (data1.DataSource is DataTable dataTable)
+                {
+                    if (!string.IsNullOrWhiteSpace(filterText))
+                    {
+                        dataTable.DefaultView.RowFilter = $"{findField} LIKE '{filterText}%'";
+                    }
+                    else
+                    {
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                типустройстваBindingSource.RemoveFilter();
+                MessageBox.Show($"Ошибка фильтрации: {ex.Message}");
             }
         }
 

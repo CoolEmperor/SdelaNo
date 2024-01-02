@@ -175,18 +175,34 @@ namespace СделаНо
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("DeleteWork", connection))
+                string checkQuery = "SELECT COUNT(*) FROM Работы WHERE ИдРаботы = @ИдРаботы";
+
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@ИдРаботы", selectedEmployeeId);
+                    checkCommand.Parameters.AddWithValue("@ИдРаботы", selectedEmployeeId);
 
-                    command.ExecuteNonQuery();
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Эта работа имеет зависимые данные и не может быть удален.");
+                    }
+                    else
+                    {
+                        using (SqlCommand deleteCommand = new SqlCommand("DeleteWork", connection))
+                        {
+                            deleteCommand.CommandType = CommandType.StoredProcedure;
+                            deleteCommand.Parameters.AddWithValue("@ИдРаботы", selectedEmployeeId);
+                            deleteCommand.ExecuteNonQuery();
+                        }
+
+                        FillDataGridView();
+
+                        MessageBox.Show("Данные удалены успешно.");
+                    }
                 }
-
-                FillDataGridView();
-
-                MessageBox.Show("Данные удалены успешно.");
             }
+
         }
 
         private void butSort_Click(object sender, EventArgs e)
@@ -224,17 +240,29 @@ namespace СделаНо
 
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
-            string filterText = textBoxFind.Text;
-            string findField = "Название";
+            try
+            {
+                string filterText = textBoxFind.Text;
+                string findField = "Название";
 
-            if (!string.IsNullOrWhiteSpace(filterText))
-            {
-                видремонтныхработBindingSource.Filter = $"{findField} LIKE '{filterText}%'";
+                if (data1.DataSource is DataTable dataTable)
+                {
+                    if (!string.IsNullOrWhiteSpace(filterText))
+                    {
+                        dataTable.DefaultView.RowFilter = $"{findField} LIKE '{filterText}%'";
+                    }
+                    else
+                    {
+                        dataTable.DefaultView.RowFilter = string.Empty;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                видремонтныхработBindingSource.RemoveFilter();
+                MessageBox.Show($"Ошибка фильтрации: {ex.Message}");
             }
+
+
         }
 
         private void data1_SelectionChanged(object sender, EventArgs e)

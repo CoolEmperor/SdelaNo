@@ -64,8 +64,9 @@
             this.comboBoxSort2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxFindFam = new Guna.UI2.WinForms.Guna2TextBox();
-            this.butClear = new Guna.UI2.WinForms.Guna2Button();
+            this.butGood = new Guna.UI2.WinForms.Guna2Button();
             this.сотрудникTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter();
+            this.butBack = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
@@ -126,9 +127,9 @@
             this.butExit.FillColor = System.Drawing.Color.PeachPuff;
             this.butExit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butExit.ForeColor = System.Drawing.Color.Black;
-            this.butExit.Location = new System.Drawing.Point(1239, 748);
+            this.butExit.Location = new System.Drawing.Point(1229, 740);
             this.butExit.Name = "butExit";
-            this.butExit.Size = new System.Drawing.Size(249, 40);
+            this.butExit.Size = new System.Drawing.Size(259, 48);
             this.butExit.TabIndex = 11;
             this.butExit.Text = "Выход из программы";
             this.butExit.Click += new System.EventHandler(this.butExit_Click);
@@ -178,7 +179,7 @@
             this.data1.RowHeadersVisible = false;
             this.data1.RowHeadersWidth = 51;
             this.data1.RowTemplate.Height = 24;
-            this.data1.Size = new System.Drawing.Size(1021, 701);
+            this.data1.Size = new System.Drawing.Size(996, 701);
             this.data1.TabIndex = 12;
             this.data1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.data1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -267,7 +268,7 @@
             this.labelFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFIO.AutoSize = true;
             this.labelFIO.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFIO.Location = new System.Drawing.Point(1066, 108);
+            this.labelFIO.Location = new System.Drawing.Point(1033, 89);
             this.labelFIO.Name = "labelFIO";
             this.labelFIO.Size = new System.Drawing.Size(55, 24);
             this.labelFIO.TabIndex = 13;
@@ -278,7 +279,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1066, 152);
+            this.label4.Location = new System.Drawing.Point(1033, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 24);
             this.label4.TabIndex = 15;
@@ -289,7 +290,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1066, 196);
+            this.label5.Location = new System.Drawing.Point(1033, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 24);
             this.label5.TabIndex = 17;
@@ -300,7 +301,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1066, 239);
+            this.label6.Location = new System.Drawing.Point(1040, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 24);
             this.label6.TabIndex = 19;
@@ -311,7 +312,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1066, 294);
+            this.label7.Location = new System.Drawing.Point(1021, 273);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 24);
             this.label7.TabIndex = 21;
@@ -331,13 +332,13 @@
             this.textFIO.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textFIO.ForeColor = System.Drawing.Color.Red;
             this.textFIO.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textFIO.Location = new System.Drawing.Point(1172, 108);
+            this.textFIO.Location = new System.Drawing.Point(1125, 89);
             this.textFIO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textFIO.Name = "textFIO";
             this.textFIO.PasswordChar = '\0';
             this.textFIO.PlaceholderText = "";
             this.textFIO.SelectedText = "";
-            this.textFIO.Size = new System.Drawing.Size(304, 36);
+            this.textFIO.Size = new System.Drawing.Size(362, 36);
             this.textFIO.TabIndex = 24;
             // 
             // comboRole
@@ -355,9 +356,9 @@
             "Администратор",
             "Менеджер",
             "Мастер"});
-            this.comboRole.Location = new System.Drawing.Point(1171, 239);
+            this.comboRole.Location = new System.Drawing.Point(1124, 220);
             this.comboRole.Name = "comboRole";
-            this.comboRole.Size = new System.Drawing.Size(305, 36);
+            this.comboRole.Size = new System.Drawing.Size(363, 36);
             this.comboRole.TabIndex = 25;
             // 
             // textLogin
@@ -374,13 +375,13 @@
             this.textLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textLogin.ForeColor = System.Drawing.Color.Red;
             this.textLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLogin.Location = new System.Drawing.Point(1172, 152);
+            this.textLogin.Location = new System.Drawing.Point(1125, 133);
             this.textLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textLogin.Name = "textLogin";
             this.textLogin.PasswordChar = '\0';
             this.textLogin.PlaceholderText = "";
             this.textLogin.SelectedText = "";
-            this.textLogin.Size = new System.Drawing.Size(304, 36);
+            this.textLogin.Size = new System.Drawing.Size(362, 36);
             this.textLogin.TabIndex = 26;
             // 
             // textPass
@@ -397,13 +398,13 @@
             this.textPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPass.ForeColor = System.Drawing.Color.Red;
             this.textPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textPass.Location = new System.Drawing.Point(1172, 196);
+            this.textPass.Location = new System.Drawing.Point(1125, 177);
             this.textPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPass.Name = "textPass";
             this.textPass.PasswordChar = '\0';
             this.textPass.PlaceholderText = "";
             this.textPass.SelectedText = "";
-            this.textPass.Size = new System.Drawing.Size(304, 36);
+            this.textPass.Size = new System.Drawing.Size(362, 36);
             this.textPass.TabIndex = 27;
             // 
             // textTel
@@ -420,13 +421,13 @@
             this.textTel.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textTel.ForeColor = System.Drawing.Color.Red;
             this.textTel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textTel.Location = new System.Drawing.Point(1172, 294);
+            this.textTel.Location = new System.Drawing.Point(1124, 273);
             this.textTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textTel.Name = "textTel";
             this.textTel.PasswordChar = '\0';
             this.textTel.PlaceholderText = "";
             this.textTel.SelectedText = "";
-            this.textTel.Size = new System.Drawing.Size(304, 36);
+            this.textTel.Size = new System.Drawing.Size(362, 36);
             this.textTel.TabIndex = 28;
             // 
             // butAdd
@@ -491,9 +492,9 @@
             this.butSort.FillColor = System.Drawing.Color.PeachPuff;
             this.butSort.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butSort.ForeColor = System.Drawing.Color.Black;
-            this.butSort.Location = new System.Drawing.Point(1171, 571);
+            this.butSort.Location = new System.Drawing.Point(1177, 580);
             this.butSort.Name = "butSort";
-            this.butSort.Size = new System.Drawing.Size(237, 43);
+            this.butSort.Size = new System.Drawing.Size(237, 36);
             this.butSort.TabIndex = 32;
             this.butSort.Text = "Сортировать по ФИО";
             this.butSort.Click += new System.EventHandler(this.butSort_Click);
@@ -512,9 +513,9 @@
             this.comboBoxSort2.Items.AddRange(new object[] {
             "По возрастанию",
             "По убыванию"});
-            this.comboBoxSort2.Location = new System.Drawing.Point(1169, 520);
+            this.comboBoxSort2.Location = new System.Drawing.Point(1125, 529);
             this.comboBoxSort2.Name = "comboBoxSort2";
-            this.comboBoxSort2.Size = new System.Drawing.Size(305, 36);
+            this.comboBoxSort2.Size = new System.Drawing.Size(363, 36);
             this.comboBoxSort2.TabIndex = 35;
             // 
             // label8
@@ -522,7 +523,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1077, 520);
+            this.label8.Location = new System.Drawing.Point(1033, 532);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 24);
             this.label8.TabIndex = 34;
@@ -542,36 +543,53 @@
             this.textBoxFindFam.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFindFam.ForeColor = System.Drawing.Color.Red;
             this.textBoxFindFam.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxFindFam.Location = new System.Drawing.Point(1111, 644);
+            this.textBoxFindFam.Location = new System.Drawing.Point(1063, 675);
             this.textBoxFindFam.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFindFam.Name = "textBoxFindFam";
             this.textBoxFindFam.PasswordChar = '\0';
             this.textBoxFindFam.PlaceholderText = "Текст для поиска";
             this.textBoxFindFam.SelectedText = "";
-            this.textBoxFindFam.Size = new System.Drawing.Size(350, 31);
+            this.textBoxFindFam.Size = new System.Drawing.Size(408, 31);
             this.textBoxFindFam.TabIndex = 36;
             this.textBoxFindFam.TextChanged += new System.EventHandler(this.textBoxFindFam_TextChanged);
             // 
-            // butClear
+            // butGood
             // 
-            this.butClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butClear.FillColor = System.Drawing.Color.PeachPuff;
-            this.butClear.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butClear.ForeColor = System.Drawing.Color.Black;
-            this.butClear.Location = new System.Drawing.Point(1172, 337);
-            this.butClear.Name = "butClear";
-            this.butClear.Size = new System.Drawing.Size(237, 31);
-            this.butClear.TabIndex = 37;
-            this.butClear.Text = "Очистить";
-            this.butClear.Click += new System.EventHandler(this.butClear_Click);
+            this.butGood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butGood.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butGood.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butGood.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butGood.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butGood.FillColor = System.Drawing.Color.PeachPuff;
+            this.butGood.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butGood.ForeColor = System.Drawing.Color.Black;
+            this.butGood.Location = new System.Drawing.Point(1139, 341);
+            this.butGood.Name = "butGood";
+            this.butGood.Size = new System.Drawing.Size(313, 36);
+            this.butGood.TabIndex = 37;
+            this.butGood.Text = "Применить";
+            this.butGood.Click += new System.EventHandler(this.butClear_Click);
             // 
             // сотрудникTableAdapter
             // 
             this.сотрудникTableAdapter.ClearBeforeFill = true;
+            // 
+            // butBack
+            // 
+            this.butBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butBack.FillColor = System.Drawing.Color.PeachPuff;
+            this.butBack.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBack.ForeColor = System.Drawing.Color.Black;
+            this.butBack.Location = new System.Drawing.Point(1139, 383);
+            this.butBack.Name = "butBack";
+            this.butBack.Size = new System.Drawing.Size(313, 36);
+            this.butBack.TabIndex = 38;
+            this.butBack.Text = "Отменить";
+            this.butBack.Click += new System.EventHandler(this.butBack_Click);
             // 
             // Admin
             // 
@@ -579,7 +597,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1500, 800);
-            this.Controls.Add(this.butClear);
+            this.Controls.Add(this.butBack);
+            this.Controls.Add(this.butGood);
             this.Controls.Add(this.textBoxFindFam);
             this.Controls.Add(this.comboBoxSort2);
             this.Controls.Add(this.label8);
@@ -647,7 +666,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxSort2;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox textBoxFindFam;
-        private Guna.UI2.WinForms.Guna2Button butClear;
+        private Guna.UI2.WinForms.Guna2Button butGood;
         private Тест_курсач.СделаНоDataSet сделаНоDataSet;
         private System.Windows.Forms.BindingSource сотрудникBindingSource;
         private Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
@@ -657,5 +676,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private Guna.UI2.WinForms.Guna2Button butBack;
     }
 }
