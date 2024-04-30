@@ -37,10 +37,10 @@ namespace СделаНо
                 if (adminCount == 0)
                 {
                     SqlCommand createAdminQuery = new SqlCommand("INSERT INTO Сотрудник (ФИО, Логин, Пароль, Роль, Телефон) VALUES (@ФИО, @Логин, @Пароль, 'Администратор', @Телефон)", connection);
-                    createAdminQuery.Parameters.AddWithValue("@ФИО", "Администратор");
-                    createAdminQuery.Parameters.AddWithValue("@Логин", "Администратор");
-                    createAdminQuery.Parameters.AddWithValue("@Пароль", "Администратор");
-                    createAdminQuery.Parameters.AddWithValue("@Телефон", "Администратор");
+                    createAdminQuery.Parameters.AddWithValue("@ФИО", "Бугай Дмитрий Александрович");
+                    createAdminQuery.Parameters.AddWithValue("@Логин", "администратор");
+                    createAdminQuery.Parameters.AddWithValue("@Пароль", "администратор");
+                    createAdminQuery.Parameters.AddWithValue("@Телефон", "+375259482128");
                     createAdminQuery.ExecuteNonQuery();
                 }
 

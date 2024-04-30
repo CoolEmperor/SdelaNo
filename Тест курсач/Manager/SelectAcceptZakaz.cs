@@ -36,7 +36,7 @@ namespace Тест_курсач.Manager
                 data1.DataSource = table;
             }
 
-            string query1 = $@"SELECT * FROM МатериалыДляМастера";
+            string query1 = $@"SELECT * FROM МатериалыДляМастера JOIN Затраченный_материал ON Затраченный_материал.ИдМатериала = МатериалыДляМастера.ИдМатериала WHERE Затраченный_материал.ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -146,7 +146,7 @@ namespace Тест_курсач.Manager
 
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFileDialog.Filter = "Excel файлы (*.xlsx)|*.xlsx|Все файлы (*.*)|*.*";
-
+            saveFileDialog.FileName = "Квитанция.xlsx";
             DialogResult result = saveFileDialog.ShowDialog();
             string outputFilePath = "";
             if (result == DialogResult.OK)
@@ -242,10 +242,10 @@ namespace Тест_курсач.Manager
                                                 }
                                             }
 
-                                            if (!reader.IsDBNull(reader.GetOrdinal("НазваниеМатериала")))
+                                            if (!reader.IsDBNull(reader.GetOrdinal("ИдМатериала")))
                                             {
                                                 int materialId = Convert.ToInt32(reader["ИдМатериала"]);
-                                                string materialInfo = $"{reader["НазваниеМатериала"]}, {reader["СтоимостьМатериала"]}, {reader["КоличествоМатериала"]}";
+                                                string materialInfo = $"{reader["НазваниеМатериала"]}, {reader["СтоимостьМатериала"]}"; /*, { reader["КоличествоМатериала"]}*/
 
                                                 if (!materials.ContainsKey(materialId))
                                                 {
@@ -271,7 +271,7 @@ namespace Тест_курсач.Manager
                                             string[] materialInfo = material.Value.Split(',');
                                             worksheet.Cells[rowMaterial, 2].Value = materialInfo[0].Trim();
                                             worksheet.Cells[rowMaterial, 4].Value = materialInfo[1].Trim();
-                                            worksheet.Cells[rowMaterial, 3].Value = materialInfo[2].Trim();
+                                            //worksheet.Cells[rowMaterial, 3].Value = materialInfo[2].Trim();
                                             rowMaterial++;
                                         }
                                     }

@@ -119,7 +119,7 @@ namespace СделаНо
                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else if(click == 2)
             {
                 try
                 {
@@ -241,7 +241,7 @@ namespace СделаНо
             comboRole.Enabled = true;
             textTel.Enabled = true;
 
-            click = 1;
+            click = 2;
 
             butGood.Visible = true;
             butBack.Visible = true;
@@ -257,10 +257,10 @@ namespace СделаНо
             {
                 int selectedEmployeeId = (int)data1.CurrentRow.Cells[0].Value;
 
-                // Count the number of administrators before deleting
-                int adminCount = CountAdministrators();
+                // Проверяем, является ли сотрудник администратором
+                bool isDeletingAdmin = IsEmployeeAdmin(selectedEmployeeId);
 
-                if (adminCount > 1)
+                if (!isDeletingAdmin || CountAdministrators() > 1)
                 {
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
@@ -274,9 +274,8 @@ namespace СделаНо
                         }
 
                         FillDataGridView();
+                        MessageBox.Show("Данные удалены успешно.");
                     }
-
-                    MessageBox.Show("Данные удалены успешно.");
                 }
                 else
                 {
@@ -286,7 +285,23 @@ namespace СделаНо
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Строка не может быть удалена!!!",
-               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsEmployeeAdmin(int employeeId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM Сотрудник WHERE Роль = 'Администратор' AND ИдСотрудника = @EmployeeId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                    int adminCount = (int)command.ExecuteScalar();
+                    return adminCount > 0;
+                }
             }
         }
 
@@ -307,7 +322,6 @@ namespace СделаНо
 
             return adminCount;
         }
-
 
         private void butSort_Click(object sender, EventArgs e)
         {

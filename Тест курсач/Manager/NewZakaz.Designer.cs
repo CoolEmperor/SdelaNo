@@ -212,7 +212,7 @@
             this.textdate.Name = "textdate";
             this.textdate.Size = new System.Drawing.Size(586, 36);
             this.textdate.TabIndex = 16;
-            this.textdate.Value = new System.DateTime(2023, 12, 2, 23, 22, 47, 290);
+            this.textdate.Value = new System.DateTime(2024, 1, 3, 19, 44, 17, 0);
             // 
             // сделаНоDataSet
             // 

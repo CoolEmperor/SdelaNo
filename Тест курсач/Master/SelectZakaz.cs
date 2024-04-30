@@ -277,6 +277,7 @@ namespace Тест_курсач.Master
             data2.MouseDoubleClick -= data2_MouseDoubleClick;
             data3.MouseDoubleClick -= data3_MouseDoubleClick;
         }
+
         private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -300,10 +301,11 @@ namespace Тест_курсач.Master
                     MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
                     FillData3GridView(selectedMaterialID);
                     FillData1GridView();
+
                 }
             }
-
         }
+
         private bool CheckIfMaterialExists(int materialID)
         {
             string query = $"SELECT COUNT(*) FROM Затраченный_материал WHERE ИдМатериала = {materialID} AND ИдЗаказа = {selectId}";
@@ -333,6 +335,7 @@ namespace Тест_курсач.Master
 
 
 
+
         private void data3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -342,6 +345,7 @@ namespace Тест_курсач.Master
                 DeleteMaterialFromAdditional(selectedMaterialID);
                 MessageBox.Show("Запись успешно удалена из таблицы Требуемые материалы");
                 FillDataGridView();
+                FillData1GridView();
             }
         }
         private void DeleteMaterialFromAdditional(int materialID)
@@ -418,6 +422,7 @@ namespace Тест_курсач.Master
                     DeleteWorkFromAdditional(selectedWorkID);
                     MessageBox.Show("Запись успешно удалена из таблицы Требуемые работы");
                     FillDataGridView();
+                    FillData1GridView();
                 }
                 else
                 {

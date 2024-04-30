@@ -38,7 +38,7 @@ namespace Тест_курсач.Manager
                 data1.DataSource = table;
             }
 
-            string query1 = $@"SELECT * FROM МатериалыДляМастера";
+            string query1 = $@"SELECT * FROM МатериалыДляМастера JOIN Затраченный_материал ON Затраченный_материал.ИдМатериала = МатериалыДляМастера.ИдМатериала WHERE Затраченный_материал.ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
