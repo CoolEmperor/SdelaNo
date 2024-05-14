@@ -67,7 +67,6 @@
 			this.butGood = new Guna.UI2.WinForms.Guna2Button();
 			this.сотрудникTableAdapter = new Тест_курсач.СделаНоDataSetTableAdapters.СотрудникTableAdapter();
 			this.butBack = new Guna.UI2.WinForms.Guna2Button();
-			this.butExp = new Guna.UI2.WinForms.Guna2Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
@@ -125,14 +124,14 @@
 			this.butExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
 			this.butExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
 			this.butExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.butExit.FillColor = System.Drawing.Color.PeachPuff;
-			this.butExit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.butExit.FillColor = System.Drawing.Color.Salmon;
+			this.butExit.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold);
 			this.butExit.ForeColor = System.Drawing.Color.Black;
-			this.butExit.Location = new System.Drawing.Point(1248, 746);
+			this.butExit.Location = new System.Drawing.Point(1223, 745);
 			this.butExit.Name = "butExit";
-			this.butExit.Size = new System.Drawing.Size(240, 42);
+			this.butExit.Size = new System.Drawing.Size(265, 43);
 			this.butExit.TabIndex = 11;
-			this.butExit.Text = "Выход из программы";
+			this.butExit.Text = "Сменить пользователя";
 			this.butExit.Click += new System.EventHandler(this.butExit_Click);
 			// 
 			// data1
@@ -592,30 +591,12 @@
 			this.butBack.Text = "Отменить";
 			this.butBack.Click += new System.EventHandler(this.butBack_Click);
 			// 
-			// butExp
-			// 
-			this.butExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.butExp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.butExp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.butExp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.butExp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.butExp.FillColor = System.Drawing.Color.PeachPuff;
-			this.butExp.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.butExp.ForeColor = System.Drawing.Color.Black;
-			this.butExp.Location = new System.Drawing.Point(1139, 488);
-			this.butExp.Name = "butExp";
-			this.butExp.Size = new System.Drawing.Size(313, 36);
-			this.butExp.TabIndex = 39;
-			this.butExp.Text = "Экспорт в Excel";
-			this.butExp.Click += new System.EventHandler(this.butExp_Click);
-			// 
 			// Admin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1500, 800);
-			this.Controls.Add(this.butExp);
 			this.Controls.Add(this.butBack);
 			this.Controls.Add(this.butGood);
 			this.Controls.Add(this.textBoxFindFam);
@@ -696,6 +677,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Guna.UI2.WinForms.Guna2Button butBack;
-		private Guna.UI2.WinForms.Guna2Button butExp;
 	}
 }

@@ -60,12 +60,15 @@ namespace СделаНо
 
         private void butExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
+			//Application.Exit();
+			Authorization aut = new Authorization();
+			aut.Show();
+			this.Close();
+		}
 
         private void butDel_Click(object sender, EventArgs e)
         {
-            AcceptZakaz spr = new AcceptZakaz();
+            AcceptZakaz spr = new AcceptZakaz(fns1);
             Controler(spr);
         }
 

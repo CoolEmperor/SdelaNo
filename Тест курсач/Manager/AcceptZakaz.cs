@@ -13,12 +13,15 @@ namespace Тест_курсач.Manager
     public partial class AcceptZakaz : UserControl
     {
         private int selectId;
-        public AcceptZakaz()
-        {
-            InitializeComponent();
-            butBack.Visible = false;
-        }
-        private void Controler(UserControl userControl)
+        string fio;
+
+		public AcceptZakaz(string fio)
+		{
+			InitializeComponent();
+			butBack.Visible = false;
+			this.fio = fio;
+		}
+		private void Controler(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
@@ -33,7 +36,7 @@ namespace Тест_курсач.Manager
         {
             butBack.Visible = true;
             butZakaz.Visible = false;
-            SelectAcceptZakaz spr = new SelectAcceptZakaz(this.selectId);
+            SelectAcceptZakaz spr = new SelectAcceptZakaz(this.selectId, fio);
             Controler(spr);
         }
 

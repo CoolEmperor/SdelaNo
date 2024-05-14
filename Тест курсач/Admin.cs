@@ -51,7 +51,10 @@ namespace СделаНо
 
 		private void butExit_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			//Application.Exit();
+			Authorization aut = new Authorization();
+			aut.Show();
+			this.Close();
 		}
 
 		private void clear()
@@ -190,7 +193,7 @@ namespace СделаНо
 			butAdd.Visible = true;
 			butEdit.Visible = true;
 			butDelete.Visible = true;
-			butExp.Visible = true;
+			//butExp.Visible = true;
 		}
 
 		private void FillDataGridView()
@@ -240,7 +243,7 @@ namespace СделаНо
 			butAdd.Visible = false;
 			butEdit.Visible = false;
 			butDelete.Visible = false;
-			butExp.Visible = false;
+			//butExp.Visible = false;
 		}
 
 		private void butEdit_Click(object sender, EventArgs e)
@@ -259,7 +262,7 @@ namespace СделаНо
 			butAdd.Visible = false;
 			butEdit.Visible = false;
 			butDelete.Visible = false;
-			butExp.Visible = false;
+			//butExp.Visible = false;
 		}
 
 		private void butDelete_Click(object sender, EventArgs e)
@@ -422,59 +425,59 @@ namespace СделаНо
 			butAdd.Visible = true;
 			butEdit.Visible = true;
 			butDelete.Visible = true;
-			butExp.Visible = true;
+			//butExp.Visible = true;
 		}
 
-		private void butExp_Click(object sender, EventArgs e)
-		{
-			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+		//private void butExp_Click(object sender, EventArgs e)
+		//{
+		//	ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-			{
-				saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-				saveFileDialog.FilterIndex = 1;
-				saveFileDialog.RestoreDirectory = true;
+		//	using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+		//	{
+		//		saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+		//		saveFileDialog.FilterIndex = 1;
+		//		saveFileDialog.RestoreDirectory = true;
 
-				if (saveFileDialog.ShowDialog() == DialogResult.OK)
-				{
-					string exportFilePath = saveFileDialog.FileName;
-					FileInfo templateFile = new FileInfo("Список сотрудников.xlsx");
+		//		if (saveFileDialog.ShowDialog() == DialogResult.OK)
+		//		{
+		//			string exportFilePath = saveFileDialog.FileName;
+		//			FileInfo templateFile = new FileInfo("Список сотрудников.xlsx");
 
-					FileInfo exportFile = new FileInfo(exportFilePath);
+		//			FileInfo exportFile = new FileInfo(exportFilePath);
 
-					using (ExcelPackage package = new ExcelPackage(exportFile, templateFile))
-					{
-						ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+		//			using (ExcelPackage package = new ExcelPackage(exportFile, templateFile))
+		//			{
+		//				ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
 
-						DataTable dataTable = GetEmployeeData();
+		//				DataTable dataTable = GetEmployeeData();
 
-						worksheet.Cells["B2"].LoadFromDataTable(dataTable, true);
+		//				worksheet.Cells["B2"].LoadFromDataTable(dataTable, true);
 
-						package.Save();
-						MessageBox.Show("Экспорт данных завершен.");
-					}
-				}
-			}
-		}
+		//				package.Save();
+		//				MessageBox.Show("Экспорт данных завершен.");
+		//			}
+		//		}
+		//	}
+		//}
 
-		private DataTable GetEmployeeData()
-		{
+		//private DataTable GetEmployeeData()
+		//{
 
-			DataTable dataTable = new DataTable();
-			using (SqlConnection connection = new SqlConnection(connectionString))
-			{
-				string query = "SELECT ИдСотрудника, ФИО, Логин, Пароль, Роль, Телефон FROM Сотрудник";
-				using (SqlCommand command = new SqlCommand(query, connection))
-				{
-					connection.Open();
-					using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-					{
-						adapter.Fill(dataTable);
-					}
-				}
-			}
+		//	DataTable dataTable = new DataTable();
+		//	using (SqlConnection connection = new SqlConnection(connectionString))
+		//	{
+		//		string query = "SELECT ИдСотрудника, ФИО, Логин, Пароль, Роль, Телефон FROM Сотрудник";
+		//		using (SqlCommand command = new SqlCommand(query, connection))
+		//		{
+		//			connection.Open();
+		//			using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+		//			{
+		//				adapter.Fill(dataTable);
+		//			}
+		//		}
+		//	}
 
-			return dataTable;
-		}
+		//	return dataTable;
+		//}
 	}
 }

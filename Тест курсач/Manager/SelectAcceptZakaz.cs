@@ -10,6 +10,8 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 using OfficeOpenXml;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 using System.Configuration;
+using СделаНо;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Тест_курсач.Manager
 {
@@ -18,11 +20,13 @@ namespace Тест_курсач.Manager
         string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
 
         int selectId;
-        public SelectAcceptZakaz(int selectId)
+        string fio;
+        public SelectAcceptZakaz(int selectId, string fio)
         {
             InitializeComponent();
             this.selectId = selectId;
             FillDataGridView();
+            this.fio = fio;
         }
         private void FillDataGridView()
         {
@@ -83,14 +87,13 @@ namespace Тест_курсач.Manager
         private void SelectAcceptZakaz_Load(object sender, EventArgs e)
         {
             CheckZakaz();
-
         }
 
         private void butStart_Click(object sender, EventArgs e)
         {
             uppAccZakaz();
-            report();
-        }
+			GenerateReport();
+		}
 
         private void uppAccZakaz()
         {
@@ -135,167 +138,162 @@ namespace Тест_курсач.Manager
             }
         }
 
-        private void report()
+		private void ReplaceWordStub(string stubToReplace, string text, Word.Document wordDocument)
+		{
+			var range = wordDocument.Content;
+			range.Find.ClearFormatting();
+			range.Find.Execute(FindText: stubToReplace, ReplaceWith: text);
+		}
+
+		private readonly string TemplaterFileName = @"" + Application.StartupPath.ToString() + "\\Квитанция.docx";
+		public void GenerateReport()
+		{
+			int rows;
+			var ИД_заказа = data1.CurrentRow.Cells[0].Value;
+			var ФИО_Клиента = data1.CurrentRow.Cells[8].Value;
+			var Телефон_Клиента = data1.CurrentRow.Cells[9].Value;
+			var Дата_принятия_заказа = data1.CurrentRow.Cells[1].Value;
+			var Дата_начала_ремонта = data1.CurrentRow.Cells[2].Value;
+			var Дата_конца_ремонта = data1.CurrentRow.Cells[3].Value;
+            var ФИО_Менеджера = fio;
+			var ФИО_Мастера = data1.CurrentRow.Cells[4].Value;
+
+			var Стоимость_работ = data1.CurrentRow.Cells[11].Value;
+			var Стоимость_материалов = data1.CurrentRow.Cells[10].Value;
+			var Стоимость_заказа = data1.CurrentRow.Cells[12].Value;
+			var Аванс = data1.CurrentRow.Cells[7].Value;
+			double Необходимо_внести = Convert.ToDouble(Стоимость_заказа) - Convert.ToDouble(Аванс);
+
+			var Вид_техники = "";
+			var Описание_устройства = "";
+			var Тип_устройства = "";
+			var Модель_устройства = "";
+
+			string query = @"
+            SELECT 
+                VT.Название AS 'Название',
+                VT.Описание AS 'Описание',
+                TU.Название AS 'НазваниеТипа',
+                M.Название AS 'НазваниеМодели'
+            FROM 
+                Заказ Z
+                JOIN Вид_техники VT ON Z.ИдВида = VT.ИдВида
+                JOIN Тип_устройства TU ON VT.ИдТипа = TU.ИдТипа
+                JOIN Модель M ON VT.ИдМодели = M.ИдМодели
+            WHERE 
+                Z.ИдЗаказа = @OrderId";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				SqlCommand command = new SqlCommand(query, connection);
+				command.Parameters.AddWithValue("@OrderId", Convert.ToInt32(ИД_заказа));
+
+				try
+				{
+					connection.Open();
+					SqlDataReader reader = command.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+						{
+							Вид_техники = reader["Название"].ToString();
+							Описание_устройства = reader["Описание"].ToString();
+							Тип_устройства = reader["НазваниеТипа"].ToString();
+							Модель_устройства = reader["НазваниеМодели"].ToString();
+						}
+					}
+					else
+					{
+						Console.WriteLine("Данные не найдены.");
+					}
+					reader.Close();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine($"Ошибка: {ex.Message}");
+				}
+			}
+
+			var wordapp = new Word.Application();
+			var wordDocument = wordapp.Documents.Open(TemplaterFileName);
+
+			wordapp.Visible = false;
+
+			ReplaceWordStub("<ИД_заказа>", Convert.ToString(ИД_заказа), wordDocument);
+			ReplaceWordStub("<ФИО_Клиента>", Convert.ToString(ФИО_Клиента), wordDocument);
+			ReplaceWordStub("<Телефон_Клиента>", Convert.ToString(Телефон_Клиента), wordDocument);
+			ReplaceWordStub("<Дата_принятия_заказа>", Convert.ToString(Дата_принятия_заказа), wordDocument);
+			ReplaceWordStub("<Дата_начала_ремонта>", Convert.ToString(Дата_начала_ремонта), wordDocument);
+			ReplaceWordStub("<Дата_конца_ремонта>", Convert.ToString(Дата_конца_ремонта), wordDocument);
+			ReplaceWordStub("<ФИО_Менеджера>", Convert.ToString(ФИО_Менеджера), wordDocument);
+			ReplaceWordStub("<ФИО_Мастера>", Convert.ToString(ФИО_Мастера), wordDocument);
+
+			ReplaceWordStub("<Стоимость_работ>", Convert.ToString(Стоимость_работ), wordDocument);
+			ReplaceWordStub("<Стоимость_материалов>", Convert.ToString(Стоимость_материалов), wordDocument);
+			ReplaceWordStub("<Стоимость_заказа>", Convert.ToString(Стоимость_заказа), wordDocument);
+			ReplaceWordStub("<Аванс>", Convert.ToString(Аванс), wordDocument);
+			ReplaceWordStub("<Необходимо_внести>", Convert.ToString(Необходимо_внести), wordDocument);
+
+			ReplaceWordStub("<Вид_техники>", Convert.ToString(Вид_техники), wordDocument);
+			ReplaceWordStub("<Тип_устройства>", Convert.ToString(Тип_устройства), wordDocument);
+			ReplaceWordStub("<Модель_устройства>", Convert.ToString(Модель_устройства), wordDocument);
+			ReplaceWordStub("<Описание_устройства>", Convert.ToString(Описание_устройства), wordDocument);
+
+			Word.Table compltb = wordDocument.Tables[1];
+			rows = data3.Rows.Count;
+			for (int i = 0; i < rows; i++)
+			{
+				Object oMissing = System.Reflection.Missing.Value;
+				compltb.Rows.Add(ref oMissing);
+			}
+			for (int i = 0; i < data3.Rows.Count; i++)
+			{
+				compltb.Cell(i + 2, 1).Range.Text = data3.Rows[i].Cells[1].Value.ToString() + "\t";
+				compltb.Cell(i + 2, 1).Range.Bold = 0;
+				compltb.Cell(i + 2, 2).Range.Text = data3.Rows[i].Cells[3].Value.ToString() + "\t";
+				compltb.Cell(i + 2, 2).Range.Bold = 0;
+				compltb.Cell(i + 2, 3).Range.Text = data3.Rows[i].Cells[2].Value.ToString() + "\t";
+				compltb.Cell(i + 2, 3).Range.Bold = 0;
+			}
+
+			Word.Table compltb1 = wordDocument.Tables[2];
+			int rows1 = data2.Rows.Count;
+
+			for (int i = 0; i < rows1; i++)
+			{
+				Object oMissing = System.Reflection.Missing.Value;
+				compltb1.Rows.Add(ref oMissing);
+			}
+
+			for (int i = 0; i < data2.Rows.Count; i++)
+			{
+				compltb1.Cell(i + 3, 1).Range.Text = data2.Rows[i].Cells[1].Value.ToString() + "\t";
+				compltb1.Cell(i + 3, 1).Range.Bold = 0;
+				compltb1.Cell(i + 3, 2).Range.Text = data2.Rows[i].Cells[2].Value.ToString() + "\t";
+				compltb1.Cell(i + 3, 2).Range.Bold = 0;
+				compltb1.Cell(i + 3, 3).Range.Text = data2.Rows[i].Cells[3].Value.ToString() + "\t";
+				compltb1.Cell(i + 3, 3).Range.Bold = 0;
+				compltb1.Cell(i + 3, 4).Range.Text = (Convert.ToDouble(data2.Rows[i].Cells[3].Value) * Convert.ToDouble(data2.Rows[i].Cells[2].Value)).ToString() + "\t";
+				compltb1.Cell(i + 3, 4).Range.Bold = 0;
+			}
+
+			wordapp.Visible = true;
+
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
+			saveFileDialog.FileName = "Название_файла.docx";
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				wordDocument.SaveAs(saveFileDialog.FileName);
+			}
+
+			wordDocument.Close();
+			wordapp.Quit();
+		}
+
+		private void butReport_Click(object sender, EventArgs e)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            int orderId = selectId;
-
-            string templateFilePath = "Квитанция.xlsx";
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            saveFileDialog.Filter = "Excel файлы (*.xlsx)|*.xlsx|Все файлы (*.*)|*.*";
-            saveFileDialog.FileName = "Квитанция.xlsx";
-            DialogResult result = saveFileDialog.ShowDialog();
-            string outputFilePath = "";
-            if (result == DialogResult.OK)
-            {
-                outputFilePath = saveFileDialog.FileName;
-
-                MessageBox.Show("Выбранный путь к файлу: " + outputFilePath);
-            }
-            else
-            {
-                MessageBox.Show("Пользователь отменил операцию выбора файла.");
-            }
-
-            try
-            {
-                FileInfo templateFile = new FileInfo(templateFilePath);
-                using (ExcelPackage package = new ExcelPackage(templateFile))
-                {
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets["Квитанция"];
-
-                    string query = @"
-                        SELECT 
-                            З.ИдЗаказа, З.Номер_квитанции, З.Дата_принятия, З.Дата_начала, З.Дата_конца, З.Дата_выдачи, 
-                            С.ФИО AS ФИОМастера, ВТ.Название AS НазваниеВида, З.Статус, З.Аванс, З.Скидка, З.ФИО_Клиента, З.Номер_телефона, 
-                            З.Стоимость_материалов, З.Стоимость_работ, З.Общая_стоимость, 
-                            М.Название AS НазваниеМодели, Т.Название AS НазваниеТипа,
-                            РР.ИдРаботы, РР.Название AS НазваниеРаботы, РР.Описание AS ОписаниеРаботы, РР.Стоимость AS СтоимостьРаботы,
-                            МТ.ИдМатериала, МТ.Название AS НазваниеМатериала, МТ.Стоимость AS СтоимостьМатериала, ЗМ.Количество AS КоличествоМатериала
-                        FROM 
-                            Заказ З
-                        LEFT JOIN 
-                            Вид_техники ВТ ON З.ИдВида = ВТ.ИдВида
-                        LEFT JOIN 
-                            Модель М ON ВТ.ИдМодели = М.ИдМодели
-                        LEFT JOIN 
-                            Тип_устройства Т ON ВТ.ИдТипа = Т.ИдТипа
-                        LEFT JOIN 
-                            Работа Р ON Р.ИдЗаказа = З.ИдЗаказа
-                        LEFT JOIN 
-                            Вид_ремонтных_работ РР ON Р.ИдРаботы = РР.ИдРаботы
-                        LEFT JOIN 
-                            Затраченный_материал ЗМ ON ЗМ.ИдЗаказа = З.ИдЗаказа
-                        LEFT JOIN 
-                            Материал МТ ON ЗМ.ИдМатериала = МТ.ИдМатериала
-                        LEFT JOIN 
-                            Сотрудник С ON З.ИдСотрудника = С.ИдСотрудника
-                        WHERE 
-                            З.ИдЗаказа = @OrderId;
-                    ";
-
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            command.Parameters.AddWithValue("@OrderId", orderId);
-                            connection.Open();
-
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                if (reader.HasRows)
-                                {
-
-                                    while (reader.Read())
-                                    {
-                                        worksheet.Cells["E1"].Value = reader["Номер_квитанции"].ToString();
-                                        worksheet.Cells["C4"].Value = reader["ФИО_Клиента"].ToString();
-                                        worksheet.Cells["C5"].Value = reader["Номер_телефона"].ToString();
-                                        worksheet.Cells["C6"].Value = reader["НазваниеВида"].ToString();
-                                        worksheet.Cells["C7"].Value = reader["НазваниеМодели"].ToString();
-                                        worksheet.Cells["C8"].Value = reader["НазваниеТипа"].ToString();
-                                        worksheet.Cells["E4"].Value = reader["Дата_принятия"].ToString();
-                                        worksheet.Cells["E5"].Value = reader["Дата_начала"].ToString();
-                                        worksheet.Cells["E6"].Value = reader["Дата_конца"].ToString();
-                                        worksheet.Cells["E7"].Value = reader["Дата_выдачи"].ToString();
-                                        worksheet.Cells["E8"].Value = reader["ФИОМастера"].ToString();
-                                        worksheet.Cells["E9"].Value = reader["Скидка"].ToString();
-                                        worksheet.Cells["E10"].Value = reader["Общая_стоимость"].ToString();
-
-                                        Dictionary<int, string> works = new Dictionary<int, string>();
-                                        Dictionary<int, string> materials = new Dictionary<int, string>();
-
-                                        while (reader.Read())
-                                        {
-
-                                            if (!reader.IsDBNull(reader.GetOrdinal("НазваниеРаботы")))
-                                            {
-                                                int workId = Convert.ToInt32(reader["ИдРаботы"]); 
-                                                string workInfo = $"{reader["НазваниеРаботы"]}, {reader["ОписаниеРаботы"]}, {reader["СтоимостьРаботы"]}";
-
-                                                if (!works.ContainsKey(workId))
-                                                {
-                                                    works.Add(workId, workInfo);
-                                                }
-                                            }
-
-                                            if (!reader.IsDBNull(reader.GetOrdinal("ИдМатериала")))
-                                            {
-                                                int materialId = Convert.ToInt32(reader["ИдМатериала"]);
-                                                string materialInfo = $"{reader["НазваниеМатериала"]}, {reader["СтоимостьМатериала"]}"; /*, { reader["КоличествоМатериала"]}*/
-
-                                                if (!materials.ContainsKey(materialId))
-                                                {
-                                                    materials.Add(materialId, materialInfo);
-                                                }
-                                            }
-                                        }
-
-                                        int rowWork = 14;
-                                        int rowMaterial = 24;
-
-                                        foreach (var work in works)
-                                        {
-                                            string[] workInfo = work.Value.Split(',');
-                                            worksheet.Cells[rowWork, 2].Value = workInfo[0].Trim();
-                                            worksheet.Cells[rowWork, 3].Value = workInfo[1].Trim();
-                                            worksheet.Cells[rowWork, 4].Value = workInfo[2].Trim();
-                                            rowWork++;
-                                        }
-
-                                        foreach (var material in materials)
-                                        {
-                                            string[] materialInfo = material.Value.Split(',');
-                                            worksheet.Cells[rowMaterial, 2].Value = materialInfo[0].Trim();
-                                            worksheet.Cells[rowMaterial, 4].Value = materialInfo[1].Trim();
-                                            //worksheet.Cells[rowMaterial, 3].Value = materialInfo[2].Trim();
-                                            rowMaterial++;
-                                        }
-                                    }
-
-                                    package.SaveAs(new FileInfo(outputFilePath));
-                                    MessageBox.Show("Отчет успешно сформирован в файле: " + outputFilePath);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Заказ с указанным идентификатором не найден.");
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка: " + ex.Message);
-            }
-        }
-        private void butReport_Click(object sender, EventArgs e)
-        {
-            report();
+            GenerateReport();
         }
     }
 }

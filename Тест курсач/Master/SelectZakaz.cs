@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using СделаНо;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Тест_курсач.Master
@@ -20,7 +12,11 @@ namespace Тест_курсач.Master
         int selectId;
         string connectionString = ConfigurationManager.ConnectionStrings["Тест_курсач.Properties.Settings.СделаНоConnectionString"].ConnectionString;
 
-        public SelectZakaz(int selectId)
+		private bool isEditingMaterials = false;
+		private bool isEditingWorks = false;
+		private bool isMaterialDoubleClickEventActive = false;
+
+		public SelectZakaz(int selectId)
         {
             InitializeComponent();
             this.selectId = selectId;
@@ -35,14 +31,11 @@ namespace Тест_курсач.Master
             label5.Visible = false;
             text1.Visible = false;
 
-            //label6.Visible = false;
-            //textFindMat.Visible = false;
-
-            //label7.Visible = false;
-            //textFindWork.Visible = false;
             butRepair.Visible = false;
             butDiagn.Visible = false;
         }
+        
+        //Заполнение таблиц
         private void FillData3GridView(int materialID)
         {
             string query = $@"SELECT МатериалыДляМастера.* 
@@ -111,7 +104,6 @@ namespace Тест_курсач.Master
                 {
                     DataRow newRow = table.Rows[0];
 
-                    // Находим индекс строки в таблице data3, соответствующей добавленному материалу
                     int rowIndex = -1;
                     foreach (DataGridViewRow row in data2.Rows)
                     {
@@ -122,7 +114,6 @@ namespace Тест_курсач.Master
                         }
                     }
 
-                    // Если строка найдена, обновляем её данными из таблицы
                     if (rowIndex != -1)
                     {
                         foreach (DataGridViewCell cell in data2.Rows[rowIndex].Cells)
@@ -157,17 +148,10 @@ namespace Тест_курсач.Master
         }
         private void FillDataGridView()
         {
-            string query = $"SELECT * FROM ЗаказДляМастера Where ИдЗаказа = {selectId}";
+            FillData1GridView();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                data1.DataSource = table;
-            }
 
-            string query1 = $@"SELECT Вид_ремонтных_работ.* FROM Вид_ремонтных_работ JOIN Работа ON Вид_ремонтных_работ.ИдРаботы = Работа.ИдРаботы WHERE Работа.ИдЗаказа = {selectId}";
+			string query1 = $@"SELECT Вид_ремонтных_работ.* FROM Вид_ремонтных_работ JOIN Работа ON Вид_ремонтных_работ.ИдРаботы = Работа.ИдРаботы WHERE Работа.ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -176,6 +160,7 @@ namespace Тест_курсач.Master
                 adapter1.Fill(table1);
                 data2.DataSource = table1;
             }
+
             string query2 = $@"SELECT МатериалыДляМастера.* FROM МатериалыДляМастера JOIN Затраченный_материал ON МатериалыДляМастера.ИдМатериала = Затраченный_материал.ИдМатериала JOIN Заказ ON Затраченный_материал.ИдЗаказа = Заказ.ИдЗаказа Where Заказ.ИдЗаказа = {selectId}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -205,6 +190,8 @@ namespace Тест_курсач.Master
                 data5.DataSource = table;
             }
         }
+
+        //Добавление работ
         private void butWork_Click(object sender, EventArgs e)
         {
             butWork.Visible = false;
@@ -222,8 +209,11 @@ namespace Тест_курсач.Master
             MessageBox.Show("Для добавление работы, кликните 2 раза по таблице 'Работы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемая работа'");
 
             data2.MouseDoubleClick += data2_MouseDoubleClick;
-        }
 
+			isEditingWorks = true;
+		}
+
+        //Добавление материалов
         private void butMat_Click(object sender, EventArgs e)
         {
             butRepair.Visible = true;
@@ -242,11 +232,95 @@ namespace Тест_курсач.Master
             butMat.Visible = false;
 
             MessageBox.Show("Для добавление материала, кликните 2 раза таблице 'Материалы для добавления'. Для удаление, кликните 2 раза по таблице 'Требуемые материалы'");
+			
+            if (!isMaterialDoubleClickEventActive)
+			{
+				data5.MouseDoubleClick += data5_MouseDoubleClick;
+				isMaterialDoubleClickEventActive = true;
+			}
 
-            data3.MouseDoubleClick += data3_MouseDoubleClick;
-        }
+			data3.MouseDoubleClick += data3_MouseDoubleClick;
 
-        private void butBack_Click(object sender, EventArgs e)
+			isEditingMaterials = true;
+		}
+
+        //Добавление выбранного материала
+		private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				if (!int.TryParse(text1.Text, out int quantity))
+				{
+					MessageBox.Show("Введите корректное количество материалов.");
+					return;
+				}
+				int selectedMaterialID = Convert.ToInt32(data5.CurrentRow.Cells[0].Value);
+
+				bool materialExists = CheckIfMaterialExists(selectedMaterialID);
+
+				if (materialExists)
+				{
+					MessageBox.Show("Запись уже существует в таблице Требуемые материалы");
+				}
+				else
+				{
+					AddMaterialToRequired(selectedMaterialID);
+					MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
+					FillData3GridView(selectedMaterialID);
+					FillData1GridView();
+
+				}
+			}
+		}
+        //Проверка на повтор
+		private bool CheckIfMaterialExists(int materialID)
+		{
+			string query = $"SELECT COUNT(*) FROM Затраченный_материал WHERE ИдМатериала = {materialID} AND ИдЗаказа = {selectId}";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				SqlCommand command = new SqlCommand(query, connection);
+				connection.Open();
+				int count = Convert.ToInt32(command.ExecuteScalar());
+				return count > 0;
+			}
+		}
+
+        //Добавление материала
+		private void AddMaterialToRequired(int materialID)
+		{
+			int quant = Convert.ToInt32(text1.Text);
+
+			string insertQuery = $"INSERT INTO Затраченный_материал (ИдМатериала, ИдЗаказа, Количество) VALUES (@MaterialID, @OrderID, @Quantity)";
+
+			try
+			{
+				using (SqlConnection connection = new SqlConnection(connectionString))
+				{
+					using (SqlCommand command = new SqlCommand(insertQuery, connection))
+					{
+						// Добавляем параметры
+						command.Parameters.AddWithValue("@MaterialID", materialID);
+						command.Parameters.AddWithValue("@OrderID", selectId);
+						command.Parameters.AddWithValue("@Quantity", quant);
+
+						connection.Open();
+						command.ExecuteNonQuery();
+					}
+				}
+
+				MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
+				FillData3GridView(materialID);
+				FillData1GridView();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Ошибка при добавлении материала: {ex.Message}");
+			}
+		}
+
+        //Возврат
+		private void butBack_Click(object sender, EventArgs e)
         {
 
             label2.Visible = true;
@@ -276,69 +350,23 @@ namespace Тест_курсач.Master
             CheckZakaz();
             data2.MouseDoubleClick -= data2_MouseDoubleClick;
             data3.MouseDoubleClick -= data3_MouseDoubleClick;
-        }
+			if (isMaterialDoubleClickEventActive)
+			{
+				data5.MouseDoubleClick -= data5_MouseDoubleClick;
+				isMaterialDoubleClickEventActive = false;
+			}
+			isEditingMaterials = false;
+			isEditingWorks = false;
+		}
 
-        private void data5_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (!int.TryParse(text1.Text, out int quantity))
-                {
-                    MessageBox.Show("Введите корректное количество материалов.");
-                    return;
-                }
-                int selectedMaterialID = Convert.ToInt32(data5.CurrentRow.Cells[0].Value);
-
-                bool materialExists = CheckIfMaterialExists(selectedMaterialID);
-
-                if (materialExists)
-                {
-                    MessageBox.Show("Запись уже существует в таблице Требуемые материалы");
-                }
-                else
-                {
-                    AddMaterialToRequired(selectedMaterialID);
-                    MessageBox.Show("Запись успешно добавлена в таблицу Требуемые материалы");
-                    FillData3GridView(selectedMaterialID);
-                    FillData1GridView();
-
-                }
-            }
-        }
-
-        private bool CheckIfMaterialExists(int materialID)
-        {
-            string query = $"SELECT COUNT(*) FROM Затраченный_материал WHERE ИдМатериала = {materialID} AND ИдЗаказа = {selectId}";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                return count > 0;
-            }
-        }
-
-        private void AddMaterialToRequired(int materialID)
-        {
-            int quant = Convert.ToInt32(text1.Text);
-
-            string insertQuery = $"INSERT INTO Затраченный_материал (ИдМатериала, ИдЗаказа, Количество) VALUES ({materialID}, {selectId}, {quant})";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(insertQuery, connection);
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
-
-
-
-
+        //Удаление материала
+        
         private void data3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+			if (!isEditingMaterials)
+				return;
+
+			if (e.Button == MouseButtons.Left)
             {
                 int selectedMaterialID = Convert.ToInt32(data3.CurrentRow.Cells[0].Value);
 
@@ -348,6 +376,9 @@ namespace Тест_курсач.Master
                 FillData1GridView();
             }
         }
+
+        //Метод для удаления материала
+
         private void DeleteMaterialFromAdditional(int materialID)
         {
             string deleteQuery = $"DELETE FROM Затраченный_материал WHERE ИдМатериала = {materialID}";
@@ -360,7 +391,7 @@ namespace Тест_курсач.Master
             }
         }
 
-
+        //Добавление работ
 
         private void data4_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -409,11 +440,12 @@ namespace Тест_курсач.Master
             }
         }
 
-
-
         private void data2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+			if (!isEditingWorks)
+				return;
+
+			if (e.Button == MouseButtons.Left)
             {
                 if (data2.RowCount > 0)
                 {
@@ -445,12 +477,14 @@ namespace Тест_курсач.Master
 
         }
 
-
+        //Проверка заказов
 
         private void SelectZakaz_Load(object sender, EventArgs e)
         {
             CheckZakaz();
-        }
+			data2.MouseDoubleClick -= data2_MouseDoubleClick;
+			data3.MouseDoubleClick -= data3_MouseDoubleClick;
+		}
         private void CheckZakaz()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -496,6 +530,9 @@ namespace Тест_курсач.Master
                 }
             }
         }
+
+        //Завершение диагностики
+
         private void butDiagn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Диагностика окончена");
@@ -515,7 +552,12 @@ namespace Тест_курсач.Master
             label3.Visible = false;
             butBack.Visible = false;
             butWork.Visible = false;
-        }
+
+			isEditingMaterials = false;
+			isEditingWorks = false;
+		}
+
+        //Завершение ремонта
 
         private void butRepair_Click(object sender, EventArgs e)
         {
@@ -542,6 +584,9 @@ namespace Тест_курсач.Master
             label5.Visible = false;
             data5.Visible = false;
             data2.Visible = true;
-        }
+
+			isEditingMaterials = false;
+			isEditingWorks = false;
+		}
     }
 }

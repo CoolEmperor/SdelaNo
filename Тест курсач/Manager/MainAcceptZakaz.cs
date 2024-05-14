@@ -18,7 +18,7 @@ namespace Тест_курсач.Manager
 
         public event EventHandler<int> RowSelected;
         public int selectId;
-        public MainAcceptZakaz()
+		public MainAcceptZakaz()
         {
             InitializeComponent();
             FillDataGridView();
