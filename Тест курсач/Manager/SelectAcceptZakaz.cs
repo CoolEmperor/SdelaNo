@@ -277,18 +277,24 @@ namespace Тест_курсач.Manager
 				compltb1.Cell(i + 3, 4).Range.Bold = 0;
 			}
 
-			wordapp.Visible = true;
-
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
 			saveFileDialog.FileName = "Название_файла.docx";
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				wordDocument.SaveAs(saveFileDialog.FileName);
+				wordapp.Visible = true;
+			}
+			else
+			{
+				wordDocument.Close(Word.WdSaveOptions.wdDoNotSaveChanges);
 			}
 
-			wordDocument.Close();
-			wordapp.Quit();
+			if (!wordapp.Visible)
+			{
+				wordDocument.Close(Word.WdSaveOptions.wdDoNotSaveChanges);
+				wordapp.Quit();
+			}
 		}
 
 		private void butReport_Click(object sender, EventArgs e)

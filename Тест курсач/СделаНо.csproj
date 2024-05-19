@@ -7,7 +7,7 @@
     <ProjectGuid>{41516F2A-713B-444E-AB86-E4EE50B5F081}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Тест_курсач</RootNamespace>
-    <AssemblyName>СделаНо</AssemblyName>
+    <AssemblyName>Мастерская</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
